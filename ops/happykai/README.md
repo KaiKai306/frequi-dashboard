@@ -62,3 +62,11 @@ pnpm run build
 Validate both Compose files together before service changes. Validate the existing
 public proxy configuration before hot reloading it. Do not use the upstream
 generic proxy/server examples for this deployment.
+
+## Historical strategy comparisons
+
+`/preview/backtests/*` is served from the existing static container through a dedicated
+authenticated, GET/HEAD-only route on the public Caddy. The original bot gateway
+allowlist is unchanged. The frontend reads completed research reports; it cannot
+start backtest commands or change the running strategy. Build and reproduce
+reports using [research/backtests](../../research/backtests/README.md).

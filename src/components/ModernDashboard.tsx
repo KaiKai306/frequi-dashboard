@@ -13,11 +13,12 @@ import type { Trade } from '../types';
 import type { ChartQuote } from '../views/CandleChartView';
 import '../styles/modern.css';
 
+const BacktestsView = lazy(() => import('../views/BacktestsView').then(m => ({ default: m.BacktestsView })));
 const CandleChartView = lazy(() => import('../views/CandleChartView').then(m => ({ default: m.CandleChartView })));
 const ClosedTradesView = lazy(() => import('../views/ClosedTradesView').then(m => ({ default: m.ClosedTradesView })));
 const BotLogsView = lazy(() => import('../views/BotLogsView').then(m => ({ default: m.BotLogsView })));
 type Page = DashboardPage | 'overview';
-const tabs: { id: Page; label: string }[] = [{ id: 'overview', label: '账户总览' }, { id: 'trading', label: '行情与持仓' }, { id: 'analysis', label: '收益分析' }, { id: 'history', label: '成交记录' }, { id: 'logs', label: '运行日志' }];
+const tabs: { id: Page; label: string }[] = [{ id: 'overview', label: '账户总览' }, { id: 'trading', label: '行情与持仓' }, { id: 'analysis', label: '收益分析' }, { id: 'history', label: '成交记录' }, { id: 'backtests', label: '策略回测' }, { id: 'logs', label: '运行日志' }];
 const Loading = () => <div className="studio-loading">正在读取数据…</div>;
 function Card({ title, children, extra, className = '' }: { title: string; children: ReactNode; extra?: ReactNode; className?: string }) {
   return <section className={`studio-card ${className}`} aria-label={title}><header className="studio-card-head"><h2>{title}</h2>{extra}</header><div className="studio-card-body">{children}</div></section>;
@@ -65,7 +66,9 @@ function PerformanceStrip() {
 
 export function ModernDashboard() {
   const { botState, activeBotId, isConnected, isConnecting, refreshData, theme, setTheme, refreshCountdown, refreshInterval, setRefreshInterval, deleteProfile, hideBalances, toggleHideBalances, selectedPair, lastError, formatCurrency } = useBot();
-  const [page, setPage] = useState<Page>('overview');
+  const [page, setCurrentPage] = useState<Page>(() => tabs.some(t => t.id === location.hash.slice(1)) ? location.hash.slice(1) as Page : 'overview');
+  const setPage = (next: Page) => { setCurrentPage(next); history.replaceState(null, '', `#${next}`); };
+  useEffect(() => { const update = () => setCurrentPage(tabs.some(t => t.id === location.hash.slice(1)) ? location.hash.slice(1) as Page : 'overview'); addEventListener('hashchange', update); return () => removeEventListener('hashchange', update); }, []);
   const mainRef = useRef<HTMLElement>(null);
   useEffect(() => { mainRef.current?.scrollTo({ top: 0, left: 0 }); }, [page]);
   const [refreshing, setRefreshing] = useState(false);
@@ -82,6 +85,7 @@ export function ModernDashboard() {
     {page === 'trading' && <><div className="studio-market-grid"><Card title="市场行情" className="studio-market-card" extra={<span className="studio-micro">BINANCE SPOT</span>}><div className="studio-market-quote"><Coin pair={selectedPair} /><div><strong>{selectedPair || '等待行情'}</strong><small>实时市场观察</small></div><div className="studio-market-price">{currentQuote ? currentQuote.close.toLocaleString('en-US', { maximumFractionDigits: 2 }) : '—'}<small>USDT</small></div>{currentQuote && <span className={currentQuote.change < 0 ? 'studio-negative' : 'studio-positive'}>{currentQuote.change >= 0 ? '+' : ''}{currentQuote.change.toFixed(2)}%<small>本根 {currentQuote.timeframe} K 线</small></span>}<span className="studio-market-fresh">{currentQuote && clock.getTime() - currentQuote.updatedAt < 90000 ? '行情已更新' : '行情待更新'}</span></div><div className="studio-chart-engine"><Suspense fallback={<Loading />}><CandleChartView onQuote={setQuote} /></Suspense></div></Card><div className="studio-market-aside"><Strategy /><Allocation /></div></div><Positions onDetail={setDetail} onHistory={() => setPage('history')} /></>}
     {page === 'analysis' && <><PerformanceStrip /><div className="studio-analysis-grid"><PortfolioPanel analysis /><Card title="信号统计" className="studio-signals"><SignalSummary /></Card></div><Card title="运行概览" className="studio-recent"><FreqUIDashboardView /></Card></>}
     {page === 'history' && <><PerformanceStrip /><Card title="历史成交" className="studio-history"><Suspense fallback={<Loading />}><ClosedTradesView /></Suspense></Card></>}
+    {page === 'backtests' && <Suspense fallback={<Loading />}><BacktestsView /></Suspense>}
     {page === 'logs' && <Card title="运行日志" className="studio-logs"><Suspense fallback={<Loading />}><BotLogsView /></Suspense></Card>}
     <footer className="studio-footer"><span><i />Happykai <span>/</span>量化工作空间</span><span>{clock.toLocaleTimeString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false })} UTC+8<a href="/preview/legacy-fixed-cockpit/index.html">旧版中文面板 ↗</a></span></footer></main>
     {detail && <StudioDialog title="持仓详情" onClose={() => setDetail(null)}><div className="studio-detail-hero"><Coin pair={detail.pair} /><div><h3>{detail.pair}</h3><span>现货持仓</span></div><strong className={detail.profit_ratio < 0 ? 'studio-negative' : 'studio-positive'}>{formatCurrency(detail.profit_abs ?? detail.stake_amount * detail.profit_ratio, { showSign: true })}</strong></div><dl className="studio-details">{[['开仓时间', formatUtc8(detail.open_timestamp || detail.open_date, 'YYYY-MM-DD HH:mm:ss')], ['数量', hideBalances ? '••••••' : detail.amount.toLocaleString('en-US', { maximumFractionDigits: 8 })], ['投入金额', formatCurrency(detail.stake_amount)], ['开仓价', detail.open_rate.toLocaleString('en-US')], ['当前价', detail.current_rate?.toLocaleString('en-US') ?? '—'], ['收益率', `${(detail.profit_ratio * 100).toFixed(2)}%`], ['止损价', detail.stop_loss_abs?.toLocaleString('en-US') ?? '—'], ['入场信号', detail.enter_tag || '—']].map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl><button className="studio-primary studio-wide" onClick={() => setDetail(null)}>关闭</button></StudioDialog>}

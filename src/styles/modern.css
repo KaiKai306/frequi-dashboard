@@ -28,3 +28,6 @@ html.dark{--terminal-bg:var(--studio-bg);--terminal-panel:var(--studio-panel);--
 @media(max-width:760px){.studio-shell .terminal-log-row{grid-template-columns:66px 45px max-content;padding:8px 0}}
 
 .studio-shell .terminal-log-row>.terminal-log-time{grid-column:auto;grid-row:auto;white-space:nowrap}
+
+/* Six desktop navigation entries, including research. */
+@media(min-width:1121px) and (max-width:1440px){.studio-header{gap:20px;padding-left:30px;padding-right:30px}.studio-header nav{gap:2px}.studio-header nav button{padding:0 11px}.studio-header-tools{gap:10px}}

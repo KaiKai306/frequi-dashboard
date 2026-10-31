@@ -13,6 +13,18 @@ quant.happykai.cn {
 		max_size 1MB
 	}
 	redir /preview /preview/ 308
+	handle /preview/backtests/* {
+		route {
+			@research_write not method GET HEAD
+			respond @research_write "Read-only research reports" 405
+			forward_auth freqtrade:8080 {
+				uri /api/v1/show_config
+			}
+			uri strip_prefix /preview
+			header Cache-Control "no-store"
+			reverse_proxy trellis-preview:8080
+		}
+	}
 	handle_path /preview/* {
 		reverse_proxy trellis-preview:8080
 	}

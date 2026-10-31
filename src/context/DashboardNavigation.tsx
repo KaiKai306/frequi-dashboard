@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react';
 import { useOptionalWorkspace } from '@danfessler/trellis-react';
 import { useBot } from './BotContext';
 
-export type DashboardPage = 'trading' | 'analysis' | 'history' | 'logs';
+export type DashboardPage = 'trading' | 'analysis' | 'history' | 'logs' | 'backtests';
 export const DashboardNavigation = createContext<((page: DashboardPage) => void) | null>(null);
 
 export function useOpenChart() {
