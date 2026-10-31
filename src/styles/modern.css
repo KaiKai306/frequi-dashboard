@@ -31,3 +31,5 @@ html.dark{--terminal-bg:var(--studio-bg);--terminal-panel:var(--studio-panel);--
 
 /* Six desktop navigation entries, including research. */
 @media(min-width:1121px) and (max-width:1440px){.studio-header{gap:20px;padding-left:30px;padding-right:30px}.studio-header nav{gap:2px}.studio-header nav button{padding:0 11px}.studio-header-tools{gap:10px}}
+
+.studio-bot-select{max-width:250px;height:30px;padding:0 10px;color:var(--studio-text);background:var(--studio-panel);border:1px solid var(--studio-border);border-radius:6px;font:12px var(--studio-font)}

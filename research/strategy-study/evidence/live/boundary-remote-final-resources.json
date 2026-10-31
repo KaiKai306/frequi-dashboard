@@ -1,0 +1,14 @@
+{
+  "original_production_containers_preserved": 7,
+  "available_mib": 5925.8,
+  "running_containers": [
+    "kai-newapi-bridge",
+    "codex2api",
+    "happykai-site-editor",
+    "magic-portfolio",
+    "infinite-canvas",
+    "infinite-canvas-sync",
+    "training-docs-admin"
+  ],
+  "research_tasks_completed": 6
+}

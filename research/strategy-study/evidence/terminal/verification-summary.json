@@ -1,0 +1,13 @@
+{
+  "formal_groups": 54,
+  "formal_strategy_runs": 378,
+  "original_executions": 378,
+  "corrective_executions": 126,
+  "total_executions": 504,
+  "new_causal_checks": 210,
+  "original_framework_lookahead_variants": 21,
+  "post_correction_accounting_runs": 378,
+  "all_corrective_trades_chronologically_valid": true,
+  "original_archive_backup": "/srv/ccpocket/workspace/tmp/2026-10-31/quant-strategy-study/before-terminal-install-20261031T234405Z",
+  "final_dataset_sha256": "666dbf1e539df417b039849a181f7e35df6138db38e524ffe6c47ae3bd616e5b"
+}

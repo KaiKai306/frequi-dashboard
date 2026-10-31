@@ -1,0 +1,1010 @@
+[
+  {
+    "family": "Sma",
+    "timeframe": "4h",
+    "stake": 100,
+    "name": "双均线趋势",
+    "positive_all_three_stress_periods": true,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": 1.7443601716635282,
+    "stress_returns": {
+      "2022-2023": 3.5166976760000024,
+      "2024-2025": 17.50082742100001,
+      "2026-q1-q3": 3.1956420759999826
+    }
+  },
+  {
+    "family": "HorizonSma",
+    "timeframe": "4h",
+    "stake": 100,
+    "name": "双均线时间跨度对照",
+    "positive_all_three_stress_periods": true,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": 1.7443601716635282,
+    "stress_returns": {
+      "2022-2023": 3.5166976760000024,
+      "2024-2025": 17.50082742100001,
+      "2026-q1-q3": 3.1956420759999826
+    }
+  },
+  {
+    "family": "Donchian",
+    "timeframe": "4h",
+    "stake": 100,
+    "name": "通道突破",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 43,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -0.506984328058746,
+    "stress_returns": {
+      "2022-2023": 7.3190515719999905,
+      "2024-2025": 9.185862905000008,
+      "2026-q1-q3": -0.37918007599999637
+    }
+  },
+  {
+    "family": "RsiBbands",
+    "timeframe": "4h",
+    "stake": 100,
+    "name": "RSI / 布林回归",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 3,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -1.3392492098016517,
+    "stress_returns": {
+      "2022-2023": -0.4780178989999939,
+      "2024-2025": -2.3859057450000054,
+      "2026-q1-q3": -1.0027018870000015
+    }
+  },
+  {
+    "family": "AdxMomentum",
+    "timeframe": "4h",
+    "stake": 100,
+    "name": "ADX 动量",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 78,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -4.460789138010712,
+    "stress_returns": {
+      "2022-2023": -8.716889712999997,
+      "2024-2025": -5.632547430000001,
+      "2026-q1-q3": -2.1730304700000036
+    }
+  },
+  {
+    "family": "Supertrend",
+    "timeframe": "4h",
+    "stake": 100,
+    "name": "Supertrend 趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 46,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -3.2353087685307647,
+    "stress_returns": {
+      "2022-2023": 4.983826569000005,
+      "2024-2025": 9.37980168399999,
+      "2026-q1-q3": -2.4281931809999935
+    }
+  },
+  {
+    "family": "EmaPullback",
+    "timeframe": "4h",
+    "stake": 100,
+    "name": "EMA 趋势回调",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 57,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -4.502819524742952,
+    "stress_returns": {
+      "2022-2023": -8.79713312599999,
+      "2024-2025": -5.418217272000003,
+      "2026-q1-q3": -3.1637560980000035
+    }
+  },
+  {
+    "family": "Sma",
+    "timeframe": "4h",
+    "stake": 250,
+    "name": "双均线趋势",
+    "positive_all_three_stress_periods": true,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": 4.312618155691061,
+    "stress_returns": {
+      "2022-2023": 8.80493406999998,
+      "2024-2025": 43.78953295999999,
+      "2026-q1-q3": 8.000481686000004
+    }
+  },
+  {
+    "family": "HorizonSma",
+    "timeframe": "4h",
+    "stake": 250,
+    "name": "双均线时间跨度对照",
+    "positive_all_three_stress_periods": true,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": 4.312618155691061,
+    "stress_returns": {
+      "2022-2023": 8.80493406999998,
+      "2024-2025": 43.78953295999999,
+      "2026-q1-q3": 8.000481686000004
+    }
+  },
+  {
+    "family": "Donchian",
+    "timeframe": "4h",
+    "stake": 250,
+    "name": "通道突破",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 43,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -1.2920925914877812,
+    "stress_returns": {
+      "2022-2023": 18.303951423000008,
+      "2024-2025": 22.957203686999982,
+      "2026-q1-q3": -0.9673373649999983
+    }
+  },
+  {
+    "family": "RsiBbands",
+    "timeframe": "4h",
+    "stake": 250,
+    "name": "RSI / 布林回归",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 3,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -3.3427066998450217,
+    "stress_returns": {
+      "2022-2023": -1.1948421539999976,
+      "2024-2025": -5.982405201999996,
+      "2026-q1-q3": -2.509146874000001
+    }
+  },
+  {
+    "family": "AdxMomentum",
+    "timeframe": "4h",
+    "stake": 250,
+    "name": "ADX 动量",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 78,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -11.588769049541769,
+    "stress_returns": {
+      "2022-2023": -21.821361661000015,
+      "2024-2025": -14.09540858,
+      "2026-q1-q3": -5.4546878770000085
+    }
+  },
+  {
+    "family": "Supertrend",
+    "timeframe": "4h",
+    "stake": 250,
+    "name": "Supertrend 趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 46,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -8.07157447187804,
+    "stress_returns": {
+      "2022-2023": 12.449358033000003,
+      "2024-2025": 23.442679754999986,
+      "2026-q1-q3": -6.096629437000001
+    }
+  },
+  {
+    "family": "EmaPullback",
+    "timeframe": "4h",
+    "stake": 250,
+    "name": "EMA 趋势回调",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 57,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -11.696450119646473,
+    "stress_returns": {
+      "2022-2023": -22.011552007000013,
+      "2024-2025": -13.593346838999999,
+      "2026-q1-q3": -7.935063377000007
+    }
+  },
+  {
+    "family": "Sma",
+    "timeframe": "4h",
+    "stake": 450,
+    "name": "双均线趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -0.532981936733723,
+    "stress_returns": {
+      "2022-2023": -1.0623993870000015,
+      "2024-2025": 78.82567080800003,
+      "2026-q1-q3": 14.412343643999993
+    }
+  },
+  {
+    "family": "HorizonSma",
+    "timeframe": "4h",
+    "stake": 450,
+    "name": "双均线时间跨度对照",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -0.532981936733723,
+    "stress_returns": {
+      "2022-2023": -1.0623993870000015,
+      "2024-2025": 78.82567080800003,
+      "2026-q1-q3": 14.412343643999993
+    }
+  },
+  {
+    "family": "Donchian",
+    "timeframe": "4h",
+    "stake": 450,
+    "name": "通道突破",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 37,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -9.350967720280579,
+    "stress_returns": {
+      "2022-2023": 32.95394141699999,
+      "2024-2025": 41.336675873000004,
+      "2026-q1-q3": -7.075161160999999
+    }
+  },
+  {
+    "family": "RsiBbands",
+    "timeframe": "4h",
+    "stake": 450,
+    "name": "RSI / 布林回归",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 3,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -5.995490489403455,
+    "stress_returns": {
+      "2022-2023": -2.152793142999998,
+      "2024-2025": -10.765428590000003,
+      "2026-q1-q3": -4.516036958999992
+    }
+  },
+  {
+    "family": "AdxMomentum",
+    "timeframe": "4h",
+    "stake": 450,
+    "name": "ADX 动量",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 72,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -20.66619195742051,
+    "stress_returns": {
+      "2022-2023": -37.04151974000002,
+      "2024-2025": -17.822847648999986,
+      "2026-q1-q3": -3.997513635999994
+    }
+  },
+  {
+    "family": "Supertrend",
+    "timeframe": "4h",
+    "stake": 450,
+    "name": "Supertrend 趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 33,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -7.008318929603297,
+    "stress_returns": {
+      "2022-2023": -8.601418177999998,
+      "2024-2025": 32.155002453,
+      "2026-q1-q3": -5.286023675000006
+    }
+  },
+  {
+    "family": "EmaPullback",
+    "timeframe": "4h",
+    "stake": 450,
+    "name": "EMA 趋势回调",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 56,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -17.40826875194902,
+    "stress_returns": {
+      "2022-2023": -24.737032963999994,
+      "2024-2025": -20.576031693999997,
+      "2026-q1-q3": -13.320653362000002
+    }
+  },
+  {
+    "family": "Sma",
+    "timeframe": "1h",
+    "stake": 100,
+    "name": "双均线趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 43,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -2.101181707172428,
+    "stress_returns": {
+      "2022-2023": -4.155427597999994,
+      "2024-2025": 5.842984806999985,
+      "2026-q1-q3": 0.5319385209999972
+    }
+  },
+  {
+    "family": "HorizonSma",
+    "timeframe": "1h",
+    "stake": 100,
+    "name": "双均线时间跨度对照",
+    "positive_all_three_stress_periods": true,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": 2.6098675367286717,
+    "stress_returns": {
+      "2022-2023": 5.284135840000004,
+      "2024-2025": 16.721294576000002,
+      "2026-q1-q3": 3.2541826939999963
+    }
+  },
+  {
+    "family": "Donchian",
+    "timeframe": "1h",
+    "stake": 100,
+    "name": "通道突破",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 141,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -9.399396205352318,
+    "stress_returns": {
+      "2022-2023": -17.904213421000005,
+      "2024-2025": -15.912206543000007,
+      "2026-q1-q3": -1.9002310660000021
+    }
+  },
+  {
+    "family": "RsiBbands",
+    "timeframe": "1h",
+    "stake": 100,
+    "name": "RSI / 布林回归",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -1.05141645082365,
+    "stress_returns": {
+      "2022-2023": -1.8978849820000088,
+      "2024-2025": -2.093194789999997,
+      "2026-q1-q3": -0.7192685160000045
+    }
+  },
+  {
+    "family": "AdxMomentum",
+    "timeframe": "1h",
+    "stake": 100,
+    "name": "ADX 动量",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 167,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -13.483843323843159,
+    "stress_returns": {
+      "2022-2023": -25.134703985000005,
+      "2024-2025": -12.66114640799999,
+      "2026-q1-q3": -7.758024746000003
+    }
+  },
+  {
+    "family": "Supertrend",
+    "timeframe": "1h",
+    "stake": 100,
+    "name": "Supertrend 趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 167,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -9.24887125094289,
+    "stress_returns": {
+      "2022-2023": -17.63138409899998,
+      "2024-2025": -11.997768758999994,
+      "2026-q1-q3": -4.236494817999992
+    }
+  },
+  {
+    "family": "EmaPullback",
+    "timeframe": "1h",
+    "stake": 100,
+    "name": "EMA 趋势回调",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 177,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -14.823828947975294,
+    "stress_returns": {
+      "2022-2023": -21.565446806,
+      "2024-2025": -27.466132081999994,
+      "2026-q1-q3": -8.003854180000003
+    }
+  },
+  {
+    "family": "Sma",
+    "timeframe": "1h",
+    "stake": 250,
+    "name": "双均线趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 43,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -5.346017005479453,
+    "stress_returns": {
+      "2022-2023": -10.399496270000007,
+      "2024-2025": 14.614638693999993,
+      "2026-q1-q3": 1.3333649950000082
+    }
+  },
+  {
+    "family": "HorizonSma",
+    "timeframe": "1h",
+    "stake": 250,
+    "name": "双均线时间跨度对照",
+    "positive_all_three_stress_periods": true,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": 6.410840190968647,
+    "stress_returns": {
+      "2022-2023": 13.223037795000003,
+      "2024-2025": 41.76692932499999,
+      "2026-q1-q3": 8.137910310999995
+    }
+  },
+  {
+    "family": "Donchian",
+    "timeframe": "1h",
+    "stake": 250,
+    "name": "通道突破",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 141,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -25.734660276948574,
+    "stress_returns": {
+      "2022-2023": -44.824125114999966,
+      "2024-2025": -39.85622888099994,
+      "2026-q1-q3": -4.757686069
+    }
+  },
+  {
+    "family": "RsiBbands",
+    "timeframe": "1h",
+    "stake": 250,
+    "name": "RSI / 布林回归",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -2.653346395696776,
+    "stress_returns": {
+      "2022-2023": -4.750809817000001,
+      "2024-2025": -5.239778783999993,
+      "2026-q1-q3": -1.8004611930000025
+    }
+  },
+  {
+    "family": "AdxMomentum",
+    "timeframe": "1h",
+    "stake": 250,
+    "name": "ADX 动量",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 167,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -34.62409448385212,
+    "stress_returns": {
+      "2022-2023": -57.23503568599997,
+      "2024-2025": -31.715250941999983,
+      "2026-q1-q3": -19.429330851000003
+    }
+  },
+  {
+    "family": "Supertrend",
+    "timeframe": "1h",
+    "stake": 250,
+    "name": "Supertrend 趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 167,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -25.263919738529907,
+    "stress_returns": {
+      "2022-2023": -44.12291261600003,
+      "2024-2025": -30.066832746000006,
+      "2026-q1-q3": -10.597540234000002
+    }
+  },
+  {
+    "family": "EmaPullback",
+    "timeframe": "1h",
+    "stake": 250,
+    "name": "EMA 趋势回调",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 177,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -42.947859241983174,
+    "stress_returns": {
+      "2022-2023": -54.211383358000084,
+      "2024-2025": -67.47552878399998,
+      "2026-q1-q3": -20.032019015999992
+    }
+  },
+  {
+    "family": "Sma",
+    "timeframe": "1h",
+    "stake": 450,
+    "name": "双均线趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 33,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -14.38306180959039,
+    "stress_returns": {
+      "2022-2023": -26.681814890999977,
+      "2024-2025": 26.302253859000025,
+      "2026-q1-q3": -3.0478157250000137
+    }
+  },
+  {
+    "family": "HorizonSma",
+    "timeframe": "1h",
+    "stake": 450,
+    "name": "双均线时间跨度对照",
+    "positive_all_three_stress_periods": true,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": 2.0533848910943897,
+    "stress_returns": {
+      "2022-2023": 4.146035815000015,
+      "2024-2025": 75.23328638100001,
+      "2026-q1-q3": 14.656955224000011
+    }
+  },
+  {
+    "family": "Donchian",
+    "timeframe": "1h",
+    "stake": 450,
+    "name": "通道突破",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 116,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -32.81606780385319,
+    "stress_returns": {
+      "2022-2023": -54.83861017199998,
+      "2024-2025": -48.734448721000014,
+      "2026-q1-q3": -10.084133609000002
+    }
+  },
+  {
+    "family": "RsiBbands",
+    "timeframe": "1h",
+    "stake": 450,
+    "name": "RSI / 布林回归",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -4.8276357272666,
+    "stress_returns": {
+      "2022-2023": -8.552092195000006,
+      "2024-2025": -9.428345886,
+      "2026-q1-q3": -3.238801328999996
+    }
+  },
+  {
+    "family": "AdxMomentum",
+    "timeframe": "1h",
+    "stake": 450,
+    "name": "ADX 动量",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 142,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -33.877151154620655,
+    "stress_returns": {
+      "2022-2023": -56.252923224999975,
+      "2024-2025": -55.45175886100006,
+      "2026-q1-q3": -21.496955639000003
+    }
+  },
+  {
+    "family": "Supertrend",
+    "timeframe": "1h",
+    "stake": 450,
+    "name": "Supertrend 趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 118,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -32.622755652357014,
+    "stress_returns": {
+      "2022-2023": -54.57852405199999,
+      "2024-2025": -43.586592490000044,
+      "2026-q1-q3": -18.796690321999996
+    }
+  },
+  {
+    "family": "EmaPullback",
+    "timeframe": "1h",
+    "stake": 450,
+    "name": "EMA 趋势回调",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 144,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -47.62220274626651,
+    "stress_returns": {
+      "2022-2023": -54.73505198899999,
+      "2024-2025": -54.79999739600001,
+      "2026-q1-q3": -38.328956441999985
+    }
+  },
+  {
+    "family": "Sma",
+    "timeframe": "15m",
+    "stake": 100,
+    "name": "双均线趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 161,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -7.711955668499981,
+    "stress_returns": {
+      "2022-2023": -13.749965824999999,
+      "2024-2025": -9.037289544999993,
+      "2026-q1-q3": -5.822199223999991
+    }
+  },
+  {
+    "family": "HorizonSma",
+    "timeframe": "15m",
+    "stake": 100,
+    "name": "双均线时间跨度对照",
+    "positive_all_three_stress_periods": true,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": 2.1103375127896173,
+    "stress_returns": {
+      "2022-2023": 4.262229542999996,
+      "2024-2025": 16.93522489399999,
+      "2026-q1-q3": 3.271951312999999
+    }
+  },
+  {
+    "family": "Donchian",
+    "timeframe": "15m",
+    "stake": 100,
+    "name": "通道突破",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 465,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -43.145046621966266,
+    "stress_returns": {
+      "2022-2023": -67.65014641699996,
+      "2024-2025": -63.525762258000064,
+      "2026-q1-q3": -23.27294740600001
+    }
+  },
+  {
+    "family": "RsiBbands",
+    "timeframe": "15m",
+    "stake": 100,
+    "name": "RSI / 布林回归",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 41,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -4.565251458278141,
+    "stress_returns": {
+      "2022-2023": -8.916261598000009,
+      "2024-2025": -4.8594544589999895,
+      "2026-q1-q3": -0.7755966730000008
+    }
+  },
+  {
+    "family": "AdxMomentum",
+    "timeframe": "15m",
+    "stake": 100,
+    "name": "ADX 动量",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 337,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -24.81009305584052,
+    "stress_returns": {
+      "2022-2023": -43.442705911999944,
+      "2024-2025": -38.24507306600003,
+      "2026-q1-q3": -15.728079102999992
+    }
+  },
+  {
+    "family": "Supertrend",
+    "timeframe": "15m",
+    "stake": 100,
+    "name": "Supertrend 趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 520,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -44.83348678359063,
+    "stress_returns": {
+      "2022-2023": -69.54176748899987,
+      "2024-2025": -62.80421310400003,
+      "2026-q1-q3": -23.445425935999996
+    }
+  },
+  {
+    "family": "EmaPullback",
+    "timeframe": "15m",
+    "stake": 100,
+    "name": "EMA 趋势回调",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 445,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -42.347709130117984,
+    "stress_returns": {
+      "2022-2023": -66.7370653589999,
+      "2024-2025": -59.521055842000024,
+      "2026-q1-q3": -19.66395000800002
+    }
+  },
+  {
+    "family": "Sma",
+    "timeframe": "15m",
+    "stake": 250,
+    "name": "双均线趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 161,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -19.028930885679742,
+    "stress_returns": {
+      "2022-2023": -34.41791243200002,
+      "2024-2025": -22.663740479999984,
+      "2026-q1-q3": -14.55503306100001
+    }
+  },
+  {
+    "family": "HorizonSma",
+    "timeframe": "15m",
+    "stake": 250,
+    "name": "双均线时间跨度对照",
+    "positive_all_three_stress_periods": true,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": 5.206809567203319,
+    "stress_returns": {
+      "2022-2023": 10.677037276,
+      "2024-2025": 42.32890575799999,
+      "2026-q1-q3": 8.176210020000019
+    }
+  },
+  {
+    "family": "Donchian",
+    "timeframe": "15m",
+    "stake": 250,
+    "name": "通道突破",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 444,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -70.04271418962182,
+    "stress_returns": {
+      "2022-2023": -75.05410453700003,
+      "2024-2025": -74.94551253199997,
+      "2026-q1-q3": -59.38181375099997
+    }
+  },
+  {
+    "family": "RsiBbands",
+    "timeframe": "15m",
+    "stake": 250,
+    "name": "RSI / 布林回归",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 41,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -11.868466336622651,
+    "stress_returns": {
+      "2022-2023": -22.314893284000004,
+      "2024-2025": -12.179655011000001,
+      "2026-q1-q3": -1.9426186730000072
+    }
+  },
+  {
+    "family": "AdxMomentum",
+    "timeframe": "15m",
+    "stake": 250,
+    "name": "ADX 动量",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 337,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -49.95657260755399,
+    "stress_returns": {
+      "2022-2023": -74.84739138199996,
+      "2024-2025": -74.980275637,
+      "2026-q1-q3": -39.352909690000004
+    }
+  },
+  {
+    "family": "Supertrend",
+    "timeframe": "15m",
+    "stake": 250,
+    "name": "Supertrend 趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 488,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -71.78354008388096,
+    "stress_returns": {
+      "2022-2023": -74.96255980899993,
+      "2024-2025": -74.85090444199996,
+      "2026-q1-q3": -61.15927672000004
+    }
+  },
+  {
+    "family": "EmaPullback",
+    "timeframe": "15m",
+    "stake": 250,
+    "name": "EMA 趋势回调",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 445,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -59.628049322436084,
+    "stress_returns": {
+      "2022-2023": -74.77461178999995,
+      "2024-2025": -74.89268781299998,
+      "2026-q1-q3": -49.23424032599995
+    }
+  },
+  {
+    "family": "Sma",
+    "timeframe": "15m",
+    "stake": 450,
+    "name": "双均线趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 120,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -32.62285389942614,
+    "stress_returns": {
+      "2022-2023": -41.56296926799998,
+      "2024-2025": -52.78312725499998,
+      "2026-q1-q3": -25.556870615000005
+    }
+  },
+  {
+    "family": "HorizonSma",
+    "timeframe": "15m",
+    "stake": 450,
+    "name": "双均线时间跨度对照",
+    "positive_all_three_stress_periods": true,
+    "recent_trade_count": 12,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": 3.8467424977494113,
+    "stress_returns": {
+      "2022-2023": 7.835887093000027,
+      "2024-2025": 76.22159065400001,
+      "2026-q1-q3": 14.744801646000006
+    }
+  },
+  {
+    "family": "Donchian",
+    "timeframe": "15m",
+    "stake": 450,
+    "name": "通道突破",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 209,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -65.28373980458497,
+    "stress_returns": {
+      "2022-2023": -54.67644996900002,
+      "2024-2025": -55.06917774199999,
+      "2026-q1-q3": -54.649818317
+    }
+  },
+  {
+    "family": "RsiBbands",
+    "timeframe": "15m",
+    "stake": 450,
+    "name": "RSI / 布林回归",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 41,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -20.862459346727245,
+    "stress_returns": {
+      "2022-2023": -37.352433476,
+      "2024-2025": -20.219565227000015,
+      "2026-q1-q3": -3.4962492780000076
+    }
+  },
+  {
+    "family": "AdxMomentum",
+    "timeframe": "15m",
+    "stake": 450,
+    "name": "ADX 动量",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 224,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -65.88846374981514,
+    "stress_returns": {
+      "2022-2023": -55.15167170100001,
+      "2024-2025": -54.638477903999984,
+      "2026-q1-q3": -55.24156655000001
+    }
+  },
+  {
+    "family": "Supertrend",
+    "timeframe": "15m",
+    "stake": 450,
+    "name": "Supertrend 趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 236,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -65.35125959513243,
+    "stress_returns": {
+      "2022-2023": -54.639592640000004,
+      "2024-2025": -54.55069521899999,
+      "2026-q1-q3": -54.71575944100001
+    }
+  },
+  {
+    "family": "EmaPullback",
+    "timeframe": "15m",
+    "stake": 450,
+    "name": "EMA 趋势回调",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 256,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -65.34266700868679,
+    "stress_returns": {
+      "2022-2023": -55.67412553700001,
+      "2024-2025": -54.73938580299998,
+      "2026-q1-q3": -54.70736595500002
+    }
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "task": "1h-s450-2026-q1-q3-base",
+    "strategy": "EmaPullbackStudy1h",
+    "engine_start": "2026-01-01 00:00:00",
+    "engine_end": "2026-09-30 23:00:00",
+    "last_trade_close": "2026-09-30T23:00:00+00:00",
+    "outside": 1,
+    "sample": [
+      {
+        "pair": "ETH/USDT",
+        "opened": "2026-09-30 23:05:00+00:00",
+        "closed": "2026-09-30 23:00:00+00:00",
+        "reason": "force_exit"
+      }
+    ]
+  },
+  {
+    "task": "1h-s450-2026-q1-q3-stress",
+    "strategy": "EmaPullbackStudy1h",
+    "engine_start": "2026-01-01 00:00:00",
+    "engine_end": "2026-09-30 23:00:00",
+    "last_trade_close": "2026-09-30T23:00:00+00:00",
+    "outside": 1,
+    "sample": [
+      {
+        "pair": "ETH/USDT",
+        "opened": "2026-09-30 23:05:00+00:00",
+        "closed": "2026-09-30 23:00:00+00:00",
+        "reason": "force_exit"
+      }
+    ]
+  }
+]

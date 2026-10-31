@@ -70,3 +70,50 @@ authenticated, GET/HEAD-only route on the public Caddy. The original bot gateway
 allowlist is unchanged. The frontend reads completed research reports; it cannot
 start backtest commands or change the running strategy. Build and reproduce
 reports using [research/backtests](../../research/backtests/README.md).
+
+## Independent paper accounts
+
+`compose.paper.yaml` adds only `paper-compare` to the existing project. It has no
+host port and mounts its own `paper_compare/` directory, SQLite database, strategy
+and config. Reuse dashboard auth read-only; leave exchange credentials empty.
+The public Caddy example adds a fixed GET-only `/preview/bots/compare/api/v1/`
+gateway. Validate the candidate, write the bind-mounted live file in place and
+hot reload the existing Caddy. Do not recreate existing services.
+
+Keep two paper bots initially on this 2-core / 2GB node. `PaperCompare1h` is a
+frozen research variant for forward observation, not a claim of profitability.
+Preserve the baseline and its database. Each independent virtual wallet starts
+at 1000 USDT: 100-USDT stake, two positions, 8% stop and 8-hour cooldown. A new
+account starts its live history now; backtest gains are never imported.
+
+The authenticated `backtests/paper-bots.json` registry lists deployed names and
+only the two fixed gateways. The workspace selector changes the viewed account;
+both bots continue independently. Snapshots, trades, capital settings and logs
+are scoped to each bot. Switching ignores late replies and remounts account
+views. Logout clears all session profiles and snapshots. Original FreqUI at `/`
+continues to target the baseline.
+
+Validate Compose overlays with `config --quiet`, then use `up -d --no-deps
+paper-compare` for this service only. Run `verify_paper.py` on Japan: it reads auth
+locally and checks real configs, candles, independent SQLite files, absent
+exchange credentials/host ports and denied write routes. For rollback restore
+the matching UI index and Caddy backup (validate/hot reload), remove the second
+registry entry, and stop only the comparison service. Retain all data/backups.
+
+## Shorter-timeframe research
+
+[research/strategy-study](../../research/strategy-study/README.md) compares seven
+fixed rule families, three timeframes and three stakes across three periods and
+two costs. Original 24-run report bytes remain unchanged. Versioned reports,
+trades and candles are gzip-compressed and loaded on demand in the browser via
+the existing authenticated research route. Selecting a backtest row changes the
+research view only and cannot replace or control a running paper strategy.
+
+The 2026-10-31 release includes 378 formal runs (504 actual executions after
+uniform terminal-data correction); see the study RESULTS and
+TERMINAL-CORRECTION. `verify_study.py <deployment-record-directory>` runs on Japan
+and checks every authenticated served file SHA, gzip/JSON decoding, all 378
+results, original report bytes and denied writes. Credentials remain local.
+Exact accepted UI/API/resource checks and deployment backup paths are retained
+under `research/strategy-study/evidence/live/`. Browser runtime fixtures and real
+Japan-local API assertions are recorded separately.

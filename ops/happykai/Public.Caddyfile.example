@@ -25,6 +25,20 @@ quant.happykai.cn {
 			reverse_proxy trellis-preview:8080
 		}
 	}
+	handle /preview/bots/compare/* {
+		route {
+			@paper_read {
+				method GET
+				path /preview/bots/compare/api/v1/ping /preview/bots/compare/api/v1/version /preview/bots/compare/api/v1/show_config /preview/bots/compare/api/v1/status /preview/bots/compare/api/v1/balance /preview/bots/compare/api/v1/whitelist /preview/bots/compare/api/v1/blacklist /preview/bots/compare/api/v1/profit /preview/bots/compare/api/v1/trades /preview/bots/compare/api/v1/daily /preview/bots/compare/api/v1/logs /preview/bots/compare/api/v1/pair_candles /preview/bots/compare/api/v1/count /preview/bots/compare/api/v1/strategy/*
+			}
+			handle @paper_read {
+				uri strip_prefix /preview/bots/compare
+				header Cache-Control "no-store"
+				reverse_proxy paper-compare:8080
+			}
+			respond "Read-only paper account" 405
+		}
+	}
 	handle_path /preview/* {
 		reverse_proxy trellis-preview:8080
 	}

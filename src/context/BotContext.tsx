@@ -9,7 +9,7 @@ import type {
   SignalStat,
   Trade,
 } from '../types';
-import { FreqtradeClient, EMPTY_BOT_STATE, normalizeApiUrl } from '../api/client';
+import { FreqtradeClient, EMPTY_BOT_STATE, normalizeApiUrl, isPaperApiUrl } from '../api/client';
 import { useLocale } from '../i18n/LocaleContext';
 
 export type CurrencyUnit = 'USDT' | 'USD' | 'CNY' | 'EUR' | 'IDR';
@@ -64,6 +64,7 @@ interface BotContextValue {
   addProfile: (profile: Omit<BotProfile, 'id' | 'createdAt'>) => Promise<{ success: boolean; error?: string; id?: string }>;
   updateProfile: (id: string, updates: Partial<BotProfile>) => Promise<boolean>;
   deleteProfile: (id: string) => void;
+  logoutAllProfiles: () => void;
   switchBot: (id: string) => Promise<boolean>;
   disconnectCurrent: () => void;
   refreshData: (overrideClient?: FreqtradeClient, forceAll?: boolean) => Promise<void>;
@@ -86,14 +87,16 @@ interface BotContextValue {
 }
 
 const BotContext = createContext<BotContextValue | null>(null);
+const PAPER_PROFILES_KEY = 'happykai_paper_profiles_v2';
+const PAPER_ACTIVE_KEY = 'happykai_paper_active_v2';
 
 function loadInitialProfiles(): { profiles: BotProfile[]; activeId: string | null } {
   try {
-    const raw = sessionStorage.getItem('happykai_preview_profiles');
+    const raw = sessionStorage.getItem(PAPER_PROFILES_KEY) || sessionStorage.getItem('happykai_preview_profiles');
     if (raw) {
       const profiles = JSON.parse(raw) as BotProfile[];
       if (Array.isArray(profiles) && profiles.length) {
-        const activeId = sessionStorage.getItem('happykai_preview_active_id');
+        const activeId = sessionStorage.getItem(PAPER_ACTIVE_KEY) || sessionStorage.getItem('happykai_preview_active_id');
         return {profiles:profiles.map(p => ({...p,apiUrl:normalizeApiUrl(p.apiUrl)})),activeId:profiles.some(p => p.id === activeId) ? activeId : profiles[0].id};
       }
     }
@@ -369,8 +372,11 @@ export function BotProvider({ children }: { children: ReactNode }) {
   const [isConnecting, setIsConnecting] = useState<boolean>(false);
   const [lastError, setLastError] = useState<string | null>(null);
 
+  const deployedStartingCapital = activeProfile?.startingCapital;
   // Auto-calculated or inferred starting capital from live bot data
   const autoInferredCapital = useMemo(() => {
+    // Deployment metadata records each virtual wallet's own starting capital.
+    if (deployedStartingCapital && deployedStartingCapital > 0) return deployedStartingCapital;
     // 1. Check earliest daily record starting_balance
     if (dailyRecords && dailyRecords.length > 0) {
       const sorted = [...dailyRecords].sort((a, b) => a.date.localeCompare(b.date));
@@ -389,27 +395,21 @@ export function BotProvider({ children }: { children: ReactNode }) {
       }
     }
 
-    // 3. User requested default: 2000 USDT
-    return 2000;
-  }, [dailyRecords, botState.balance, profitSummary]);
+    // 3. Deployment virtual wallets start at 1000 USDT.
+    return 1000;
+  }, [deployedStartingCapital, dailyRecords, botState.balance, profitSummary]);
 
   // Helper to load bot-scoped initial capital
   const getBotInitialCapital = useCallback((botId: string | null) => {
-    if (!botId) return { isCustom: false, value: 2000 };
+    if (!botId) return { isCustom: false, value: 1000 };
     try {
       const isCustom = localStorage.getItem(`frequi_initial_capital_custom_${botId}`) === 'true';
       const saved = localStorage.getItem(`frequi_initial_capital_${botId}`);
       if (isCustom && saved && Number(saved) > 0 && Number(saved) !== 10000) {
         return { isCustom: true, value: Number(saved) };
       }
-      // Fallback check legacy global key if bot-specific not set
-      const legacyCustom = localStorage.getItem('frequi_initial_capital_custom') === 'true';
-      const legacySaved = localStorage.getItem('frequi_initial_capital');
-      if (legacyCustom && legacySaved && Number(legacySaved) > 0 && Number(legacySaved) !== 10000) {
-        return { isCustom: true, value: Number(legacySaved) };
-      }
     } catch {}
-    return { isCustom: false, value: 2000 };
+    return { isCustom: false, value: 1000 };
   }, []);
 
   // Track whether the user has manually overridden initial capital for current active bot
@@ -474,16 +474,54 @@ export function BotProvider({ children }: { children: ReactNode }) {
   // Sync profiles to localStorage
   const saveProfiles = (newProfiles: BotProfile[], newActiveId?: string | null) => {
     setProfiles(newProfiles);
-    sessionStorage.setItem('happykai_preview_profiles', JSON.stringify(newProfiles));
+    sessionStorage.setItem(PAPER_PROFILES_KEY, JSON.stringify(newProfiles));
     if (newActiveId !== undefined) {
       setActiveBotId(newActiveId);
       if (newActiveId) {
-        sessionStorage.setItem('happykai_preview_active_id', newActiveId);
+        sessionStorage.setItem(PAPER_ACTIVE_KEY, newActiveId);
       } else {
-        sessionStorage.removeItem('happykai_preview_active_id');
+        sessionStorage.removeItem(PAPER_ACTIVE_KEY);
       }
     }
   };
+
+  // Authenticated deployment registry: only the two fixed same-origin gateways.
+  // Credentials stay in this browser session and never appear in the registry.
+  const registryUsername = config.username;
+  const registryPassword = config.password;
+  const hasProfiles = profiles.length > 0;
+  useEffect(() => {
+    if (!hasProfiles) return;
+    const controller = new AbortController();
+    void (async () => {
+      try {
+        const response = await fetch('/preview/backtests/paper-bots.json', {
+          headers: { Authorization: 'Basic ' + btoa(`${registryUsername || ''}:${registryPassword || ''}`) },
+          cache: 'no-store', signal: controller.signal,
+        });
+        if (!response.ok) return;
+        const registry = await response.json();
+        if (registry.schemaVersion !== 1 || !Array.isArray(registry.bots) || controller.signal.aborted) return;
+        const bots = registry.bots.filter((bot: any) => bot && typeof bot.name === 'string' && bot.name.length <= 80 && isPaperApiUrl(bot.apiUrl));
+        setProfiles(previous => {
+          if (controller.signal.aborted || !previous.length) return previous;
+          let next = previous.map(profile => {
+            const bot = bots.find((item: any) => item.apiUrl === profile.apiUrl);
+            return bot ? { ...profile, name: bot.name, startingCapital: Number.isFinite(bot.startingCapital) && bot.startingCapital > 0 ? bot.startingCapital : undefined } : profile;
+          });
+          for (const bot of bots) {
+            if (!next.some(profile => profile.apiUrl === bot.apiUrl)) {
+              next.push({ id: bot.apiUrl === '/preview/bot' ? 'paper-baseline' : 'paper-compare', name: bot.name, apiUrl: bot.apiUrl, startingCapital: Number.isFinite(bot.startingCapital) && bot.startingCapital > 0 ? bot.startingCapital : undefined, username: registryUsername, password: registryPassword, createdAt: Date.now() });
+            }
+          }
+          if (JSON.stringify(next) === JSON.stringify(previous)) return previous;
+          sessionStorage.setItem(PAPER_PROFILES_KEY, JSON.stringify(next));
+          return next;
+        });
+      } catch { /* Old deployments without a registry keep the single account. */ }
+    })();
+    return () => controller.abort();
+  }, [hasProfiles, registryUsername, registryPassword]);
 
   /**
    * 分级刷新机制：
@@ -639,6 +677,7 @@ export function BotProvider({ children }: { children: ReactNode }) {
     prevActiveTradeIdsRef.current = '';
 
     setIsConnecting(true);
+    setIsConnected(false);
     setLastError(null);
 
     // 检查是否有针对目标机器人的 SWR 快照，若有则瞬间装载，实现 0 延迟秒切！
@@ -670,6 +709,8 @@ export function BotProvider({ children }: { children: ReactNode }) {
     setDailyRecords([]);
     setSignals([]);
     setLogs([]);
+    setIsLoadingLogs(false);
+    setIsLoadingAllTrades(false);
 
     // 切换 initialCapital 到目标 bot 的配置
     const capInfo = getBotInitialCapital(id);
@@ -677,7 +718,7 @@ export function BotProvider({ children }: { children: ReactNode }) {
     setInitialCapitalState(capInfo.value);
 
     setActiveBotId(id);
-    sessionStorage.setItem('happykai_preview_active_id', id);
+    sessionStorage.setItem(PAPER_ACTIVE_KEY, id);
 
     const newClient = new FreqtradeClient({
       apiUrl: target.apiUrl,
@@ -691,7 +732,7 @@ export function BotProvider({ children }: { children: ReactNode }) {
     try {
       await refreshData(newClient, true);
 
-      if (activeBotIdRef.current === id) {
+      if (activeBotIdRef.current === id && botStateRef.current) {
         setIsConnected(true);
         setLastError(null);
         setIsSelectingBot(false);
@@ -734,7 +775,7 @@ export function BotProvider({ children }: { children: ReactNode }) {
       return { success: false, error: errMsg };
     }
 
-    const newId = `bot-${Date.now()}`;
+    const newId = profiles.find(item => item.apiUrl === cleanUrl)?.id || (cleanUrl === '/preview/bots/compare' ? 'paper-compare' : 'paper-baseline');
     const newProfile: BotProfile = {
       ...profileData,
       apiUrl: cleanUrl,
@@ -743,16 +784,24 @@ export function BotProvider({ children }: { children: ReactNode }) {
       lastConnected: Date.now(),
     };
 
-    const nextList = [...profiles, newProfile];
+    const nextList = [...profiles.filter(item => item.id !== newId), newProfile];
+    ++activeRequestIdRef.current;
+    activeBotIdRef.current = newId;
+    lastLoadedBotIdRef.current = newId;
+    botStateRef.current = null;
+    clientRef.current = tempClient;
+    const capInfo = getBotInitialCapital(newId);
+    setIsManualCapital(capInfo.isCustom);
+    setInitialCapitalState(capInfo.value);
     saveProfiles(nextList, newId);
     setClient(tempClient);
     setIsConnected(true);
     setIsConnecting(false);
     setIsSelectingBot(false);
 
-    await refreshData(tempClient);
+    await refreshData(tempClient, true);
     return { success: true, id: newId };
-  }, [profiles, refreshData]);
+  }, [profiles, refreshData, getBotInitialCapital]);
 
   // Update existing profile (name, apiUrl, username, password)
   const updateProfile = useCallback(async (id: string, updates: Partial<BotProfile>): Promise<boolean> => {
@@ -797,7 +846,7 @@ export function BotProvider({ children }: { children: ReactNode }) {
         switchBot(nextActive);
       } else {
         localStorage.removeItem('nfi_bot_config');
-        sessionStorage.removeItem('happykai_preview_active_id');
+        sessionStorage.removeItem(PAPER_ACTIVE_KEY);
         setIsConnected(false);
         setBotState(EMPTY_BOT_STATE);
         setActiveTrades([]);
@@ -807,6 +856,35 @@ export function BotProvider({ children }: { children: ReactNode }) {
       saveProfiles(remaining);
     }
   }, [profiles, activeBotId, switchBot]);
+
+  const logoutAllProfiles = useCallback(() => {
+    ++activeRequestIdRef.current;
+    activeBotIdRef.current = null;
+    lastLoadedBotIdRef.current = null;
+    botStateRef.current = null;
+    closedTradesRef.current = [];
+    isRefreshingRef.current = false;
+    for (const profile of profiles) sessionStorage.removeItem(`frequi_snapshot_${profile.id}`);
+    sessionStorage.removeItem(PAPER_PROFILES_KEY);
+    sessionStorage.removeItem(PAPER_ACTIVE_KEY);
+    sessionStorage.removeItem('happykai_preview_profiles');
+    sessionStorage.removeItem('happykai_preview_active_id');
+    setProfiles([]);
+    setActiveBotId(null);
+    const emptyClient = new FreqtradeClient({ apiUrl: '' });
+    clientRef.current = emptyClient;
+    setClient(emptyClient);
+    setIsConnected(false);
+    setIsConnecting(false);
+    setIsSelectingBot(false);
+    setIsManualCapital(false);
+    setInitialCapitalState(1000);
+    setLastError(null);
+    setBotState(EMPTY_BOT_STATE);
+    setActiveTrades([]); setClosedTrades([]); setDailyRecords([]);
+    setProfitSummary(null); setSignals([]); setLogs([]);
+    setSelectedPair('');
+  }, [profiles]);
 
   // Batch import profiles from backup file preserving exact ordering and config
   const importProfiles = useCallback(
@@ -916,6 +994,8 @@ export function BotProvider({ children }: { children: ReactNode }) {
 
   const fetchLogs = useCallback(async (customLimit?: number) => {
     if (!clientRef.current) return;
+    const targetClient = clientRef.current;
+    const targetId = activeBotIdRef.current;
     const limit = customLimit !== undefined ? customLimit : logLimitRef.current;
     if (customLimit !== undefined && customLimit !== logLimitRef.current) {
       setLogLimit(customLimit);
@@ -923,12 +1003,12 @@ export function BotProvider({ children }: { children: ReactNode }) {
     }
     setIsLoadingLogs(true);
     try {
-      const logList = await clientRef.current.getLogs(limit);
-      if (logList) setLogs(logList);
+      const logList = await targetClient.getLogs(limit);
+      if (targetId === activeBotIdRef.current && targetClient === clientRef.current && logList) setLogs(logList);
     } catch (err) {
       console.warn('fetchLogs failed:', err);
     } finally {
-      setIsLoadingLogs(false);
+      if (targetId === activeBotIdRef.current && targetClient === clientRef.current) setIsLoadingLogs(false);
     }
   }, []);
 
@@ -1069,6 +1149,7 @@ export function BotProvider({ children }: { children: ReactNode }) {
         addProfile,
         updateProfile,
         deleteProfile,
+        logoutAllProfiles,
         switchBot,
         disconnectCurrent,
         refreshData,

@@ -1,0 +1,185 @@
+{
+  "source_archives": 236,
+  "datasets": {
+    "BTC_USDT-5m.feather": {
+      "rows": 516945,
+      "missing_bars": [
+        "2023-03-24T12:40:00+00:00",
+        "2023-03-24T12:45:00+00:00",
+        "2023-03-24T12:50:00+00:00",
+        "2023-03-24T12:55:00+00:00",
+        "2023-03-24T13:00:00+00:00",
+        "2023-03-24T13:05:00+00:00",
+        "2023-03-24T13:10:00+00:00",
+        "2023-03-24T13:15:00+00:00",
+        "2023-03-24T13:20:00+00:00",
+        "2023-03-24T13:25:00+00:00",
+        "2023-03-24T13:30:00+00:00",
+        "2023-03-24T13:35:00+00:00",
+        "2023-03-24T13:40:00+00:00",
+        "2023-03-24T13:45:00+00:00",
+        "2023-03-24T13:50:00+00:00",
+        "2023-03-24T13:55:00+00:00"
+      ],
+      "sha256": "a509036d07b2d0c4feabc9354e730e9218484b8dc7fb4f15a2d972c5c83dd2df",
+      "original_sha256": "f29efb1ec009d0401e44644613b74bdded1104a56c67c82572a74f3b824cead8",
+      "appended_bars": 1
+    },
+    "BTC_USDT-15m.feather": {
+      "rows": 172316,
+      "missing_bars": [
+        "2023-03-24T12:45:00+00:00",
+        "2023-03-24T13:00:00+00:00",
+        "2023-03-24T13:15:00+00:00",
+        "2023-03-24T13:30:00+00:00",
+        "2023-03-24T13:45:00+00:00"
+      ],
+      "sha256": "c549cec0e2a74ab8e064444939b77a4b3c5a3e8e61a96668e9135b083e595a4a",
+      "original_sha256": "0de8d82daf986a5f2663780dcac578d6e6b2a8c6249b288563ea207cbeadf4f2",
+      "appended_bars": 1
+    },
+    "ETH_USDT-5m.feather": {
+      "rows": 516945,
+      "missing_bars": [
+        "2023-03-24T12:40:00+00:00",
+        "2023-03-24T12:45:00+00:00",
+        "2023-03-24T12:50:00+00:00",
+        "2023-03-24T12:55:00+00:00",
+        "2023-03-24T13:00:00+00:00",
+        "2023-03-24T13:05:00+00:00",
+        "2023-03-24T13:10:00+00:00",
+        "2023-03-24T13:15:00+00:00",
+        "2023-03-24T13:20:00+00:00",
+        "2023-03-24T13:25:00+00:00",
+        "2023-03-24T13:30:00+00:00",
+        "2023-03-24T13:35:00+00:00",
+        "2023-03-24T13:40:00+00:00",
+        "2023-03-24T13:45:00+00:00",
+        "2023-03-24T13:50:00+00:00",
+        "2023-03-24T13:55:00+00:00"
+      ],
+      "sha256": "bf13687c7bd88fc03829afc93be743960865c3749aab31e5479fdef2bb254f92",
+      "original_sha256": "7d37f45ddc9cc704ab1bcb876cb26e23698259b58bb441384ce645f1422361ce",
+      "appended_bars": 1
+    },
+    "ETH_USDT-15m.feather": {
+      "rows": 172316,
+      "missing_bars": [
+        "2023-03-24T12:45:00+00:00",
+        "2023-03-24T13:00:00+00:00",
+        "2023-03-24T13:15:00+00:00",
+        "2023-03-24T13:30:00+00:00",
+        "2023-03-24T13:45:00+00:00"
+      ],
+      "sha256": "344b03adf68e664a87ea7ef88b05aaf4c329deac1606aa28e8054a7c9c0c308f",
+      "original_sha256": "9d9fa58f9addedf4eb76a72d81ae552053f5e51e095d751a871d3bca6712cca6",
+      "appended_bars": 1
+    },
+    "BTC_USDT-1h.feather": {
+      "rows": 43080,
+      "original_sha256": "12fdc3d24c5568ac6dc5cf407ac365b99a916639837169cddf1c081be689083b",
+      "sha256": "3641a1308fba0b80975f8359959468eb9ae5f90251b6a496d9d80372e1f77eb0",
+      "appended_bars": 1
+    },
+    "BTC_USDT-4h.feather": {
+      "rows": 10770,
+      "original_sha256": "5ae25da1271c243540ca8a5be1f51a0eb226d36116d99063430021964718d689",
+      "sha256": "2fbc4feef9bedcb6088651ffe7deda77930f082dc079d84e82c421bca9eb17f7",
+      "appended_bars": 1
+    },
+    "ETH_USDT-1h.feather": {
+      "rows": 43080,
+      "original_sha256": "c51fdb8533f5ceea8b101f9154f30a25736bb0ec799902afda4078f5fc6799c3",
+      "sha256": "255cb6e9a3c960f03e10ada6f60115fbdfd737b5034fa0c5fa4e8e03cd7a322d",
+      "appended_bars": 1
+    },
+    "ETH_USDT-4h.feather": {
+      "rows": 10770,
+      "original_sha256": "dd3a196ed72cf008a5709dc51155fa35c240c1d475b614d360c2ab610da1dbc7",
+      "sha256": "c48b378d041245416113dd971436fec99de5fa8a8c3ab2edc29eb42e34848b79",
+      "appended_bars": 1
+    }
+  },
+  "reconciliation": [
+    {
+      "symbol": "BTCUSDT",
+      "source": "15m",
+      "against": "previous_verified_1h",
+      "common_complete_hours": 43078,
+      "max_ohlc_difference": 0.0,
+      "volume_max_difference": 1.4551915228366852e-11
+    },
+    {
+      "symbol": "BTCUSDT",
+      "source": "5m",
+      "against": "previous_verified_1h",
+      "common_complete_hours": 43078,
+      "max_ohlc_difference": 0.0,
+      "volume_max_difference": 1.4551915228366852e-11
+    },
+    {
+      "symbol": "ETHUSDT",
+      "source": "15m",
+      "against": "previous_verified_1h",
+      "common_complete_hours": 43078,
+      "max_ohlc_difference": 0.0,
+      "volume_max_difference": 5.820766091346741e-11
+    },
+    {
+      "symbol": "ETHUSDT",
+      "source": "5m",
+      "against": "previous_verified_1h",
+      "common_complete_hours": 43078,
+      "max_ohlc_difference": 0.0,
+      "volume_max_difference": 0.0893999999971129
+    }
+  ],
+  "created_at": "2026-10-31T21:37:55.201230+00:00",
+  "original_audit_sha256": "cc5168773f68a6284a6a656c875fcf9f8ea1fc277a98cf39543cad35ec1b4e9a",
+  "terminal_archives": [
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "5m",
+      "name": "BTCUSDT-5m-2026-10-01.zip",
+      "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/5m/BTCUSDT-5m-2026-10-01.zip",
+      "sha256": "958f85306dfcc19289027069a301f02c079a62bb480d9ae15123f95b69188082"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "15m",
+      "name": "BTCUSDT-15m-2026-10-01.zip",
+      "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/15m/BTCUSDT-15m-2026-10-01.zip",
+      "sha256": "4329590fe606ba6f2d5eff81d5d553972514a201909784225fe8fbff1e663b48"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1h",
+      "name": "BTCUSDT-1h-2026-10-01.zip",
+      "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2026-10-01.zip",
+      "sha256": "e947446abe67158757aafbc2024bba4dcc65b1251df9846a315a5cdb4d37bcf9"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "5m",
+      "name": "ETHUSDT-5m-2026-10-01.zip",
+      "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/5m/ETHUSDT-5m-2026-10-01.zip",
+      "sha256": "768ac4cac8ff44b83ce3d88c19f8c2735b96a8fcf9eac53421010eaa5520599f"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "15m",
+      "name": "ETHUSDT-15m-2026-10-01.zip",
+      "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/15m/ETHUSDT-15m-2026-10-01.zip",
+      "sha256": "55f1139b09bcc5fba4ef9a78a765b301128f6e1d502b60db44c7c201f4b1a870"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1h",
+      "name": "ETHUSDT-1h-2026-10-01.zip",
+      "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/1h/ETHUSDT-1h-2026-10-01.zip",
+      "sha256": "626db359ad3bb43ae62709ef9b8295500e85d8d85903aa9f5cf942db9c694d3c"
+    }
+  ],
+  "terminal_boundary": "2026-10-01T00:00:00Z",
+  "terminal_purpose": "Native force-exit price only; entry window remains strictly before cutoff"
+}

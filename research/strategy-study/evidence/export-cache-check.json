@@ -1,0 +1,46 @@
+{
+  "actual_intervals_checked": 9,
+  "all_outputs_exactly_equal": true,
+  "no_rule_data_fee_or_trade_changes": true,
+  "old_total_seconds": 24.114824560005218,
+  "cached_total_seconds": 0.21647621924057603,
+  "cache_hits": 13,
+  "checks": [
+    {
+      "id": "4h-s450-2022-2023-stress-SmaStudy4h",
+      "curve_drawdown_monthly_exposure_exactly_equal": true
+    },
+    {
+      "id": "4h-s450-2024-2025-stress-SmaStudy4h",
+      "curve_drawdown_monthly_exposure_exactly_equal": true
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-stress-SmaStudy4h",
+      "curve_drawdown_monthly_exposure_exactly_equal": true
+    },
+    {
+      "id": "1h-s450-2022-2023-stress-SupertrendStudy1h",
+      "curve_drawdown_monthly_exposure_exactly_equal": true
+    },
+    {
+      "id": "1h-s450-2024-2025-stress-SupertrendStudy1h",
+      "curve_drawdown_monthly_exposure_exactly_equal": true
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-stress-SupertrendStudy1h",
+      "curve_drawdown_monthly_exposure_exactly_equal": true
+    },
+    {
+      "id": "15m-s450-2022-2023-stress-AdxMomentumStudy15m",
+      "curve_drawdown_monthly_exposure_exactly_equal": true
+    },
+    {
+      "id": "15m-s450-2024-2025-stress-AdxMomentumStudy15m",
+      "curve_drawdown_monthly_exposure_exactly_equal": true
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-stress-AdxMomentumStudy15m",
+      "curve_drawdown_monthly_exposure_exactly_equal": true
+    }
+  ]
+}

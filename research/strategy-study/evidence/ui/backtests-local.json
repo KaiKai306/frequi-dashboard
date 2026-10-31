@@ -1,0 +1,54 @@
+{
+  "origin": "http://quant-preview.test",
+  "actualBacktestReport": true,
+  "verifiedMetrics": 24,
+  "curveAndDrawdown": true,
+  "curveCheckboxesAndKeyboard": true,
+  "monthlyAndStrategyDetails": true,
+  "tradePagination": true,
+  "candleMarkersAndPair": true,
+  "csvAndJsonDownloads": true,
+  "privacyRespected": true,
+  "errorRetainsLastReport": true,
+  "hashNavigationReload": true,
+  "sizes": [
+    {
+      "width": 1280,
+      "height": 800,
+      "overflow": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "width": 1600,
+      "height": 1000,
+      "overflow": false
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    }
+  ],
+  "reportCalls": 5,
+  "errors": [],
+  "readOnlyRequests": true
+}

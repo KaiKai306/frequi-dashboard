@@ -1,0 +1,36 @@
+{
+  "record": "/root/ai-maint/2026-10-31/paper-compare-20261031T234634Z",
+  "new_service": "binance-quant-paper-compare",
+  "strategy": {
+    "timeframe": "1h",
+    "sourceClass": "SmaStudy1h",
+    "name": "双均线趋势 · 1h 观察",
+    "startingCapital": 1000,
+    "stake": 100,
+    "basicGatesPassed": false,
+    "strictDominance": false,
+    "selectionType": "post-study exploratory forward observation",
+    "historicalEvidence": {
+      "family": "Sma",
+      "timeframe": "1h",
+      "stake": 100,
+      "name": "双均线趋势",
+      "positive_all_three_stress_periods": false,
+      "recent_trade_count": 43,
+      "basic_gates_passed": false,
+      "strictly_dominates_4h_sma_all_periods": false,
+      "min_stress_cagr": -2.101181707172428,
+      "stress_returns": {
+        "2022-2023": -4.155427597999994,
+        "2024-2025": 5.842984806999985,
+        "2026-q1-q3": 0.5319385209999972
+      }
+    },
+    "reason": "在1h、单笔100、2026压力成本至少30笔的固定变体中，优先满足三段压力收益为正与严格收益/回撤对照，再按最差区间历史CAGR排序。此排序在结果后用于挑选观察对象，未做显著性验证或新样本外测试。"
+  },
+  "original_services_unchanged": true,
+  "new_config_sha256": "9692d4a64fbb0d9a4e38dc4e288caee0189b36ae4afdd8f644a4c9b83c51f853",
+  "strategy_sha256": "ccbf33985a48dca422ac2f59fb1c217eb6f337e849d813c5fbb50d8751468c1a",
+  "public_routes_changed": false,
+  "static_page_changed": false
+}

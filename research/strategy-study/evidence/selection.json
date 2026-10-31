@@ -1,0 +1,27 @@
+{
+  "timeframe": "1h",
+  "sourceClass": "SmaStudy1h",
+  "name": "双均线趋势 · 1h 观察",
+  "startingCapital": 1000,
+  "stake": 100,
+  "basicGatesPassed": false,
+  "strictDominance": false,
+  "selectionType": "post-study exploratory forward observation",
+  "historicalEvidence": {
+    "family": "Sma",
+    "timeframe": "1h",
+    "stake": 100,
+    "name": "双均线趋势",
+    "positive_all_three_stress_periods": false,
+    "recent_trade_count": 43,
+    "basic_gates_passed": false,
+    "strictly_dominates_4h_sma_all_periods": false,
+    "min_stress_cagr": -2.101181707172428,
+    "stress_returns": {
+      "2022-2023": -4.155427597999994,
+      "2024-2025": 5.842984806999985,
+      "2026-q1-q3": 0.5319385209999972
+    }
+  },
+  "reason": "在1h、单笔100、2026压力成本至少30笔的固定变体中，优先满足三段压力收益为正与严格收益/回撤对照，再按最差区间历史CAGR排序。此排序在结果后用于挑选观察对象，未做显著性验证或新样本外测试。"
+}

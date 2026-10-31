@@ -1,0 +1,54 @@
+{
+  "archive": "/work/results/4h-s450-2026-q1-q3-base/backtest-result-2026-10-31_22-01-55.zip",
+  "rows": [
+    {
+      "strategy": "SmaStudy4h",
+      "final": 1154.71901861712,
+      "drawdown_pct": 16.090770339695837,
+      "exposure": 54.36226015507486,
+      "monthly": 9
+    },
+    {
+      "strategy": "HorizonSmaStudy4h",
+      "final": 1154.71901861712,
+      "drawdown_pct": 16.090770339695837,
+      "exposure": 54.36226015507486,
+      "monthly": 9
+    },
+    {
+      "strategy": "DonchianStudy4h",
+      "final": 983.3658053820393,
+      "drawdown_pct": 19.850518002202676,
+      "exposure": 25.98876190081042,
+      "monthly": 9
+    },
+    {
+      "strategy": "RsiBbandsStudy4h",
+      "final": 958.2962646772801,
+      "drawdown_pct": 5.6560413352840015,
+      "exposure": 0.9064561289434077,
+      "monthly": 9
+    },
+    {
+      "strategy": "AdxMomentumStudy4h",
+      "final": 1021.0967285220773,
+      "drawdown_pct": 13.243102900971305,
+      "exposure": 32.88795007987992,
+      "monthly": 9
+    },
+    {
+      "strategy": "SupertrendStudy4h",
+      "final": 968.7422873761186,
+      "drawdown_pct": 16.729908356241307,
+      "exposure": 29.944566432547003,
+      "monthly": 9
+    },
+    {
+      "strategy": "EmaPullbackStudy4h",
+      "final": 923.6026407975578,
+      "drawdown_pct": 14.325230133894863,
+      "exposure": 18.79881367113218,
+      "monthly": 9
+    }
+  ]
+}

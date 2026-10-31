@@ -1,0 +1,49 @@
+{
+  "created_at": "2026-10-31T23:31:17.048123+00:00",
+  "archives": [
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "5m",
+      "name": "BTCUSDT-5m-2026-10-01.zip",
+      "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/5m/BTCUSDT-5m-2026-10-01.zip",
+      "sha256": "958f85306dfcc19289027069a301f02c079a62bb480d9ae15123f95b69188082"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "15m",
+      "name": "BTCUSDT-15m-2026-10-01.zip",
+      "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/15m/BTCUSDT-15m-2026-10-01.zip",
+      "sha256": "4329590fe606ba6f2d5eff81d5d553972514a201909784225fe8fbff1e663b48"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "timeframe": "1h",
+      "name": "BTCUSDT-1h-2026-10-01.zip",
+      "url": "https://data.binance.vision/data/spot/daily/klines/BTCUSDT/1h/BTCUSDT-1h-2026-10-01.zip",
+      "sha256": "e947446abe67158757aafbc2024bba4dcc65b1251df9846a315a5cdb4d37bcf9"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "5m",
+      "name": "ETHUSDT-5m-2026-10-01.zip",
+      "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/5m/ETHUSDT-5m-2026-10-01.zip",
+      "sha256": "768ac4cac8ff44b83ce3d88c19f8c2735b96a8fcf9eac53421010eaa5520599f"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "15m",
+      "name": "ETHUSDT-15m-2026-10-01.zip",
+      "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/15m/ETHUSDT-15m-2026-10-01.zip",
+      "sha256": "55f1139b09bcc5fba4ef9a78a765b301128f6e1d502b60db44c7c201f4b1a870"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "timeframe": "1h",
+      "name": "ETHUSDT-1h-2026-10-01.zip",
+      "url": "https://data.binance.vision/data/spot/daily/klines/ETHUSDT/1h/ETHUSDT-1h-2026-10-01.zip",
+      "sha256": "626db359ad3bb43ae62709ef9b8295500e85d8d85903aa9f5cf942db9c694d3c"
+    }
+  ],
+  "trade_end_unchanged": "2026-10-01T00:00:00Z",
+  "reason": "Ensure end boundary exists for native engine force liquidation; no signals/entries after cutoff"
+}

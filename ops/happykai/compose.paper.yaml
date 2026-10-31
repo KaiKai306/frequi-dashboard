@@ -1,0 +1,40 @@
+# Additional independent virtual wallet. Start this service only.
+services:
+  paper-compare:
+    image: freqtradeorg/freqtrade:2026.10@sha256:0cc4b6dc9b16e0516d27efae1765e925da7d6aea5c8f3c3825930ffe3098d7c7
+    container_name: binance-quant-paper-compare
+    restart: unless-stopped
+    init: true
+    mem_limit: 768m
+    cpus: 0.7
+    pids_limit: 192
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    volumes:
+      - ./paper_compare:/freqtrade/user_data
+      - ./paper_compare/config.json:/freqtrade/user_data/config.json:ro
+      - ./paper_compare/strategies:/freqtrade/user_data/strategies:ro
+      - ./private/api-server.json:/run/secrets/freqtrade-api.json:ro
+    command:
+      - trade
+      - --config
+      - /freqtrade/user_data/config.json
+      - --config
+      - /run/secrets/freqtrade-api.json
+      - --strategy
+      - PaperCompare1h
+      - --db-url
+      - sqlite:////freqtrade/user_data/trades-dryrun.sqlite
+      - --logfile
+      - /freqtrade/user_data/logs/freqtrade.log
+    healthcheck:
+      test: [CMD, python, -c, "import json,urllib.request; assert json.load(urllib.request.urlopen('http://127.0.0.1:8080/api/v1/ping',timeout=5))['status']=='pong'"]
+      interval: 30s
+      timeout: 8s
+      retries: 3
+      start_period: 120s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"

@@ -1,0 +1,47 @@
+{
+  "base_url": "https://quant.happykai.cn",
+  "tested_at_utc": "2026-10-31T23:51:16.501083+00:00",
+  "credentials_or_tokens_printed": false,
+  "real_exchange_order_sent": false,
+  "ui_html_valid": true,
+  "ui_assets": [
+    {
+      "path": "/assets/index-CqFyOUQX.js",
+      "valid": true,
+      "sha256": "12c6bd0cf834475f491c8c5b58bea6a3ccd465bd09c3ccd8b754845871b50116"
+    },
+    {
+      "path": "/assets/runtime-core.esm-bundler-DZo3dYLJ.js",
+      "valid": true,
+      "sha256": "13f325c3c5f73bfd19f00ac21b9d2779482da34921658be3e6b23a990feb7458"
+    }
+  ],
+  "anonymous_protected_request_rejected": true,
+  "wrong_password_rejected": true,
+  "jwt_login_valid": true,
+  "runtime": {
+    "dry_run": true,
+    "trading_mode": "spot",
+    "timeframe": "4h",
+    "strategy": "BaselineSmaTrend4h",
+    "state": "running",
+    "max_open_trades": 2.0,
+    "stake_amount": "100"
+  },
+  "pair_whitelist_valid": true,
+  "candles": [
+    {
+      "pair": "BTC/USDT",
+      "returned_candles": 5,
+      "close_and_trend_indicators_valid": true
+    },
+    {
+      "pair": "ETH/USDT",
+      "returned_candles": 5,
+      "close_and_trend_indicators_valid": true
+    }
+  ],
+  "websocket_invalid_token_rejected": true,
+  "websocket_authenticated_upgrade_and_ping_valid": true,
+  "passed": true
+}

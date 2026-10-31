@@ -1,0 +1,59 @@
+{
+  "origin": "http://quant-preview.test",
+  "errors": [],
+  "sizes": [
+    {
+      "width": 1280,
+      "height": 800,
+      "overflow": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false
+    }
+  ],
+  "blackBackground": true,
+  "topNavigation": true,
+  "compactHeaders": true,
+  "newPortfolioComposition": true,
+  "fullPositionsFieldsAndStrategyParameters": true,
+  "loginRejectAndAccept": true,
+  "sessionReloadLogout": true,
+  "allRequestsReadOnly": true,
+  "chartTimeframesHistoryPairAndMarkers": true,
+  "equityModesRangesAndBaseline": true,
+  "walletAndTradeDetails": true,
+  "privacyAndThemes": true,
+  "closedTradesExcelDownloaded": true,
+  "pdfExportDownloaded": true,
+  "mobileHistoryPagination": true,
+  "chartDialogs": true,
+  "logFiltersAndLimits": true,
+  "calls": [
+    "ping",
+    "show_config",
+    "version",
+    "whitelist",
+    "blacklist",
+    "balance",
+    "status",
+    "profit",
+    "trades",
+    "daily",
+    "pair_candles",
+    "market:4h",
+    "market:1h",
+    "logs"
+  ]
+}

@@ -28,8 +28,14 @@ export const EMPTY_BOT_STATE: BotState = {
 // Static design previews share the existing read-only gateway.
 const PREVIEW_ROOT = '/preview/';
 const PREVIEW_API = `${PREVIEW_ROOT}bot`;
+export const PAPER_API_PATHS = [PREVIEW_API, `${PREVIEW_ROOT}bots/compare`] as const;
+export function isPaperApiUrl(url: string): boolean {
+  return PAPER_API_PATHS.some(path => path === url);
+}
 
-export function normalizeApiUrl(_url: string): string { return PREVIEW_API; }
+export function normalizeApiUrl(url: string): string {
+  return isPaperApiUrl(url) ? url : PREVIEW_API;
+}
 
 export function buildApiUrl(baseUrl: string, endpoint: string): string {
   const trimmedBase = (baseUrl || '').trim();
@@ -108,7 +114,7 @@ export class FreqtradeClient {
     return this.config;
   }
 
-  getBaseUrl(): string { return PREVIEW_API; }
+  getBaseUrl(): string { return normalizeApiUrl(this.config.apiUrl); }
 
   private getAuthHeader(): Record<string, string> {
     if (this.config.username || this.config.password) {
@@ -279,7 +285,7 @@ export class FreqtradeClient {
           max_open_trades?: number;
           stake_amount?: number | string;
           tradable_balance_ratio?: number;
-        }>('show_config').catch(() => ({} as any)),
+        }>('show_config'),
         this.request<{ whitelist: string[] }>('whitelist').catch(() => ({ whitelist: [] })),
         this.request<{ blacklist?: string[]; blacklist_expanded?: string[] }>('blacklist').catch(() => ({ blacklist: [], blacklist_expanded: [] })),
       ]);
@@ -303,22 +309,7 @@ export class FreqtradeClient {
       return this.cachedStaticState;
     } catch (err: any) {
       console.warn('getStaticBotConfig failed:', err);
-      if (this.cachedStaticState) return this.cachedStaticState;
-      return {
-        version: 'Freqtrade',
-        strategy: 'FreqtradeStrategy',
-        strategy_version: '',
-        timeframe: '5m',
-        state: 'running' as const,
-        dry_run: true,
-        stake_currency: 'USDT',
-        max_open_trades: 5,
-        stake_amount: 0,
-        tradable_balance_ratio: 0.99,
-        whitelist: [],
-        blacklist: [],
-        blacklist_expanded: [],
-      };
+      throw err;
     }
   }
 
@@ -341,7 +332,7 @@ export class FreqtradeClient {
           }>;
           stake?: string;
           symbol?: string;
-        }>('balance').catch(() => ({ total: 0, free: 0, currencies: [] })),
+        }>('balance'),
       ]);
 
       const stakeCurrency = staticConfig.stake_currency || 'USDT';
@@ -385,7 +376,7 @@ export class FreqtradeClient {
       };
     } catch (err: any) {
       console.warn('Real API getBotState failed:', err);
-      return EMPTY_BOT_STATE;
+      throw err;
     }
   }
 
@@ -464,7 +455,7 @@ export class FreqtradeClient {
       }));
     } catch (err) {
       console.warn('Real API getActiveTrades failed:', err);
-      return [];
+      throw err;
     }
   }
 

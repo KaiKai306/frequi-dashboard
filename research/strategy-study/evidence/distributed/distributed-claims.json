@@ -1,0 +1,18 @@
+{
+  "remote_work": "/home/agent/ccpocket-maint/2026-10-31/quant-strategy-study-20261031T223024Z",
+  "claimed": [
+    "15m-s250-2022-2023-base",
+    "15m-s250-2022-2023-stress",
+    "15m-s250-2024-2025-base",
+    "15m-s250-2024-2025-stress",
+    "15m-s250-2026-q1-q3-base",
+    "15m-s250-2026-q1-q3-stress",
+    "15m-s450-2022-2023-base",
+    "15m-s450-2022-2023-stress",
+    "15m-s450-2024-2025-base",
+    "15m-s450-2024-2025-stress",
+    "15m-s450-2026-q1-q3-base",
+    "15m-s450-2026-q1-q3-stress"
+  ],
+  "created_at": "2026-10-31T22:35:58.142237+00:00"
+}

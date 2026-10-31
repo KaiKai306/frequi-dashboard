@@ -1,0 +1,15 @@
+{
+  "build": "passed",
+  "ui_assets_identical_to_previously_verified_build": 21,
+  "lint_exit_code": 0,
+  "lint_warning_lines": 59,
+  "lint_error_lines": 0,
+  "full_study_metrics_verified": 378,
+  "original_report_metrics_verified": 24,
+  "new_causal_checks": 210,
+  "framework_lookahead_variants": 21,
+  "post_correction_accounting_runs": 378,
+  "public_files_sha256_verified": 429,
+  "paper_accounts_verified": 2,
+  "browser_runtime_fixture_boundary_documented": true
+}

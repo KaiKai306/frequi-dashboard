@@ -1,0 +1,1266 @@
+{
+  "passed": true,
+  "variants": 21,
+  "checks": [
+    {
+      "strategy": "SmaStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy4h",
+      "pair": "BTC/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 1077,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 2692,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 5385,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 8077,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy4h",
+      "pair": "ETH/USDT",
+      "rows": 10231,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy1h",
+      "pair": "BTC/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 4308,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 10770,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 21540,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 32310,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy1h",
+      "pair": "ETH/USDT",
+      "rows": 40926,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "SmaStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "HorizonSmaStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "DonchianStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "RsiBbandsStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "AdxMomentumStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "SupertrendStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy15m",
+      "pair": "BTC/USDT",
+      "rows": 163700,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 17231,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 43079,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 86158,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 129237,
+      "passed": true
+    },
+    {
+      "strategy": "EmaPullbackStudy15m",
+      "pair": "ETH/USDT",
+      "rows": 163700,
+      "passed": true
+    }
+  ]
+}

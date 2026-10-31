@@ -99,6 +99,7 @@ export interface SignalStat {
 }
 
 export interface BotProfile {
+  startingCapital?: number;
   id: string;
   name: string;
   apiUrl: string;

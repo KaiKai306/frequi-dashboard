@@ -1,0 +1,195 @@
+{
+  "status": "passed",
+  "signals_per_variant": 10,
+  "rows": [
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "SmaStudy4h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "HorizonSmaStudy4h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "DonchianStudy4h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "RsiBbandsStudy4h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "AdxMomentumStudy4h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "SupertrendStudy4h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "EmaPullbackStudy4h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "SmaStudy1h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "HorizonSmaStudy1h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "DonchianStudy1h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "RsiBbandsStudy1h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "AdxMomentumStudy1h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "SupertrendStudy1h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "EmaPullbackStudy1h",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "SmaStudy15m",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "HorizonSmaStudy15m",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "DonchianStudy15m",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "RsiBbandsStudy15m",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "AdxMomentumStudy15m",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "SupertrendStudy15m",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    },
+    {
+      "filename": "StudyStrategies.py",
+      "strategy": "EmaPullbackStudy15m",
+      "has_bias": "False",
+      "total_signals": "10",
+      "biased_entry_signals": "0",
+      "biased_exit_signals": "0",
+      "biased_indicators": ""
+    }
+  ]
+}

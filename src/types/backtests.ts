@@ -9,15 +9,16 @@ export interface BacktestRun {
   id: string; taskId: string; strategyId: string; periodId: string; costId: string;
   start: number; end: number;
   metrics: { initial: number; final: number; profit: number; returnPct: number; drawdownPct: number;
-    closedDrawdownPct: number; trades: number; winRate: number; profitFactor: number | null; fees: number; };
+    closedDrawdownPct: number; trades: number; winRate: number; profitFactor: number | null; fees: number; cagrPct?: number; exposurePct?: number; maxExposurePct?: number; tradesPerYear?: number; meanDurationMinutes?: number; turnover?: number; rejectedSignals?: number; };
   series: BacktestPoint[];
   monthly: { month: string; returnPct: number; profit: number }[];
   trades: BacktestTrade[];
+  tradesPath?: string;
 }
 export interface BacktestReport {
   schemaVersion: 1; createdAt: string; engine: string; reportId: string;
   dataset: { start: string; end: string; archives: number; hourlyRowsPerPair: number; source: string; sha256: string; knownGap: string };
-  settings: { initial: number; stake: number; maxOpenTrades: number; stoplossPct: number; timeframe: string; detailTimeframe: string; reviewedHistory: boolean; };
+  settings: { initial: number; stake: number; maxOpenTrades: number; stoplossPct: number; timeframe: string; detailTimeframe: string; reviewedHistory: boolean; cooldownHours?: number; valuationTimeframe?: string; };
   strategies: { id: string; name: string; description: string; parameters: Record<string, number | string>; sourceSha256: string; }[];
   periods: { id: string; label: string; start: string; end: string; }[];
   costs: { id: string; label: string; fee: number; slippage: number; effective_fee: number; }[];
@@ -25,6 +26,16 @@ export interface BacktestReport {
   runs: BacktestRun[];
   benchmarks: { periodId: string; costId: string; name: string; series: BacktestPoint[]; returnPct: number; drawdownPct: number }[];
   candles: Record<string, BacktestCandle[]>;
+  candleFiles?: Record<string, Record<string, string>>;
   checks: { archiveChecksums: boolean; causalPrefix: boolean; frameworkLookahead: string; accountingReconciled: boolean; };
   notes: string[];
 }
+
+export interface BacktestStudyIndex {
+  schemaVersion: 1; createdAt: string; totalRuns: number; summaryPath: string;
+  reports: { id: string; timeframe: string; stake: number; label: string; path: string; runs: number }[];
+}
+export type BacktestStudyRow = BacktestRun['metrics'] & {
+  id: string; family: string; name: string; timeframe: string; stake: number; period: string; cost: string;
+}
+export interface BacktestStudySummary { createdAt: string; runs: BacktestStudyRow[]; notes: string[]; }

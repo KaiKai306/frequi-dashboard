@@ -1,0 +1,893 @@
+{
+  "native_trade_checks": [
+    {
+      "id": "4h-s250-2026-q1-q3-base-SmaStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "21936fc3ca94e6718cccb5fa3b083f456e1cd1244f292c0ecc980c9073d6ddf7"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-base-HorizonSmaStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "21936fc3ca94e6718cccb5fa3b083f456e1cd1244f292c0ecc980c9073d6ddf7"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-base-DonchianStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "21936fc3ca94e6718cccb5fa3b083f456e1cd1244f292c0ecc980c9073d6ddf7"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-base-RsiBbandsStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "21936fc3ca94e6718cccb5fa3b083f456e1cd1244f292c0ecc980c9073d6ddf7"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-base-AdxMomentumStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "21936fc3ca94e6718cccb5fa3b083f456e1cd1244f292c0ecc980c9073d6ddf7"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-base-SupertrendStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "21936fc3ca94e6718cccb5fa3b083f456e1cd1244f292c0ecc980c9073d6ddf7"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-base-EmaPullbackStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "21936fc3ca94e6718cccb5fa3b083f456e1cd1244f292c0ecc980c9073d6ddf7"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-base-SmaStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "89c5a5b1f1ad567f8b52efb7d0904e5edc299b407be97e9e7386a1851d1235f4"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-base-HorizonSmaStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "89c5a5b1f1ad567f8b52efb7d0904e5edc299b407be97e9e7386a1851d1235f4"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-base-DonchianStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "89c5a5b1f1ad567f8b52efb7d0904e5edc299b407be97e9e7386a1851d1235f4"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-base-RsiBbandsStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "89c5a5b1f1ad567f8b52efb7d0904e5edc299b407be97e9e7386a1851d1235f4"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-base-AdxMomentumStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "89c5a5b1f1ad567f8b52efb7d0904e5edc299b407be97e9e7386a1851d1235f4"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-base-SupertrendStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "89c5a5b1f1ad567f8b52efb7d0904e5edc299b407be97e9e7386a1851d1235f4"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-base-EmaPullbackStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "89c5a5b1f1ad567f8b52efb7d0904e5edc299b407be97e9e7386a1851d1235f4"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-stress-SmaStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ad8c224ad345a28de95337be0f359df6a34817764eb184cb647d34c780bd135b"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-stress-HorizonSmaStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ad8c224ad345a28de95337be0f359df6a34817764eb184cb647d34c780bd135b"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-stress-DonchianStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ad8c224ad345a28de95337be0f359df6a34817764eb184cb647d34c780bd135b"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-stress-RsiBbandsStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ad8c224ad345a28de95337be0f359df6a34817764eb184cb647d34c780bd135b"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-stress-AdxMomentumStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ad8c224ad345a28de95337be0f359df6a34817764eb184cb647d34c780bd135b"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-stress-SupertrendStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ad8c224ad345a28de95337be0f359df6a34817764eb184cb647d34c780bd135b"
+    },
+    {
+      "id": "4h-s100-2026-q1-q3-stress-EmaPullbackStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ad8c224ad345a28de95337be0f359df6a34817764eb184cb647d34c780bd135b"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-stress-SmaStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "8e1d1507bcaec8e472a1a85ad0de9a5f2e294554d8be9aa1064b7e51a6681d44"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-stress-HorizonSmaStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "8e1d1507bcaec8e472a1a85ad0de9a5f2e294554d8be9aa1064b7e51a6681d44"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-stress-DonchianStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "8e1d1507bcaec8e472a1a85ad0de9a5f2e294554d8be9aa1064b7e51a6681d44"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-stress-RsiBbandsStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "8e1d1507bcaec8e472a1a85ad0de9a5f2e294554d8be9aa1064b7e51a6681d44"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-stress-AdxMomentumStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "8e1d1507bcaec8e472a1a85ad0de9a5f2e294554d8be9aa1064b7e51a6681d44"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-stress-SupertrendStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "8e1d1507bcaec8e472a1a85ad0de9a5f2e294554d8be9aa1064b7e51a6681d44"
+    },
+    {
+      "id": "4h-s250-2026-q1-q3-stress-EmaPullbackStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "8e1d1507bcaec8e472a1a85ad0de9a5f2e294554d8be9aa1064b7e51a6681d44"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-base-SmaStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "5a4ff3a697c1b8f14c597c9daf55a5d65f41b56e86f217d2d0cd8482fc757aa1"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-base-HorizonSmaStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "5a4ff3a697c1b8f14c597c9daf55a5d65f41b56e86f217d2d0cd8482fc757aa1"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-base-DonchianStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "5a4ff3a697c1b8f14c597c9daf55a5d65f41b56e86f217d2d0cd8482fc757aa1"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-base-RsiBbandsStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "5a4ff3a697c1b8f14c597c9daf55a5d65f41b56e86f217d2d0cd8482fc757aa1"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-base-AdxMomentumStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "5a4ff3a697c1b8f14c597c9daf55a5d65f41b56e86f217d2d0cd8482fc757aa1"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-base-SupertrendStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "5a4ff3a697c1b8f14c597c9daf55a5d65f41b56e86f217d2d0cd8482fc757aa1"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-base-EmaPullbackStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "5a4ff3a697c1b8f14c597c9daf55a5d65f41b56e86f217d2d0cd8482fc757aa1"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-stress-SmaStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "fa07104de97ed665048f69b988ab7e44c21bfd7e10e0c6c2d0f860d95173d72b"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-stress-HorizonSmaStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "fa07104de97ed665048f69b988ab7e44c21bfd7e10e0c6c2d0f860d95173d72b"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-stress-DonchianStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "fa07104de97ed665048f69b988ab7e44c21bfd7e10e0c6c2d0f860d95173d72b"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-stress-RsiBbandsStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "fa07104de97ed665048f69b988ab7e44c21bfd7e10e0c6c2d0f860d95173d72b"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-stress-AdxMomentumStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "fa07104de97ed665048f69b988ab7e44c21bfd7e10e0c6c2d0f860d95173d72b"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-stress-SupertrendStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "fa07104de97ed665048f69b988ab7e44c21bfd7e10e0c6c2d0f860d95173d72b"
+    },
+    {
+      "id": "4h-s450-2026-q1-q3-stress-EmaPullbackStudy4h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "fa07104de97ed665048f69b988ab7e44c21bfd7e10e0c6c2d0f860d95173d72b"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-base-SmaStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "69d9e657cefc6d9a497f9a2c758c3d7d8476d47029b72444561015aa09311f2b"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-base-HorizonSmaStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "69d9e657cefc6d9a497f9a2c758c3d7d8476d47029b72444561015aa09311f2b"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-base-DonchianStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "69d9e657cefc6d9a497f9a2c758c3d7d8476d47029b72444561015aa09311f2b"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-base-RsiBbandsStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "69d9e657cefc6d9a497f9a2c758c3d7d8476d47029b72444561015aa09311f2b"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-base-AdxMomentumStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "69d9e657cefc6d9a497f9a2c758c3d7d8476d47029b72444561015aa09311f2b"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-base-SupertrendStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "69d9e657cefc6d9a497f9a2c758c3d7d8476d47029b72444561015aa09311f2b"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-base-EmaPullbackStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "69d9e657cefc6d9a497f9a2c758c3d7d8476d47029b72444561015aa09311f2b"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-stress-SmaStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e0ac3906935454d1b4a07d4a774331fc6c33c453edd310f1f08548e98b6eacd9"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-stress-HorizonSmaStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e0ac3906935454d1b4a07d4a774331fc6c33c453edd310f1f08548e98b6eacd9"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-stress-DonchianStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e0ac3906935454d1b4a07d4a774331fc6c33c453edd310f1f08548e98b6eacd9"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-stress-RsiBbandsStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e0ac3906935454d1b4a07d4a774331fc6c33c453edd310f1f08548e98b6eacd9"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-stress-AdxMomentumStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e0ac3906935454d1b4a07d4a774331fc6c33c453edd310f1f08548e98b6eacd9"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-stress-SupertrendStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e0ac3906935454d1b4a07d4a774331fc6c33c453edd310f1f08548e98b6eacd9"
+    },
+    {
+      "id": "1h-s100-2026-q1-q3-stress-EmaPullbackStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e0ac3906935454d1b4a07d4a774331fc6c33c453edd310f1f08548e98b6eacd9"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-base-SmaStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "3091680dd4168a233ffd3de0840df71e144dbdfc2f279ff885b478c119cf1d9e"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-base-HorizonSmaStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "3091680dd4168a233ffd3de0840df71e144dbdfc2f279ff885b478c119cf1d9e"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-base-DonchianStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "3091680dd4168a233ffd3de0840df71e144dbdfc2f279ff885b478c119cf1d9e"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-base-RsiBbandsStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "3091680dd4168a233ffd3de0840df71e144dbdfc2f279ff885b478c119cf1d9e"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-base-AdxMomentumStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "3091680dd4168a233ffd3de0840df71e144dbdfc2f279ff885b478c119cf1d9e"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-base-SupertrendStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "3091680dd4168a233ffd3de0840df71e144dbdfc2f279ff885b478c119cf1d9e"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-base-EmaPullbackStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "3091680dd4168a233ffd3de0840df71e144dbdfc2f279ff885b478c119cf1d9e"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-stress-SmaStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "51876895a4ddb4b6475a8e20f29ac7604ca27f81878ced43e1d71beb0289acb2"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-stress-HorizonSmaStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "51876895a4ddb4b6475a8e20f29ac7604ca27f81878ced43e1d71beb0289acb2"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-stress-DonchianStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "51876895a4ddb4b6475a8e20f29ac7604ca27f81878ced43e1d71beb0289acb2"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-stress-RsiBbandsStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "51876895a4ddb4b6475a8e20f29ac7604ca27f81878ced43e1d71beb0289acb2"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-stress-AdxMomentumStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "51876895a4ddb4b6475a8e20f29ac7604ca27f81878ced43e1d71beb0289acb2"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-stress-SupertrendStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "51876895a4ddb4b6475a8e20f29ac7604ca27f81878ced43e1d71beb0289acb2"
+    },
+    {
+      "id": "1h-s250-2026-q1-q3-stress-EmaPullbackStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "51876895a4ddb4b6475a8e20f29ac7604ca27f81878ced43e1d71beb0289acb2"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-base-SmaStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e5419bad65b144df9e1ac3849960c63c2fc15d94c75c01329b6566044d48e910"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-base-HorizonSmaStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e5419bad65b144df9e1ac3849960c63c2fc15d94c75c01329b6566044d48e910"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-base-DonchianStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e5419bad65b144df9e1ac3849960c63c2fc15d94c75c01329b6566044d48e910"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-base-RsiBbandsStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e5419bad65b144df9e1ac3849960c63c2fc15d94c75c01329b6566044d48e910"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-base-AdxMomentumStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e5419bad65b144df9e1ac3849960c63c2fc15d94c75c01329b6566044d48e910"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-base-SupertrendStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e5419bad65b144df9e1ac3849960c63c2fc15d94c75c01329b6566044d48e910"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-base-EmaPullbackStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "e5419bad65b144df9e1ac3849960c63c2fc15d94c75c01329b6566044d48e910"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-stress-SmaStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "1bb52f562767bfd10a08f85fb40519647d9a5c2c5caa06adf1e556ea785391f3"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-stress-HorizonSmaStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "1bb52f562767bfd10a08f85fb40519647d9a5c2c5caa06adf1e556ea785391f3"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-stress-DonchianStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "1bb52f562767bfd10a08f85fb40519647d9a5c2c5caa06adf1e556ea785391f3"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-stress-RsiBbandsStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "1bb52f562767bfd10a08f85fb40519647d9a5c2c5caa06adf1e556ea785391f3"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-stress-AdxMomentumStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "1bb52f562767bfd10a08f85fb40519647d9a5c2c5caa06adf1e556ea785391f3"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-stress-SupertrendStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "1bb52f562767bfd10a08f85fb40519647d9a5c2c5caa06adf1e556ea785391f3"
+    },
+    {
+      "id": "1h-s450-2026-q1-q3-stress-EmaPullbackStudy1h",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "1bb52f562767bfd10a08f85fb40519647d9a5c2c5caa06adf1e556ea785391f3"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-stress-SmaStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "901c8d3aed158057b531d9ebe09d95cd65de3d54598d96ce0a9e2b8807e3b8ca"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-stress-HorizonSmaStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "901c8d3aed158057b531d9ebe09d95cd65de3d54598d96ce0a9e2b8807e3b8ca"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-stress-DonchianStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "901c8d3aed158057b531d9ebe09d95cd65de3d54598d96ce0a9e2b8807e3b8ca"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-stress-RsiBbandsStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "901c8d3aed158057b531d9ebe09d95cd65de3d54598d96ce0a9e2b8807e3b8ca"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-stress-AdxMomentumStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "901c8d3aed158057b531d9ebe09d95cd65de3d54598d96ce0a9e2b8807e3b8ca"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-stress-SupertrendStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "901c8d3aed158057b531d9ebe09d95cd65de3d54598d96ce0a9e2b8807e3b8ca"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-stress-EmaPullbackStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "901c8d3aed158057b531d9ebe09d95cd65de3d54598d96ce0a9e2b8807e3b8ca"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-base-SmaStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "4978f11b6382c25d052ad244d3d11113c3462b607831a44c1b13fb17abd46fd5"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-base-HorizonSmaStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "4978f11b6382c25d052ad244d3d11113c3462b607831a44c1b13fb17abd46fd5"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-base-DonchianStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "4978f11b6382c25d052ad244d3d11113c3462b607831a44c1b13fb17abd46fd5"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-base-RsiBbandsStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "4978f11b6382c25d052ad244d3d11113c3462b607831a44c1b13fb17abd46fd5"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-base-AdxMomentumStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "4978f11b6382c25d052ad244d3d11113c3462b607831a44c1b13fb17abd46fd5"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-base-SupertrendStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "4978f11b6382c25d052ad244d3d11113c3462b607831a44c1b13fb17abd46fd5"
+    },
+    {
+      "id": "15m-s100-2026-q1-q3-base-EmaPullbackStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "4978f11b6382c25d052ad244d3d11113c3462b607831a44c1b13fb17abd46fd5"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-base-SmaStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ff48ae04b8b1b007020ca354c0ebc9c27e8af0f09a15b40e331f40b9fb888605"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-base-HorizonSmaStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ff48ae04b8b1b007020ca354c0ebc9c27e8af0f09a15b40e331f40b9fb888605"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-base-DonchianStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ff48ae04b8b1b007020ca354c0ebc9c27e8af0f09a15b40e331f40b9fb888605"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-base-RsiBbandsStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ff48ae04b8b1b007020ca354c0ebc9c27e8af0f09a15b40e331f40b9fb888605"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-base-AdxMomentumStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ff48ae04b8b1b007020ca354c0ebc9c27e8af0f09a15b40e331f40b9fb888605"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-base-SupertrendStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ff48ae04b8b1b007020ca354c0ebc9c27e8af0f09a15b40e331f40b9fb888605"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-base-EmaPullbackStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "ff48ae04b8b1b007020ca354c0ebc9c27e8af0f09a15b40e331f40b9fb888605"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-stress-SmaStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "aaedeff91a1f657ef36b7b5ffb2cc6a06d74e0edbefcab69ccef24a68137dfaf"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-stress-HorizonSmaStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "aaedeff91a1f657ef36b7b5ffb2cc6a06d74e0edbefcab69ccef24a68137dfaf"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-stress-DonchianStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "aaedeff91a1f657ef36b7b5ffb2cc6a06d74e0edbefcab69ccef24a68137dfaf"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-stress-RsiBbandsStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "aaedeff91a1f657ef36b7b5ffb2cc6a06d74e0edbefcab69ccef24a68137dfaf"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-stress-AdxMomentumStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "aaedeff91a1f657ef36b7b5ffb2cc6a06d74e0edbefcab69ccef24a68137dfaf"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-stress-SupertrendStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "aaedeff91a1f657ef36b7b5ffb2cc6a06d74e0edbefcab69ccef24a68137dfaf"
+    },
+    {
+      "id": "15m-s250-2026-q1-q3-stress-EmaPullbackStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "aaedeff91a1f657ef36b7b5ffb2cc6a06d74e0edbefcab69ccef24a68137dfaf"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-base-SmaStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "c8bfb75aeb20c25da9b3a07a1e34b81ae53d1cff8a397116383c10ec4d7700ce"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-base-HorizonSmaStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "c8bfb75aeb20c25da9b3a07a1e34b81ae53d1cff8a397116383c10ec4d7700ce"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-base-DonchianStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "c8bfb75aeb20c25da9b3a07a1e34b81ae53d1cff8a397116383c10ec4d7700ce"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-base-RsiBbandsStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "c8bfb75aeb20c25da9b3a07a1e34b81ae53d1cff8a397116383c10ec4d7700ce"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-base-AdxMomentumStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "c8bfb75aeb20c25da9b3a07a1e34b81ae53d1cff8a397116383c10ec4d7700ce"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-base-SupertrendStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "c8bfb75aeb20c25da9b3a07a1e34b81ae53d1cff8a397116383c10ec4d7700ce"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-base-EmaPullbackStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "c8bfb75aeb20c25da9b3a07a1e34b81ae53d1cff8a397116383c10ec4d7700ce"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-stress-SmaStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "84530645ecf643ae47b9b1729681b046e46d49ec2e356537083fe731dc904087"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-stress-HorizonSmaStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "84530645ecf643ae47b9b1729681b046e46d49ec2e356537083fe731dc904087"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-stress-DonchianStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "84530645ecf643ae47b9b1729681b046e46d49ec2e356537083fe731dc904087"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-stress-RsiBbandsStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "84530645ecf643ae47b9b1729681b046e46d49ec2e356537083fe731dc904087"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-stress-AdxMomentumStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "84530645ecf643ae47b9b1729681b046e46d49ec2e356537083fe731dc904087"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-stress-SupertrendStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "84530645ecf643ae47b9b1729681b046e46d49ec2e356537083fe731dc904087"
+    },
+    {
+      "id": "15m-s450-2026-q1-q3-stress-EmaPullbackStudy15m",
+      "chronology_valid": true,
+      "no_entries_on_or_after_cutoff": true,
+      "native_end_at_cutoff": true,
+      "archive_sha256": "84530645ecf643ae47b9b1729681b046e46d49ec2e356537083fe731dc904087"
+    }
+  ],
+  "all_126_chronologically_valid": true,
+  "all_18_groups_uniformly_replaced": true,
+  "original_results_and_data_preserved": "/srv/ccpocket/workspace/tmp/2026-10-31/quant-strategy-study/before-terminal-install-20261031T234405Z",
+  "trade_window_unchanged": true,
+  "original_matrix_runs": 378,
+  "additional_corrective_runs": 126,
+  "final_comparison_runs": 378
+}

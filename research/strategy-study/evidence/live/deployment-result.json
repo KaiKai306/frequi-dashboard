@@ -1,0 +1,11 @@
+{
+  "record": "/root/ai-maint/2026-10-31/strategy-study-20261031T235038Z",
+  "backup": "/opt/binance-quant/trellis/public.before-strategy-study-20261031T235038Z",
+  "config_backup": "/opt/binance-quant/Caddyfile.before-paper-multi-20261031T235038Z",
+  "rollback": "/root/ai-maint/2026-10-31/strategy-study-20261031T235038Z/rollback.py",
+  "paper_record": "/root/ai-maint/2026-10-31/paper-compare-20261031T234634Z",
+  "files": 429,
+  "original_services_configs_database_and_report_preserved": true,
+  "caddy_hot_reloaded": true,
+  "no_new_public_port": true
+}

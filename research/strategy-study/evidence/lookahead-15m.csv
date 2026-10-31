@@ -1,0 +1,8 @@
+filename,strategy,has_bias,total_signals,biased_entry_signals,biased_exit_signals,biased_indicators
+StudyStrategies.py,SmaStudy15m,False,10,0,0,
+StudyStrategies.py,HorizonSmaStudy15m,False,10,0,0,
+StudyStrategies.py,DonchianStudy15m,False,10,0,0,
+StudyStrategies.py,RsiBbandsStudy15m,False,10,0,0,
+StudyStrategies.py,AdxMomentumStudy15m,False,10,0,0,
+StudyStrategies.py,SupertrendStudy15m,False,10,0,0,
+StudyStrategies.py,EmaPullbackStudy15m,False,10,0,0,

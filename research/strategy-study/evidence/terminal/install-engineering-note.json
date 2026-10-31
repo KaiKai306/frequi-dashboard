@@ -1,0 +1,5 @@
+{
+  "issue": "Existing Docker-owned causal report and partial output directory lacked group write permission for replacement/move.",
+  "recovery": "Original data/matrix/all18 groups already backed up and installed. Revalidated every corrected archive and input SHA, replaced causal JSON atomically, granted group write only on temporary partial output directory to archive it. No rerun, PnL edit or production modification.",
+  "all_original_inputs_and_results_retained": true
+}

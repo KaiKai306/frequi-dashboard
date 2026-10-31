@@ -1,0 +1,62 @@
+{
+  "coordinator_sha256": "e248a360ea028656ff23ddacefc36875a1c7b30ee04709ce667389b8b0e39bd1",
+  "actual_kernel_fifos": true,
+  "original_frozen_reader": true,
+  "cases": [
+    {
+      "case": "partial",
+      "real_frozen_run_task_used": true,
+      "initial_blocked_readers": 5,
+      "completed_groups": 12,
+      "fallback_local_groups": 12,
+      "deadlock": false,
+      "remaining_fifos": 0,
+      "duplicate_archives": false,
+      "real_ssh_or_docker_executed": false
+    },
+    {
+      "case": "corrupt",
+      "real_frozen_run_task_used": true,
+      "initial_blocked_readers": 3,
+      "completed_groups": 12,
+      "fallback_local_groups": 12,
+      "deadlock": false,
+      "remaining_fifos": 0,
+      "duplicate_archives": false,
+      "real_ssh_or_docker_executed": false
+    },
+    {
+      "case": "success",
+      "real_frozen_run_task_used": true,
+      "initial_blocked_readers": 12,
+      "completed_groups": 12,
+      "fallback_local_groups": 0,
+      "deadlock": false,
+      "remaining_fifos": 0,
+      "duplicate_archives": false,
+      "real_ssh_or_docker_executed": false
+    },
+    {
+      "case": "disconnect",
+      "real_frozen_run_task_used": true,
+      "initial_blocked_readers": 7,
+      "completed_groups": 12,
+      "fallback_local_groups": 12,
+      "deadlock": false,
+      "remaining_fifos": 0,
+      "duplicate_archives": false,
+      "real_ssh_or_docker_executed": false
+    },
+    {
+      "case": "signal",
+      "real_frozen_run_task_used": true,
+      "initial_blocked_readers": 11,
+      "completed_groups": 12,
+      "fallback_local_groups": 12,
+      "deadlock": false,
+      "remaining_fifos": 0,
+      "duplicate_archives": false,
+      "real_ssh_or_docker_executed": false
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "tested_at": "2026-10-31T23:51:21.682050+00:00",
+  "served_release_files_sha256_verified": 429,
+  "research_files_verified": 407,
+  "all_gzip_json_decodes": true,
+  "original_report_bytes_preserved": true,
+  "all_378_results_and_9_reports_available": true,
+  "auth_and_write_denial_verified": true,
+  "credentials_exported": false
+}

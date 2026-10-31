@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "bots": [
+    {
+      "name": "双均线基线 · 4h",
+      "apiUrl": "/preview/bot",
+      "startingCapital": 1000
+    },
+    {
+      "name": "双均线趋势 · 1h 观察",
+      "apiUrl": "/preview/bots/compare",
+      "startingCapital": 1000
+    }
+  ]
+}

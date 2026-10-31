@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-31T23:52:25.347278+00:00",
+  "hostname": "ser608738340395",
+  "services": [
+    {
+      "name": "/binance-quant-freqtrade",
+      "id": "537ffdf439a91b2e5c5384e15118a431bbb08a0ed3d8dde07e9bbe6bdef5f88a",
+      "started": "2026-10-31T13:04:44.665293691Z",
+      "restart_count": 0,
+      "healthy": "healthy"
+    },
+    {
+      "name": "/binance-quant-caddy",
+      "id": "0c90341d78609900058555af9d6b5436cfa3c934dd51bb7a2282ab0f4d6b0234",
+      "started": "2026-10-31T12:57:26.423294083Z",
+      "restart_count": 0,
+      "healthy": null
+    },
+    {
+      "name": "/binance-quant-trellis-preview",
+      "id": "ad8c2a16d3b67d548f29f91b2d2dd5cfe8bd90e35b611a037abff6493cc64919",
+      "started": "2026-10-31T13:45:36.235017841Z",
+      "restart_count": 0,
+      "healthy": "healthy"
+    }
+  ],
+  "configs": {
+    "compose.yaml": "a9a49e17e85f67c3070ebef76e995126b5f9f54e146d9eded66397449054d027",
+    "compose.preview.yaml": "14bcb9a5e9fc085a91a2a27a6b8ac76127da1d4e3a506942562b21d91bc8b585",
+    "Caddyfile": "02fd26c036b50ff411b61c31a8f922ae983b6f419df1212fea2b4b62e3b5e1fa",
+    "user_data/config.json": "d836d9430e71fd5ea729f672a8dbb694476d03dfb06088375a77d681c934cfa1",
+    "trellis/Preview.Caddyfile": "d609c3cc1f6fc3d25c4e898ca6f5d8431e1d01b73d4debc94e53dd3fd45d34ce"
+  },
+  "public_inode": 1290361,
+  "index_sha256": "a7f02129b1bb4581bce516ac3731e42902210d25f95fb9b95ebfbc70ebebbd9a",
+  "original_report_sha256": "97e9c3e14f37888a72a6fef658a797b40899255c1e90cd4baea5750ae66a4692",
+  "baseline_db_inode": 1038274,
+  "memory": "               total        used        free      shared  buff/cache   available\nMem:            1967        1417         153           3         592         550\nSwap:              0           0           0\n",
+  "docker_stats": "binance-quant-freqtrade 524.7MiB / 1.074GiB 0.28%\nbinance-quant-caddy 28.62MiB / 192MiB 0.00%\nbinance-quant-trellis-preview 16.22MiB / 128MiB 0.03%\nbinance-quant-paper-compare 393.9MiB / 768MiB 0.22%\n",
+  "new_service": {
+    "id": "fb52468f90faf30727d1940645d69a25d9494ffe135b000b601db0c1d743164d",
+    "healthy": true,
+    "restart_count": 0
+  },
+  "available_mib": 537.4,
+  "original_services_and_data_preserved": true
+}

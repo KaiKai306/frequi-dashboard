@@ -1,0 +1,28 @@
+{
+  "authenticated_internal_config_and_candles": true,
+  "no_real_credentials": true,
+  "samples": [
+    {
+      "attempt": 0,
+      "health": "healthy",
+      "available_mib": 543.8,
+      "virtual_wallet_total": 1000.0,
+      "open_paper_trades": 0
+    },
+    {
+      "attempt": 1,
+      "health": "healthy",
+      "available_mib": 526.4,
+      "virtual_wallet_total": 1000.0,
+      "open_paper_trades": 0
+    },
+    {
+      "attempt": 2,
+      "health": "healthy",
+      "available_mib": 542.1,
+      "virtual_wallet_total": 1000.0,
+      "open_paper_trades": 0
+    }
+  ],
+  "steady_memory_threshold_mib": 250
+}

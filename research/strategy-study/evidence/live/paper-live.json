@@ -1,0 +1,21 @@
+{
+  "tested_at": "2026-10-31T23:51:08.866707+00:00",
+  "two_spot_paper_bots_running": true,
+  "separate_virtual_wallets_and_databases": true,
+  "database_trade_counts": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "fixed_read_only_gateway": true,
+  "compare_candles_available": true,
+  "no_new_public_port": true,
+  "no_exchange_credentials_mounted": true,
+  "dashboard_credentials_exported": false,
+  "real_orders_sent": false
+}

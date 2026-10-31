@@ -1,0 +1,71 @@
+{
+  "tested_at_utc": "2026-10-31T23:51:11.345720+00:00",
+  "origin": "https://quant.happykai.cn",
+  "real_orders_sent": false,
+  "credentials_exported": false,
+  "html": {
+    "valid": true,
+    "tls_verified": true,
+    "elapsed_ms_on_japan": 16.0
+  },
+  "assets": [
+    {
+      "path": "/preview/assets/index-D3Cq3iYJ.js",
+      "bytes": 399432,
+      "sha256": "fff3093eba1db8427af5d072c5c058a234fca508ea772dc2054d2741d34d2ff8",
+      "elapsed_ms_on_japan": 20.76
+    },
+    {
+      "path": "/preview/assets/createLucideIcon-ux2InIhN.js",
+      "bytes": 97426,
+      "sha256": "0cf681f799e7c7903e77dbc202d1a2b511203f2f5cf258dcd1c1a58df7ee1c9c",
+      "elapsed_ms_on_japan": 15.94
+    },
+    {
+      "path": "/preview/assets/dateUtils-CkTMgSE3.js",
+      "bytes": 4954,
+      "sha256": "4151c15640af9d993a1b0b45aea70d3b6e75dd3db063957046ad67c4c26d77f3",
+      "elapsed_ms_on_japan": 12.69
+    },
+    {
+      "path": "/preview/assets/index-DblVs0LJ.css",
+      "bytes": 168388,
+      "sha256": "d73c435f2f9c84ec6097a81ee7e137ea92c0873e6bc5ed1f2b10a8d70aec7149",
+      "elapsed_ms_on_japan": 14.0
+    }
+  ],
+  "runtime": {
+    "strategy": "BaselineSmaTrend4h",
+    "timeframe": "4h",
+    "state": "running",
+    "dry_run": true,
+    "trading_mode": "spot",
+    "max_open_trades": 2.0
+  },
+  "dashboard_authentication": true,
+  "read_endpoints": true,
+  "candles": [
+    {
+      "pair": "BTC/USDT",
+      "server_sma50_sma200": true
+    },
+    {
+      "pair": "ETH/USDT",
+      "server_sma50_sma200": true
+    }
+  ],
+  "market": [
+    {
+      "symbol": "BTCUSDT",
+      "spot_hourly_and_history_valid": true
+    },
+    {
+      "symbol": "ETHUSDT",
+      "spot_hourly_and_history_valid": true
+    }
+  ],
+  "gateway_write_denials": true,
+  "dynamic_proxy_denied": true,
+  "invalid_market_queries_denied": true,
+  "original_ui_reachable": true
+}

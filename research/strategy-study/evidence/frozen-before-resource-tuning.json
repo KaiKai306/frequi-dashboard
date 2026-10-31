@@ -1,0 +1,24 @@
+{
+  "frozen_at": "2026-10-31T21:37:32.632525+00:00",
+  "sources": {
+    "PROTOCOL.md": "3595a9074bdf73f16c21f7fb91148465c647b6d59737bedc0fe9e12a5cb1c7dd",
+    "strategies/StudyStrategies.py": "cc1b1e57b98dbe535f5026849495757ee3c4202b8d4f10fa77c3b492658da395",
+    "run_matrix.py": "1d802ddd571508e12c5927cc97613c49f8a21c10604624ed2847e91ca9b71717",
+    "offline_freqtrade.py": "eee0c3dae0306b0d470f53f1eaf03767ddf2a1763136c9089667bd752caf35ee",
+    "prepare_data.py": "9d939fb65d9decd8ae5fd48f34c5139e70c34336ce72aa076f20ffa5bdb5f32d"
+  },
+  "configs": {
+    "config-s100.json": "38e0235f40374edbd926e6a72b7310c30c19ae97a0a8f69957833f2ebae636cb",
+    "config-s250.json": "bf579f0ee282385ca3f65c340f76b163e1008206c93968a669b92683b307a553",
+    "config-s450.json": "ef280449c3765cf065441a954760451639ac685b367f4f9dfd41cfe8967ebb76"
+  },
+  "expected_strategy_runs": 378,
+  "engineering_fixes": [
+    {
+      "at": "2026-10-31T21:38:43.119991+00:00",
+      "reason": "First startup failed before strategy loading because research user_data was not group writable; add task-only directory mode and config hash validation. No strategy/parameter/data changes.",
+      "before": "a4ecf640a004a0187246a0ea071c59ba35e77f7bd233cbe878fa1de58bab7d75",
+      "after": "1d802ddd571508e12c5927cc97613c49f8a21c10604624ed2847e91ca9b71717"
+    }
+  ]
+}

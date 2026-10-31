@@ -1,0 +1,38 @@
+{
+  "remote_work": "/home/agent/ccpocket-maint/2026-10-31/quant-terminal-correction-20261031T233238Z",
+  "files": {
+    "15m-s100-2026-q1-q3-stress/task.json": "d16de0baeb55043aac4e7a14ecd1b654705fdb5bb338d0acb48f100af6174c5f",
+    "15m-s100-2026-q1-q3-stress/.last_result.json": "069b83269969728dec339792512c22149b3b1b0865709150ae8bbf5ffe04e282",
+    "15m-s100-2026-q1-q3-stress/backtest-result-2026-10-31_23-38-09.meta.json": "0710db56e67726b6412254d3fb0584c4b711921c73208d7f46c071dc21f980aa",
+    "15m-s100-2026-q1-q3-stress/backtest-result-2026-10-31_23-38-09.zip": "901c8d3aed158057b531d9ebe09d95cd65de3d54598d96ce0a9e2b8807e3b8ca",
+    "15m-s100-2026-q1-q3-stress/engine.log": "24792d15021375b3aec6a3c42a5d838b5a9d3840868c098beb1aac73257130a2",
+    "15m-s450-2026-q1-q3-stress/task.json": "5cbc31da033b605906d02f12cc509afaea44591512eb4eb4f44f5ec99ed23774",
+    "15m-s450-2026-q1-q3-stress/.last_result.json": "c58fdd8b89cf8d5edf33208f6afc0fb1448e9faebfd0e7e4ceb1916791bbd596",
+    "15m-s450-2026-q1-q3-stress/backtest-result-2026-10-31_23-43-24.meta.json": "1de76630391163dc5c3e64c656d898f6109b35e89c517de917a5a427016a3db9",
+    "15m-s450-2026-q1-q3-stress/backtest-result-2026-10-31_23-43-24.zip": "84530645ecf643ae47b9b1729681b046e46d49ec2e356537083fe731dc904087",
+    "15m-s450-2026-q1-q3-stress/engine.log": "45d1673121a48c2fb5fe94ffb9f3c2ebec120aa36251e021f288f2c36393d9ee",
+    "15m-s250-2026-q1-q3-stress/backtest-result-2026-10-31_23-38-26.zip": "aaedeff91a1f657ef36b7b5ffb2cc6a06d74e0edbefcab69ccef24a68137dfaf",
+    "15m-s250-2026-q1-q3-stress/task.json": "ad923bffe2864523123e7e27f7dac51903dddd839f941ae2f50d65e81358bffb",
+    "15m-s250-2026-q1-q3-stress/.last_result.json": "b80fd344623f10c3288f8b91fba58b58cd876ca8bd0141e1b3812260f1910e46",
+    "15m-s250-2026-q1-q3-stress/engine.log": "942a55156497f8b8b21823de06b50a49ed8ffef47d1fd7c0a4f4b75e0cbbab63",
+    "15m-s250-2026-q1-q3-stress/backtest-result-2026-10-31_23-38-26.meta.json": "b55fce9062a08c1293d7351bccd52279d92ad9ce93a295531979a4aeae6b9506",
+    "15m-s450-2026-q1-q3-base/task.json": "f28a1308c23e6f93522367f1e92b4cc02d3e92434b3f33514400fcf365b6c64d",
+    "15m-s450-2026-q1-q3-base/backtest-result-2026-10-31_23-42-58.zip": "c8bfb75aeb20c25da9b3a07a1e34b81ae53d1cff8a397116383c10ec4d7700ce",
+    "15m-s450-2026-q1-q3-base/.last_result.json": "5cee4646fba67f6f6615726740b995d4e8428109d60c41aca34de9f47d44b2d0",
+    "15m-s450-2026-q1-q3-base/backtest-result-2026-10-31_23-42-58.meta.json": "850f9ab0fa4d2bad1c14c7ad66a0a324f9576b8b5a214d1a259fb2b9faae0f7b",
+    "15m-s450-2026-q1-q3-base/engine.log": "32f6bed132b7584ae1d6590fb88cab822cb13ae715801429172286707e2a4d36",
+    "15m-s250-2026-q1-q3-base/task.json": "22e15c498706c44d84f6e9858d26397aa52881e4baa40d0134b13dfbbb5e4d75",
+    "15m-s250-2026-q1-q3-base/backtest-result-2026-10-31_23-38-15.meta.json": "4f6c13289ab2200ac26407a0c5c7722959f8f7a3e5d093afbf4d338c1a6e2a8f",
+    "15m-s250-2026-q1-q3-base/.last_result.json": "236ee5a640e0f1bc9cb35048cb9ac8fe384de075fa163c648810bc9347c2f96b",
+    "15m-s250-2026-q1-q3-base/backtest-result-2026-10-31_23-38-15.zip": "ff48ae04b8b1b007020ca354c0ebc9c27e8af0f09a15b40e331f40b9fb888605",
+    "15m-s250-2026-q1-q3-base/engine.log": "0e03f0fd223ffb37d58c81150bf3b1c67d860532a15eabfe6bf24eed4cc5b8d3",
+    "15m-s100-2026-q1-q3-base/backtest-result-2026-10-31_23-38-11.meta.json": "b50ed3f96c829afac37f84da23a1097c8fbe2e230dd7e3083a16ec3929b24359",
+    "15m-s100-2026-q1-q3-base/task.json": "7abc3bf1e5dc46b6dce98222d0084977a839f180a26a4cc5a6b6652892e20a28",
+    "15m-s100-2026-q1-q3-base/backtest-result-2026-10-31_23-38-11.zip": "4978f11b6382c25d052ad244d3d11113c3462b607831a44c1b13fb17abd46fd5",
+    "15m-s100-2026-q1-q3-base/.last_result.json": "7a37f54de2c5bc9db840eab7c7851127bb39ecd60ffc4e82b7aeb7f6d7cda797",
+    "15m-s100-2026-q1-q3-base/engine.log": "36743618103cbd13bd35de579f9640a4f1b5f25a0e4c1a80c5e10fd1abd7e193"
+  },
+  "production": {
+    "original_production_running_and_unchanged": 7
+  }
+}

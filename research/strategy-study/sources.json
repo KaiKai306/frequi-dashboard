@@ -1,0 +1,255 @@
+[
+  {
+    "id": "freqtrade-docs-backtesting",
+    "url": "https://raw.githubusercontent.com/freqtrade/freqtrade/2026.10/docs/backtesting.md",
+    "retrieved_at": "2026-10-31T21:33:20.310104+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/freqtrade/freqtrade/2026.10/docs/backtesting.md",
+    "bytes": 57906,
+    "sha256": "dc74cad035e679e4f361fe4c7cff4c8dd2dd62f534c39f7b5b012d307dee7fd9"
+  },
+  {
+    "id": "freqtrade-docs-lookahead",
+    "url": "https://raw.githubusercontent.com/freqtrade/freqtrade/2026.10/docs/lookahead-analysis.md",
+    "retrieved_at": "2026-10-31T21:33:20.315812+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/freqtrade/freqtrade/2026.10/docs/lookahead-analysis.md",
+    "bytes": 7801,
+    "sha256": "49c0cc7f34f5aa071827366d0fe28af765a2fe7a91f823548d33687bf5b633b9"
+  },
+  {
+    "id": "freqtrade-docs-hyperopt",
+    "url": "https://raw.githubusercontent.com/freqtrade/freqtrade/2026.10/docs/hyperopt.md",
+    "retrieved_at": "2026-10-31T21:33:20.316537+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/freqtrade/freqtrade/2026.10/docs/hyperopt.md",
+    "bytes": 47713,
+    "sha256": "6e11fad2a5aa79141ad486eb266ac0d0a2ff29378615d2cd9a296077d11ab063"
+  },
+  {
+    "id": "freqtrade-docs-strategy",
+    "url": "https://raw.githubusercontent.com/freqtrade/freqtrade/2026.10/docs/strategy-customization.md",
+    "retrieved_at": "2026-10-31T21:33:20.317082+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/freqtrade/freqtrade/2026.10/docs/strategy-customization.md",
+    "bytes": 65545,
+    "sha256": "b71be1d3a3cc6446401f63d99907f4f5944e2a4aec7730f316568420096a78f0"
+  },
+  {
+    "id": "strategies-supertrend",
+    "url": "https://raw.githubusercontent.com/freqtrade/freqtrade-strategies/main/user_data/strategies/Supertrend.py",
+    "retrieved_at": "2026-10-31T21:33:20.518999+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/freqtrade/freqtrade-strategies/main/user_data/strategies/Supertrend.py",
+    "bytes": 6448,
+    "sha256": "c73d2dc221e2a52274b20846bed0879212eaca72916948e8c6103f4d4dd8aeea"
+  },
+  {
+    "id": "freqtrade-docs-freqai",
+    "url": "https://raw.githubusercontent.com/freqtrade/freqtrade/2026.10/docs/freqai-running.md",
+    "retrieved_at": "2026-10-31T21:33:20.480681+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/freqtrade/freqtrade/2026.10/docs/freqai-running.md",
+    "bytes": 17355,
+    "sha256": "cf150175b3ffcf5f4bc721f9a5f2d9cc10839531bff1fc682f6543ac62d91b86"
+  },
+  {
+    "id": "strategies-adx",
+    "url": "https://raw.githubusercontent.com/freqtrade/freqtrade-strategies/main/user_data/strategies/berlinguyinca/ADXMomentum.py",
+    "retrieved_at": "2026-10-31T21:33:20.533755+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/freqtrade/freqtrade-strategies/main/user_data/strategies/berlinguyinca/ADXMomentum.py",
+    "bytes": 2137,
+    "sha256": "7ed9c2306f337a1cc49cb2e11ddf6b66397853b9c4155faa13e5cf1ea61a651a"
+  },
+  {
+    "id": "strategies-readme",
+    "url": "https://raw.githubusercontent.com/freqtrade/freqtrade-strategies/main/README.md",
+    "retrieved_at": "2026-10-31T21:33:20.504080+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/freqtrade/freqtrade-strategies/main/README.md",
+    "bytes": 4588,
+    "sha256": "50df38eb1b1ed410b5e41f55d8dd95e2a834cf89750781e38faa1b24a796b835"
+  },
+  {
+    "id": "strategies-trendrider",
+    "url": "https://raw.githubusercontent.com/freqtrade/freqtrade-strategies/main/user_data/strategies/TrendRiderStrategy.py",
+    "retrieved_at": "2026-10-31T21:33:20.628492+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/freqtrade/freqtrade-strategies/main/user_data/strategies/TrendRiderStrategy.py",
+    "bytes": 24748,
+    "sha256": "84ec4f1f00bbac46cf9a7ad6f38e1de6fe5ca83cfd9aa810c334b1a7e3c803ba"
+  },
+  {
+    "id": "strategies-scalp",
+    "url": "https://raw.githubusercontent.com/freqtrade/freqtrade-strategies/main/user_data/strategies/berlinguyinca/ReinforcedSmoothScalp.py",
+    "retrieved_at": "2026-10-31T21:33:20.634349+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/freqtrade/freqtrade-strategies/main/user_data/strategies/berlinguyinca/ReinforcedSmoothScalp.py",
+    "bytes": 5901,
+    "sha256": "d510b70a62dfcde39697184f62b48e93cae8a6c87a67670e0fadb8bed51b73c5"
+  },
+  {
+    "id": "nfi-readme",
+    "url": "https://raw.githubusercontent.com/iterativv/NostalgiaForInfinity/main/README.md",
+    "retrieved_at": "2026-10-31T21:33:20.639519+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/iterativv/NostalgiaForInfinity/main/README.md",
+    "bytes": 5228,
+    "sha256": "d81c3f3169edced9d20cb79c108c05497c7a34acffb4f8101977f6f4684ae132"
+  },
+  {
+    "id": "binance-data-readme",
+    "url": "https://raw.githubusercontent.com/binance/binance-public-data/master/README.md",
+    "retrieved_at": "2026-10-31T21:33:20.740078+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/binance/binance-public-data/master/README.md",
+    "bytes": 5282,
+    "sha256": "2e133d9945a9263a02781369078e72805eff074680f305cd5460016471c6caad"
+  },
+  {
+    "id": "search-strategies",
+    "url": "https://www.google.com/search?q=Freqtrade+crypto+strategy+15m+1h+overfitting+Supertrend+NostalgiaForInfinity",
+    "retrieved_at": "2026-10-31T21:33:20.819171+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=ISO-8859-1",
+    "final_url": "https://www.google.com/search?q=Freqtrade+crypto+strategy+15m+1h+overfitting+Supertrend+NostalgiaForInfinity",
+    "bytes": 92577,
+    "sha256": "77409fc83fdb1667153e7335d93bb5605f4865bdcad25e45cbfaeca96af34f62"
+  },
+  {
+    "id": "binance-rate-limits",
+    "url": "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/rest-api.md",
+    "retrieved_at": "2026-10-31T21:33:20.736550+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/binance/binance-spot-api-docs/master/rest-api.md",
+    "bytes": 207098,
+    "sha256": "2fb46f9c7ddfcf04a32cacb4f76c7f34d0c37499b0f505e68bd948c8506f5e47"
+  },
+  {
+    "id": "search-research",
+    "url": "https://www.google.com/search?q=cryptocurrency+intraday+momentum+transaction+costs+2024+2025+research",
+    "retrieved_at": "2026-10-31T21:33:20.998119+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=ISO-8859-1",
+    "final_url": "https://www.google.com/search?q=cryptocurrency+intraday+momentum+transaction+costs+2024+2025+research",
+    "bytes": 92500,
+    "sha256": "512fd764622827b5e5d6ae603368c09e50ef84c853d068146b0e9bc2d63b16ba"
+  },
+  {
+    "id": "backtesting-traps",
+    "url": "https://brookmiles.github.io/freqtrade-stuff/2021/04/12/backtesting-traps/",
+    "retrieved_at": "2026-10-31T21:33:21.064466+00:00",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "final_url": "https://brookmiles.github.io/freqtrade-stuff/2021/04/12/backtesting-traps/",
+    "bytes": 36206,
+    "sha256": "96bac4ac990d2eba3b813f066d1a6cab305890f7798aa3b9b11323dbcabf9e54"
+  },
+  {
+    "id": "reddit-algotrading-rss",
+    "url": "https://www.reddit.com/r/algotrading/search.rss?q=crypto%20freqtrade%20strategy&restrict_sr=on&sort=new",
+    "retrieved_at": "2026-10-31T21:33:20.743431+00:00",
+    "status": 200,
+    "content_type": "application/atom+xml; charset=UTF-8",
+    "final_url": "https://www.reddit.com/r/algotrading/search.rss?q=crypto%20freqtrade%20strategy&restrict_sr=on&sort=new",
+    "bytes": 98900,
+    "sha256": "fc4cfaf643c135b537ca7dbef3e84c68d189a7058a767086ccd49a614fe39180"
+  },
+  {
+    "id": "nfi-code",
+    "url": "https://raw.githubusercontent.com/iterativv/NostalgiaForInfinity/main/NostalgiaForInfinityX7.py",
+    "retrieved_at": "2026-10-31T21:33:20.654260+00:00",
+    "status": 200,
+    "content_type": "text/plain; charset=utf-8",
+    "final_url": "https://raw.githubusercontent.com/iterativv/NostalgiaForInfinity/main/NostalgiaForInfinityX7.py",
+    "error": "AssertionError"
+  },
+  {
+    "id": "search-bing",
+    "url": "https://www.bing.com/search?format=rss&q=cryptocurrency+intraday+momentum+transaction+costs+research",
+    "retrieved_at": "2026-10-31T21:35:08.351875+00:00",
+    "status": 200,
+    "final_url": "https://www.bing.com/search?format=rss&q=cryptocurrency+intraday+momentum+transaction+costs+research",
+    "content_type": "text/xml; charset=utf-8",
+    "bytes": 5156,
+    "sha256": "5855e718be71559fbf17a928ad8bd44696c64e45539f3820754c8f9f66b4e30e"
+  },
+  {
+    "id": "crypto-validation-readme",
+    "url": "https://raw.githubusercontent.com/CacheCarti/Crypto-Strategies/main/README.md",
+    "retrieved_at": "2026-10-31T21:35:08.354016+00:00",
+    "status": 200,
+    "final_url": "https://raw.githubusercontent.com/CacheCarti/Crypto-Strategies/main/README.md",
+    "content_type": "text/plain; charset=utf-8",
+    "bytes": 4178,
+    "sha256": "2e35fe467d40fc5ea74c657334afcb46b83c241e0a2125c96bc2d86f58f3ace0"
+  },
+  {
+    "id": "nfi-documentation",
+    "url": "https://iterativv.github.io/NostalgiaForInfinity/",
+    "retrieved_at": "2026-10-31T21:35:08.353087+00:00",
+    "status": 200,
+    "final_url": "https://iterativv.github.io/NostalgiaForInfinity/",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 63956,
+    "sha256": "376c99b3bd465577458feae48b2962c865f2ea34ed0a3d409e7bbdb1d6efe2c8"
+  },
+  {
+    "id": "reddit-overfitting-comments",
+    "url": "https://www.reddit.com/r/algotrading/comments/1witlif/.rss",
+    "retrieved_at": "2026-10-31T21:35:08.633659+00:00",
+    "status": 429,
+    "error": "HTTPError"
+  },
+  {
+    "id": "nber-momentum",
+    "url": "https://www.nber.org/papers/w24877",
+    "retrieved_at": "2026-10-31T21:35:08.347082+00:00",
+    "status": 200,
+    "final_url": "https://www.nber.org/papers/w24877",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 89571,
+    "sha256": "17541bb5898fc03b3c5478049899e5f2e366993479a8a7eefa111b1a721cbe21"
+  },
+  {
+    "id": "crypto-validation-metadata",
+    "url": "https://api.github.com/repos/CacheCarti/Crypto-Strategies",
+    "retrieved_at": "2026-10-31T21:35:08.501853+00:00",
+    "status": 200,
+    "final_url": "https://api.github.com/repos/CacheCarti/Crypto-Strategies",
+    "content_type": "application/json; charset=utf-8",
+    "bytes": 5682,
+    "sha256": "e31756db6cda4b4175421b3a296ff7ad9a0510c5a0a067b0e083290e65e9ed06"
+  },
+  {
+    "id": "reddit-freqtrade-search",
+    "url": "https://www.reddit.com/r/algotrading/search.rss?q=freqtrade&restrict_sr=on&sort=relevance",
+    "retrieved_at": "2026-10-31T21:35:08.732341+00:00",
+    "status": 429,
+    "error": "HTTPError"
+  },
+  {
+    "id": "reddit-validation-comments",
+    "url": "https://www.reddit.com/r/algotrading/comments/1wvj596/.rss",
+    "retrieved_at": "2026-10-31T21:35:08.523764+00:00",
+    "status": 200,
+    "final_url": "https://www.reddit.com/r/algotrading/comments/1wvj596/.rss",
+    "content_type": "application/atom+xml; charset=UTF-8",
+    "bytes": 51596,
+    "sha256": "90a73f06d356b9799e3609356fbd547949ea92c135bc7559e99bdf13f39d7caf"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "remote_work": "/home/agent/ccpocket-maint/2026-10-31/quant-terminal-correction-20261031T233238Z",
+  "files": 22,
+  "original_production_containers": 7,
+  "manifest": {
+    "run_boundary.py": "eb02fd73a8d17ff062c0461e6115299a5c27cbb34e223c22c60b32e378262e44",
+    "source/PROTOCOL.md": "d21c1f044691fedbff7b96015a0e15d9463d870cef021c41a4cf815e12c63767",
+    "source/strategies/StudyStrategies.py": "cc1b1e57b98dbe535f5026849495757ee3c4202b8d4f10fa77c3b492658da395",
+    "source/run_matrix.py": "77a09ea93f101ed4ac45881a9616e764c53055f2ae6df74a98e171ed938d4685",
+    "source/offline_freqtrade.py": "eee0c3dae0306b0d470f53f1eaf03767ddf2a1763136c9089667bd752caf35ee",
+    "source/prepare_data.py": "9d939fb65d9decd8ae5fd48f34c5139e70c34336ce72aa076f20ffa5bdb5f32d",
+    "work/frozen.json": "b6596623dbbb9c14d520439bee8486b4bb6d3b0a754354bc0591678930c31b4c",
+    "work/terminal-freeze.json": "c993c89d3e1db7c00f763abb281f4cad5426b0306c37592f1507b3322b27f402",
+    "work/terminal-download.json": "9269cb092bf80fcd9ce47fd631504c73ec6e973dd7267adffabad03b90c25e3f",
+    "work/config-s100.json": "38e0235f40374edbd926e6a72b7310c30c19ae97a0a8f69957833f2ebae636cb",
+    "work/config-s250.json": "bf579f0ee282385ca3f65c340f76b163e1008206c93968a669b92683b307a553",
+    "work/config-s450.json": "ef280449c3765cf065441a954760451639ac685b367f4f9dfd41cfe8967ebb76",
+    "work/markets.json": "dd2640f3ba2af620ee9400b746728c6fd23bc8e9d020f084e1c48fd451b2bfbc",
+    "work/data/audit.json": "666dbf1e539df417b039849a181f7e35df6138db38e524ffe6c47ae3bd616e5b",
+    "work/data/ETH_USDT-4h.feather": "c48b378d041245416113dd971436fec99de5fa8a8c3ab2edc29eb42e34848b79",
+    "work/data/ETH_USDT-1h.feather": "255cb6e9a3c960f03e10ada6f60115fbdfd737b5034fa0c5fa4e8e03cd7a322d",
+    "work/data/BTC_USDT-4h.feather": "2fbc4feef9bedcb6088651ffe7deda77930f082dc079d84e82c421bca9eb17f7",
+    "work/data/BTC_USDT-15m.feather": "c549cec0e2a74ab8e064444939b77a4b3c5a3e8e61a96668e9135b083e595a4a",
+    "work/data/BTC_USDT-1h.feather": "3641a1308fba0b80975f8359959468eb9ae5f90251b6a496d9d80372e1f77eb0",
+    "work/data/BTC_USDT-5m.feather": "a509036d07b2d0c4feabc9354e730e9218484b8dc7fb4f15a2d972c5c83dd2df",
+    "work/data/ETH_USDT-15m.feather": "344b03adf68e664a87ea7ef88b05aaf4c329deac1606aa28e8054a7c9c0c308f",
+    "work/data/ETH_USDT-5m.feather": "bf13687c7bd88fc03829afc93be743960865c3749aab31e5479fdef2bb254f92"
+  }
+}
