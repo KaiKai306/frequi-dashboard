@@ -4,9 +4,11 @@ These files accompany the existing read-only Chinese preview. They contain no
 dashboard password, exchange credentials, SSH key or private authentication data.
 The selected design-v2 desktop layout is maintained separately from upstream `main`
 on `happykai/preview`, with the design also available on `ui/design-v2`.
-The original selected preview remains at `/preview/design-v2-20261031/index.html`;
-the previous cockpit remains at `/preview/legacy-fixed-cockpit/index.html`. Both use the same
-read-only gateway; build the default entry with the checked-in `/preview/` base.
+The original selected preview directory has been archived outside the public root.
+The existing SPA fallback serves the default panel at its old URL. Historical
+backups and proxy configuration remain untouched. The previous cockpit remains
+at `/preview/legacy-fixed-cockpit/index.html`. Build the default entry with the
+checked-in `/preview/` base and keep the existing read-only gateway.
 
 ## Files
 
