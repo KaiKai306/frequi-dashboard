@@ -2,7 +2,8 @@ import { useMemo, useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useBot } from '../context/BotContext';
 import { useOpenChart } from '../context/DashboardNavigation';
-import { CheckCircle2, XCircle, CandlestickChart, RefreshCw, History, ArrowUpRight, ArrowDownRight, ChevronLeft, ChevronRight, FileSpreadsheet, FileText, ChevronDown, Share2 } from 'lucide-react';
+import { RefreshCw, History, ArrowUpRight, ChevronLeft, ChevronRight, FileSpreadsheet, FileText, ChevronDown, Share2 } from 'lucide-react';
+import { Coin } from '../components/StudioPrimitives';
 import { SignalBadge } from '../components/SignalBadge';
 import { formatUtc8 } from '../utils/dateUtils';
 import { useLocale } from '../i18n/LocaleContext';
@@ -241,7 +242,7 @@ export function ClosedTradesView() {
     >
       {/* Header Summary Bar */}
       <div
-        className={`px-3 sm:px-4 py-2 sm:py-2.5 border-b flex flex-wrap items-center justify-between gap-2 shrink-0 ${
+        className={`studio-history-toolbar px-3 sm:px-4 py-2 sm:py-2.5 border-b flex flex-wrap items-center justify-between gap-2 shrink-0 ${
           isDark ? 'border-slate-800 bg-[#0f1626]' : 'border-slate-200 bg-slate-50'
         }`}
       >
@@ -376,140 +377,24 @@ export function ClosedTradesView() {
         </div>
       </div>
 
-      {/* Trades Table */}
-      <div ref={tableContainerRef} className="w-full md:flex-1 md:overflow-y-auto p-3">
-        <div className="overflow-x-auto w-full">
-          <table className="w-full text-left text-xs border-collapse font-mono min-w-[700px]">
-            <thead>
-              <tr
-                className={`border-b text-[11px] font-medium ${
-                  isDark
-                    ? 'border-slate-800 text-slate-400 bg-[#0f1626]/50'
-                    : 'border-slate-200 text-slate-500 bg-slate-50'
-                }`}
-              >
-                <th className="py-2.5 px-3 whitespace-nowrap">{translate('closed.pair_close_time')}</th>
-                <th className="py-2.5 px-3 whitespace-nowrap">{translate('closed.realized_pnl')}</th>
-                <th className="py-2.5 px-3 whitespace-nowrap">{translate('dashboard.stake_amount')}</th>
-                <th className="py-2.5 px-3 text-center whitespace-nowrap">{translate('closed.open_close_price')}</th>
-                <th className="py-2.5 px-3 whitespace-nowrap">{translate('closed.exit_reason')}</th>
-                <th className="py-2.5 px-3 whitespace-nowrap">{translate('dashboard.entry_signal')}</th>
-                <th className="py-2.5 px-3 text-right whitespace-nowrap">{translate('dashboard.actions')}</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200 dark:divide-slate-800/60">
-              {pagedTrades.map((t) => {
-                const isProfit = t.profit_pct >= 0;
-                const profitAbs =
-                  t.profit_abs !== undefined
-                    ? t.profit_abs
-                    : (t.stake_amount || 0) * (t.profit_ratio || 0);
-
-                return (
-                  <tr
-                    key={t.trade_id}
-                    className={
-                      isDark ? 'hover:bg-[#1a233a]/50 transition-colors' : 'hover:bg-slate-50 transition-colors'
-                    }
-                  >
-                    <td
-                      onClick={() => handleViewChart(t.pair)}
-                      className="py-2.5 px-3 whitespace-nowrap cursor-pointer group"
-                      title={translate('ui.open_candle_chart')}
-                    >
-                      <div className="flex items-center gap-1.5 font-bold group-hover:text-cyan-500 transition-colors">
-                        {t.is_short ? (
-                          <ArrowDownRight className="w-3.5 h-3.5 text-rose-500 shrink-0" />
-                        ) : (
-                          <ArrowUpRight className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-                        )}
-                        <span className="hover:underline">{t.pair || '-'}</span>
-                        <CandlestickChart className="w-3 h-3 text-cyan-500 opacity-70 group-hover:opacity-100 transition-opacity shrink-0" />
-                      </div>
-                      <div className="text-[10px] text-slate-500 font-normal">
-                        #{t.trade_id} · {formatUtc8(t.close_timestamp || t.close_date, 'YYYY-MM-DD HH:mm:ss')}
-                      </div>
-                    </td>
-
-                    <td className="py-2.5 px-3 whitespace-nowrap">
-                      <div
-                        className={`font-bold text-sm flex items-center gap-1 ${
-                          isProfit ? 'text-emerald-600 dark:text-emerald-400' : 'text-rose-600 dark:text-rose-400'
-                        }`}
-                      >
-                        {isProfit ? (
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
-                        ) : (
-                          <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0" />
-                        )}
-                        <span>{hideBalances ? translate('ui.hidden') : formatCurrency(profitAbs, { showSign: true })}</span>
-                      </div>
-                      <div className="text-[10px] text-slate-500 font-mono">
-                        {translate('trade.return')}: {isProfit ? '+' : ''}{t.profit_pct}%
-                      </div>
-                    </td>
-
-                    <td className="py-2.5 px-3 whitespace-nowrap">
-                      <div className="font-medium text-slate-700 dark:text-slate-300">
-                        {hideBalances ? translate('ui.hidden') : formatCurrency(t.stake_amount || 0)}
-                      </div>
-                      <div className="text-[10px] text-slate-500">{translate('dashboard.amount')}: {t.amount || '-'}</div>
-                    </td>
-
-                    <td className="py-2.5 px-3 text-center whitespace-nowrap">
-                      <div className="inline-grid grid-cols-2 gap-x-3 text-center min-w-[112px]">
-                        <span className="text-[9px] uppercase tracking-wide text-slate-400">Open</span>
-                        <span className="text-[9px] uppercase tracking-wide text-slate-400">Close</span>
-                        <span className="font-medium text-slate-700 dark:text-slate-300">{t.open_rate || '-'}</span>
-                        <span className="font-semibold text-cyan-600 dark:text-cyan-400">{t.close_rate || '-'}</span>
-                      </div>
-                    </td>
-
-                    <td className="py-2.5 px-3 whitespace-nowrap">
-                      <span
-                        className={`px-1.5 py-0.5 rounded text-[10px] border ${
-                          isDark
-                            ? 'bg-slate-800/90 text-slate-300 border-slate-700'
-                            : 'bg-slate-100 text-slate-700 border-slate-200'
-                        }`}
-                        title={t.exit_reason || t.exit_tag}
-                      >
-                        {hideBalances ? translate('ui.hidden') : formatExitReason(t.exit_reason, t.exit_tag, locale === 'zh')}
-                      </span>
-                    </td>
-
-                    <td className="py-2.5 px-3 whitespace-nowrap">
-                      <SignalBadge tag={t.enter_tag} />
-                    </td>
-
-                    <td className="py-2.5 px-3 text-right whitespace-nowrap">
-                      <div className="flex items-center justify-end gap-1.5">
-                        {SHOW_SHARE_BUTTON && (
-                          <button
-                            onClick={() => setShareTrade(t)}
-                            className="px-2 py-1 rounded bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-500 text-[11px] font-medium inline-flex items-center gap-1 transition-colors cursor-pointer shrink-0"
-                            title={translate('trade.share')}
-                          >
-                            <Share2 className="w-3.5 h-3.5" />
-                            <span>{translate('trade.share')}</span>
-                          </button>
-                        )}
-                        <button
-                          onClick={() => handleViewChart(t.pair)}
-                          className="px-2 py-1 rounded bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-500 text-[11px] font-medium inline-flex items-center gap-1 transition-colors cursor-pointer shrink-0"
-                          title={translate('ui.open_candle_chart')}
-                        >
-                          <CandlestickChart className="w-3.5 h-3.5" />
-                          <span>{translate('trade.view_chart')}</span>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+      {/* Redesigned trade ledger; fetching, sorting, export and pagination stay intact. */}
+      <div ref={tableContainerRef} className="studio-ledger-scroll">
+        <table className="studio-ledger" aria-label="历史成交明细">
+          <thead><tr><th>交易对 / 平仓时间</th><th>已实现盈亏</th><th>投入 / 数量</th><th>开仓价 → 平仓价</th><th>退出原因</th><th>入场信号</th><th /></tr></thead>
+          <tbody>{pagedTrades.map(trade => {
+            const pnl = trade.profit_abs ?? trade.stake_amount * trade.profit_ratio;
+            const price = (v?: number) => v == null ? '—' : v.toLocaleString('en-US', { maximumFractionDigits: 8 });
+            return <tr key={trade.trade_id}>
+              <td><button className="studio-asset" onClick={() => handleViewChart(trade.pair)} title="查看图表"><Coin pair={trade.pair} /><span>{trade.pair}<small>#{trade.trade_id} · {formatUtc8(trade.close_timestamp || trade.close_date, 'YYYY-MM-DD HH:mm:ss')}</small></span></button></td>
+              <td><span className={pnl >= 0 ? 'studio-positive' : 'studio-negative'}>{formatCurrency(pnl, { showSign: true })}</span><small>{trade.profit_pct.toFixed(2)}% · {trade.is_short ? '做空' : '做多'}</small></td>
+              <td>{formatCurrency(trade.stake_amount)}<small>{hideBalances ? translate('ui.hidden') : price(trade.amount)} {trade.pair.split('/')[0]}</small></td>
+              <td><span className="studio-ledger-prices">{price(trade.open_rate)}<span>→</span>{price(trade.close_rate)}</span></td>
+              <td><span className="studio-exit-reason" title={trade.exit_reason || trade.exit_tag}>{formatExitReason(trade.exit_reason, trade.exit_tag, locale === 'zh')}</span></td>
+              <td><SignalBadge tag={trade.enter_tag} showIcon={false} className="studio-signal-badge" /></td>
+              <td><div className="studio-row-actions">{SHOW_SHARE_BUTTON && <button onClick={() => setShareTrade(trade)}><Share2 size={14} />{translate('trade.share')}</button>}<button onClick={() => handleViewChart(trade.pair)}>查看图表<ArrowUpRight size={14} /></button></div></td>
+            </tr>;
+          })}</tbody>
+        </table>
       </div>
 
       {/* Pagination Footer */}

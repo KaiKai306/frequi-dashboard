@@ -17,7 +17,7 @@ import {
   X,
 } from 'lucide-react';
 
-export function EquityCurveView() {
+export function EquityCurveView({compact=false}:{compact?:boolean}={}) {
   const {
     botState,
     profitSummary,
@@ -369,10 +369,11 @@ export function EquityCurveView() {
 
   return (
     <div
-      className={`w-full p-2.5 sm:p-4 pb-2.5 sm:pb-4 flex flex-col gap-3 sm:gap-4 font-sans select-none transition-colors md:h-full md:overflow-y-auto ${
+      className={`modern-equity ${compact ? 'modern-equity-compact' : ''} w-full p-2.5 sm:p-4 pb-2.5 sm:pb-4 flex flex-col gap-3 sm:gap-4 font-sans select-none transition-colors md:h-full md:overflow-y-auto ${
         isDark ? 'bg-[#0b0f19] text-slate-100' : 'bg-slate-50 text-slate-800'
       }`}
     >
+      {compact && <div className="modern-equity-baseline"><span>历史：初始资金 + 已实现盈亏；当前：钱包总值</span><button onClick={()=>{setTempCapital(String(initialCapital));setShowConfig(!showConfig)}}>调整初始资金</button></div>}
       {/* Mobile Compact Overview Card (< sm) */}
       <div
         className={`sm:hidden p-3 rounded-xl border transition-colors ${
@@ -472,7 +473,7 @@ export function EquityCurveView() {
       </div>
 
       {/* Desktop KPI Cards Grid (sm and up) */}
-      <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 shrink-0">
+      <div className="equity-kpis hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-3 shrink-0">
         {/* Initial Capital Card */}
         <div
           className={`p-3.5 rounded-xl border relative transition-colors ${
@@ -643,7 +644,7 @@ export function EquityCurveView() {
 
       {/* Main Dual Composite Chart Card */}
       <div
-        className={`flex-1 min-h-[340px] sm:min-h-[380px] rounded-xl border p-3 sm:p-4 flex flex-col justify-between transition-colors relative ${
+        className={`equity-chart-card flex-1 min-h-[340px] sm:min-h-[380px] rounded-xl border p-3 sm:p-4 flex flex-col justify-between transition-colors relative ${
           isDark ? 'bg-[#131b2e] border-slate-800' : 'bg-white border-slate-200'
         }`}
       >
@@ -751,7 +752,7 @@ export function EquityCurveView() {
         </div>
 
         {/* Desktop Header & Controls Bar (sm and up) */}
-        <div className="hidden sm:flex sm:items-center sm:justify-between gap-2 sm:gap-3 mb-2 shrink-0">
+        <div className="equity-chart-controls hidden sm:flex sm:items-center sm:justify-between gap-2 sm:gap-3 mb-2 shrink-0">
           <div className="flex items-center justify-between sm:justify-start gap-2 flex-wrap">
             <div className="flex items-center gap-1.5 sm:gap-2">
               <Activity className="w-4 h-4 text-emerald-500 shrink-0" />
@@ -1060,11 +1061,11 @@ export function EquityCurveView() {
                       strokeDasharray="3 3"
                     />
                     <text
-                      x={isMobile ? svgWidth - paddingRight : svgWidth - paddingRight + 4}
-                      y={isMobile ? baselineY - 4 : baselineY + 3}
+                      x={svgWidth - paddingRight}
+                      y={baselineY - 5}
                       fill="#94a3b8"
-                      fontSize={isMobile ? "9.5" : "10"}
-                      textAnchor={isMobile ? "end" : "start"}
+                      fontSize="12"
+                      textAnchor="end"
                       fontFamily="monospace"
                     >
                       {t('equity.baseline_label')}
@@ -1143,11 +1144,11 @@ export function EquityCurveView() {
                   strokeDasharray="3 3"
                 />
                 <text
-                  x={isMobile ? svgWidth - paddingRight : svgWidth - paddingRight + 4}
+                  x={svgWidth - paddingRight}
                   y={isMobile ? zeroLineY - 4 : zeroLineY + 3}
                   fill="#94a3b8"
-                  fontSize={isMobile ? "9.5" : "10"}
-                  textAnchor={isMobile ? "end" : "start"}
+                  fontSize="12"
+                  textAnchor="end"
                   fontFamily="monospace"
                 >
                   0.00

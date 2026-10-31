@@ -2,8 +2,11 @@
 
 These files accompany the existing read-only Chinese preview. They contain no
 dashboard password, exchange credentials, SSH key or private authentication data.
-The desktop terminal layout is maintained separately from upstream `main` on
-`happykai/preview`, with the redesign also available on `ui/desktop-terminal`.
+The selected design-v2 desktop layout is maintained separately from upstream `main`
+on `happykai/preview`, with the design also available on `ui/design-v2`.
+The original selected preview remains at `/preview/design-v2-20261031/index.html`;
+the previous cockpit remains at `/preview/legacy-fixed-cockpit/`. Both use the same
+read-only gateway; build the default entry with the checked-in `/preview/` base.
 
 ## Files
 

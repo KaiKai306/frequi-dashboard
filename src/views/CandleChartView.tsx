@@ -881,10 +881,10 @@ export function CandleChartView({ onQuote }: { onQuote?: (quote: ChartQuote) => 
 
     const chart = createChart(chartContainerRef.current, {
       layout: {
-        background: { type: ColorType.Solid, color: isDark ? '#151d2a' : '#ffffff' },
+        background: { type: ColorType.Solid, color: isDark ? '#151515' : '#ffffff' },
         textColor: isDark ? '#8e949e' : '#6f7680',
         fontFamily: getComputedStyle(document.body).fontFamily,
-        fontSize: 12,
+        fontSize: 13,
       },
       grid: {
         vertLines: { color: isDark ? 'rgba(255, 255, 255, 0.035)' : 'rgba(0, 0, 0, 0.06)' },
@@ -1084,7 +1084,7 @@ export function CandleChartView({ onQuote }: { onQuote?: (quote: ChartQuote) => 
     if (!chartRef.current) return;
     chartRef.current.applyOptions({
       layout: {
-        background: { type: ColorType.Solid, color: isDark ? '#151d2a' : '#ffffff' },
+        background: { type: ColorType.Solid, color: isDark ? '#151515' : '#ffffff' },
         textColor: isDark ? '#8e949e' : '#6f7680',
       },
       grid: {
@@ -1777,7 +1777,7 @@ export function CandleChartView({ onQuote }: { onQuote?: (quote: ChartQuote) => 
                 aria-pressed={showMarkers}
               >
                 <Bookmark className="w-3.5 h-3.5" />
-                <span>{t('candle.markers_label')}: {t('candle.show')}</span>
+                <span>{t('candle.markers_label')}: {showMarkers ? t('candle.show') : t('candle.hide')}</span>
                 <span className="font-mono text-[10px]">({tradeMarkers.length})</span>
               </button>
               {renderGuideButton(false)}

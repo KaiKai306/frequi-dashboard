@@ -25,7 +25,8 @@ export const EMPTY_BOT_STATE: BotState = {
   blacklist_expanded: [],
 };
 
-const PREVIEW_ROOT = import.meta.env.BASE_URL;
+// Static design previews share the existing read-only gateway.
+const PREVIEW_ROOT = '/preview/';
 const PREVIEW_API = `${PREVIEW_ROOT}bot`;
 
 export function normalizeApiUrl(_url: string): string { return PREVIEW_API; }
