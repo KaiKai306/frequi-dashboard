@@ -1,0 +1,67 @@
+{
+	admin off
+	auto_https off
+	persist_config off
+	log {
+		exclude http.log.access http.log.error
+	}
+}
+
+:8080 {
+	root * /srv/trellis
+	header X-Content-Type-Options nosniff
+	header Referrer-Policy same-origin
+	header Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self' data:; object-src 'none'; frame-ancestors 'self'; base-uri 'self'"
+	request_body {
+		max_size 16KB
+	}
+	route {
+		respond /health "ok" 200
+		handle /market/klines {
+			@valid {
+				method GET
+				expression `{http.request.uri.query}.matches('^symbol=(BTCUSDT|ETHUSDT)&interval=(1m|3m|5m|15m|30m|1h|2h|4h|6h|8h|12h|1d|3d|1w)&limit=([1-9][0-9]{0,2}|1000)(&endTime=[0-9]{10,16})?$')`
+			}
+			handle @valid {
+				forward_auth freqtrade:8080 {
+					uri /api/v1/show_config
+				}
+				rewrite * /api/v3/klines?{http.request.uri.query}
+				reverse_proxy https://api.binance.com {
+					header_up Host {upstream_hostport}
+					header_up -Authorization
+					header_up -Cookie
+					header_up -X-Target-URL
+					transport http {
+						dial_timeout 5s
+						response_header_timeout 12s
+					}
+				}
+			}
+			respond "Invalid spot market request" 400
+		}
+		@readonly {
+			method GET
+			path /bot/api/v1/ping /bot/api/v1/version /bot/api/v1/show_config /bot/api/v1/status /bot/api/v1/balance /bot/api/v1/whitelist /bot/api/v1/blacklist /bot/api/v1/profit /bot/api/v1/trades /bot/api/v1/daily /bot/api/v1/logs /bot/api/v1/pair_candles /bot/api/v1/count /bot/api/v1/strategy/*
+		}
+		handle @readonly {
+			uri strip_prefix /bot
+			reverse_proxy freqtrade:8080
+		}
+		handle /bot/* {
+			respond "Read-only preview" 405
+		}
+		@unsupported path /api-proxy* /owner-api* /share-api* /api/*
+		respond @unsupported "Not found" 404
+		@assets path /assets/* /favicon.svg /freqtrade.png /icons.svg
+		handle @assets {
+			header Cache-Control "public, max-age=31536000, immutable"
+			file_server
+		}
+		handle {
+			header Cache-Control no-store
+			try_files {path} /index.html
+			file_server
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+	# FreqUI uses a query token for its websocket. Do not log HTTP requests.
+	log {
+		exclude http.log.access http.log.error
+	}
+}
+
+quant.happykai.cn {
+	header X-Robots-Tag "noindex, nofollow, noarchive"
+	header X-Content-Type-Options "nosniff"
+	header Strict-Transport-Security "max-age=86400"
+	request_body {
+		max_size 1MB
+	}
+	redir /preview /preview/ 308
+	handle_path /preview/* {
+		reverse_proxy trellis-preview:8080
+	}
+	handle {
+		reverse_proxy freqtrade:8080 {
+			transport http {
+				dial_timeout 5s
+				response_header_timeout 60s
+			}
+		}
+	}
+	encode zstd gzip
+}

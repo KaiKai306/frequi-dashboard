@@ -25,20 +25,10 @@ export const EMPTY_BOT_STATE: BotState = {
   blacklist_expanded: [],
 };
 
-export function normalizeApiUrl(url: string): string {
-  const trimmed = (url || '').trim().replace(/\/dashboard\/?$/, '');
-  if (!trimmed || trimmed === '/') return '/';
-  const cleaned = trimmed.replace(/\/+$/, '');
-  if (!cleaned) return '/';
-  if (cleaned.startsWith('/') && !cleaned.startsWith('//')) return cleaned;
+const PREVIEW_ROOT = import.meta.env.BASE_URL;
+const PREVIEW_API = `${PREVIEW_ROOT}bot`;
 
-  // 智能清洗协议头：支持修复诸如 http://http://、http:/// 等畸形前缀，并保留原有的协议类型
-  const prefixMatch = cleaned.match(/^(?:https?:[\/\\]*)+/i);
-  const isHttps = prefixMatch ? /https:/i.test(prefixMatch[0]) : false;
-  const stripped = cleaned.replace(/^(?:https?:[\/\\]*)+/i, '').replace(/^[\/\\]+/, '');
-
-  return `${isHttps ? 'https' : 'http'}://${stripped}`;
-}
+export function normalizeApiUrl(_url: string): string { return PREVIEW_API; }
 
 export function buildApiUrl(baseUrl: string, endpoint: string): string {
   const trimmedBase = (baseUrl || '').trim();
@@ -117,22 +107,7 @@ export class FreqtradeClient {
     return this.config;
   }
 
-  getBaseUrl(): string {
-    const raw = normalizeApiUrl(this.config.apiUrl || '');
-    if (!raw || raw === '/') return '/';
-    // Dynamic CORS reverse proxy: remote HTTP/HTTPS targets go through /api-proxy
-    if (/^https?:\/\//i.test(raw)) {
-      if (typeof window !== 'undefined') {
-        const isSameOrigin = raw.startsWith(window.location.origin);
-        if (!isSameOrigin) {
-          return '/api-proxy';
-        }
-      } else {
-        return '/api-proxy';
-      }
-    }
-    return raw;
-  }
+  getBaseUrl(): string { return PREVIEW_API; }
 
   private getAuthHeader(): Record<string, string> {
     if (this.config.username || this.config.password) {
@@ -258,69 +233,8 @@ export class FreqtradeClient {
     return fetchPromise;
   }
 
-  private async postRequest<T>(endpoint: string, body?: any): Promise<T> {
-    const baseUrl = this.getBaseUrl();
-    const url = buildApiUrl(baseUrl, endpoint);
-    const rawApiUrl = normalizeApiUrl(this.config.apiUrl || '');
-    const headers: Record<string, string> = {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-      ...this.getAuthHeader(),
-    };
-    if (baseUrl === '/api-proxy' && rawApiUrl) {
-      headers['x-target-url'] = rawApiUrl;
-    }
-
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 15000);
-
-    try {
-      const res = await fetch(url, {
-        method: 'POST',
-        headers,
-        body: body ? JSON.stringify(body) : undefined,
-        signal: controller.signal,
-      });
-
-      if (!res.ok) {
-        const text = await res.text().catch(() => '');
-        let msg = `POST [${endpoint}] failed (${res.status}): ${text || res.statusText}`;
-        if (res.status === 401) {
-          msg = 'Operation failed: 401 Unauthorized';
-        }
-        this.lastError = msg;
-        throw new Error(msg);
-      }
-
-      const contentType = res.headers.get('content-type') || '';
-      if (contentType.includes('text/html')) {
-        const errMsg = `Target returned HTML page instead of JSON API (HTTP ${res.status}). Verify API port.`;
-        this.lastError = errMsg;
-        throw new Error(errMsg);
-      }
-
-      this.lastError = null;
-      try {
-        return (await res.json().catch(() => ({} as T))) as T;
-      } catch {
-        return {} as T;
-      }
-    } catch (err: any) {
-      if (err.name === 'AbortError') {
-        const timeoutMsg = `POST [${endpoint}] timeout (15s)`;
-        this.lastError = timeoutMsg;
-        throw new Error(timeoutMsg);
-      }
-      if (err.message === 'Failed to fetch' || err.name === 'TypeError') {
-        const targetUrl = this.getBaseUrl();
-        const fetchMsg = `Failed to fetch: Unable to reach target [${targetUrl}]. Check network or CORS.`;
-        this.lastError = fetchMsg;
-        throw new Error(fetchMsg);
-      }
-      throw err;
-    } finally {
-      clearTimeout(timeoutId);
-    }
+  private async postRequest<T>(_endpoint: string, _body?: any): Promise<T> {
+    throw new Error('此预览只读，请在原版面板执行控制操作。');
   }
 
   async ping(): Promise<boolean> {
@@ -753,193 +667,42 @@ export class FreqtradeClient {
    * Handles Freqtrade's PairHistory schema: { columns: string[], data: any[][] }
    * Formats timestamps to Unix seconds and sorts strictly ascending for lightweight-charts
    */
-  async getCandles(
-    pair: string,
-    timeframe?: string,
-    limit: number = 1000,
-    beforeTimestamp?: number
-  ): Promise<CandleData[]> {
-    if (!pair) return [];
-
+  async getCandles(pair: string, timeframe?: string, limit = 1000, beforeTimestamp?: number): Promise<CandleData[]> {
+    if (!['BTC/USDT', 'ETH/USDT'].includes(pair)) return [];
+    const tf = timeframe && timeframe !== '-' ? timeframe : this.config.timeframe || '4h';
+    if (beforeTimestamp) return this.fetchBinanceCandles(pair, tf, limit, beforeTimestamp);
     try {
-      const tf =
-        timeframe && timeframe !== '-'
-          ? timeframe
-          : this.config.timeframe && this.config.timeframe !== '-'
-          ? this.config.timeframe
-          : '5m';
-
-      // If user is panning/scrolling backwards into the past before a specific timestamp
-      if (beforeTimestamp) {
-        return await this.fetchBinanceCandles(pair, tf, limit, beforeTimestamp);
-      }
-
-      let res: any;
-
-      try {
-        // POST with filtered columns avoids 500 Internal Server Error caused by NFI's 200+ indicator columns
-        res = await this.postRequest<any>('pair_candles', {
-          pair,
-          timeframe: tf,
-          limit,
-          columns: ['date', 'open', 'high', 'low', 'close', 'volume'],
-        });
-      } catch {
-        // Fallback to GET
-        res = await this.request<any>('pair_candles', { pair, timeframe: tf, limit });
-      }
-
-      let rows: any[][] = [];
-      let columns: string[] = [];
-
-      if (Array.isArray(res)) {
-        rows = res;
-      } else if (res && Array.isArray(res.data)) {
-        rows = res.data;
-        columns = Array.isArray(res.columns) ? res.columns : [];
-      } else {
-        return await this.fetchBinanceCandles(pair, tf, limit, beforeTimestamp);
-      }
-
-      const dateIdx = columns.findIndex((c) => c.toLowerCase() === 'date');
-      const openIdx = columns.findIndex((c) => c.toLowerCase() === 'open');
-      const highIdx = columns.findIndex((c) => c.toLowerCase() === 'high');
-      const lowIdx = columns.findIndex((c) => c.toLowerCase() === 'low');
-      const closeIdx = columns.findIndex((c) => c.toLowerCase() === 'close');
-      const volIdx = columns.findIndex((c) => c.toLowerCase() === 'volume');
-
-      const parsed: CandleData[] = [];
-
+      const response = await this.request<any>('pair_candles', { pair, timeframe: tf, limit });
+      const columns: string[] = response.columns || [];
+      const rows: any[][] = response.data || [];
+      const index = (name: string) => columns.indexOf(name);
+      if (!rows.length || index('close') < 0) return this.fetchBinanceCandles(pair, tf, limit);
+      const result: CandleData[] = [];
       for (const row of rows) {
-        if (!Array.isArray(row)) continue;
-
-        const rawDate = dateIdx >= 0 ? row[dateIdx] : row[0];
-        let time: number;
-        if (typeof rawDate === 'number') {
-          // If millisecond timestamp (> 1e11), convert to seconds
-          time = rawDate > 1e11 ? Math.floor(rawDate / 1000) : Math.floor(rawDate);
-        } else if (typeof rawDate === 'string') {
-          time = Math.floor(new Date(rawDate).getTime() / 1000);
-        } else {
-          continue;
+        const raw = row[index('date')];
+        const time = typeof raw === 'number' ? Math.floor(raw > 1e11 ? raw / 1000 : raw) : Math.floor(Date.parse(raw) / 1000);
+        const candle: CandleData = { time, open: Number(row[index('open')]), high: Number(row[index('high')]), low: Number(row[index('low')]), close: Number(row[index('close')]), volume: Number(row[index('volume')]) };
+        for (const name of ['sma50', 'sma200'] as const) {
+          const value = index(name) >= 0 ? row[index(name)] : null;
+          if (value != null && Number.isFinite(Number(value))) candle[name] = Number(value);
         }
-
-        const open = Number(openIdx >= 0 ? row[openIdx] : row[1]);
-        const high = Number(highIdx >= 0 ? row[highIdx] : row[2]);
-        const low = Number(lowIdx >= 0 ? row[lowIdx] : row[3]);
-        const close = Number(closeIdx >= 0 ? row[closeIdx] : row[4]);
-        const volume = Number(volIdx >= 0 ? row[volIdx] : row[5] || 0);
-
-        if (!isNaN(time) && !isNaN(open) && !isNaN(high) && !isNaN(low) && !isNaN(close)) {
-          parsed.push({
-            time,
-            open,
-            high,
-            low,
-            close,
-            volume: isNaN(volume) ? 0 : volume,
-          });
-        }
+        if ([candle.time,candle.open,candle.high,candle.low,candle.close,candle.volume].every(Number.isFinite)) result.push(candle);
       }
-
-      // Sort ascending by time
-      parsed.sort((a, b) => a.time - b.time);
-
-      // Lightweight-charts strictly prohibits duplicate timestamps
-      const uniqueCandles: CandleData[] = [];
-      let lastTime = -1;
-      for (const candle of parsed) {
-        if (candle.time > lastTime) {
-          uniqueCandles.push(candle);
-          lastTime = candle.time;
-        }
-      }
-
-      // If Freqtrade has no candles cached for this timeframe, fallback to public market data
-      if (uniqueCandles.length === 0) {
-        const fallback = await this.fetchBinanceCandles(pair, tf, limit, beforeTimestamp);
-        if (fallback.length > 0) return fallback;
-      }
-
-      return uniqueCandles;
-    } catch (err) {
-      console.warn('Real API getCandles failed for pair:', pair, err);
-      // Fallback attempt on error
-      const tf = timeframe && timeframe !== '-' ? timeframe : '5m';
-      return await this.fetchBinanceCandles(pair, tf, limit, beforeTimestamp);
-    }
+      return [...new Map(result.sort((a,b) => a.time-b.time).map(c => [c.time,c])).values()];
+    } catch { return this.fetchBinanceCandles(pair, tf, limit); }
   }
 
-  /**
-   * Fallback & Pagination: fetches public Kline data from Binance when Freqtrade bot only caches the active strategy timeframe
-   * Supports endTime (beforeTimestamp) for infinite backward panning
-   */
-  private async fetchBinanceCandles(
-    pair: string,
-    timeframe: string,
-    limit: number = 500,
-    beforeTimestamp?: number
-  ): Promise<CandleData[]> {
-    try {
-      const cleanPair = pair.split(':')[0].replace('/', '').toUpperCase();
-      // Binance interval mapping
-      const validIntervals = ['1m', '3m', '5m', '15m', '30m', '1h', '2h', '4h', '6h', '8h', '12h', '1d', '3d', '1w'];
-      const tf = validIntervals.includes(timeframe) ? timeframe : '5m';
-      const isFutures = pair.includes(':');
-
-      const endParam = beforeTimestamp ? `&endTime=${beforeTimestamp * 1000 - 1}` : '';
-
-      const targets = isFutures
-        ? [
-            { host: 'https://fapi.binance.com', path: `/fapi/v1/klines?symbol=${cleanPair}&interval=${tf}&limit=${limit}${endParam}` },
-            { host: 'https://api.binance.com', path: `/api/v3/klines?symbol=${cleanPair}&interval=${tf}&limit=${limit}${endParam}` },
-          ]
-        : [
-            { host: 'https://api.binance.com', path: `/api/v3/klines?symbol=${cleanPair}&interval=${tf}&limit=${limit}${endParam}` },
-            { host: 'https://fapi.binance.com', path: `/fapi/v1/klines?symbol=${cleanPair}&interval=${tf}&limit=${limit}${endParam}` },
-          ];
-
-      for (const t of targets) {
-        try {
-          let resp: Response | null = null;
-          try {
-            resp = await fetch(`${t.host}${t.path}`);
-          } catch {
-            // Direct connection failed (e.g. local network block), fallback to proxy
-            try {
-              resp = await fetch(`/api-proxy${t.path}`, {
-                headers: { 'x-target-url': t.host },
-              });
-            } catch {
-              resp = null;
-            }
-          }
-
-          if (!resp || !resp.ok) continue;
-          const klines = await resp.json();
-          if (Array.isArray(klines) && klines.length > 0) {
-            const data: CandleData[] = [];
-            for (const k of klines) {
-              const time = Math.floor(Number(k[0]) / 1000);
-              const open = Number(k[1]);
-              const high = Number(k[2]);
-              const low = Number(k[3]);
-              const close = Number(k[4]);
-              const volume = Number(k[5] || 0);
-              if (!isNaN(time) && !isNaN(open) && !isNaN(high) && !isNaN(low) && !isNaN(close)) {
-                data.push({ time, open, high, low, close, volume });
-              }
-            }
-            return data.sort((a, b) => a.time - b.time);
-          }
-        } catch {
-          // ignore and try next endpoint
-        }
-      }
-    } catch {
-      // ignore
-    }
-    return [];
+  private async fetchBinanceCandles(pair: string, timeframe: string, limit = 500, beforeTimestamp?: number): Promise<CandleData[]> {
+    if (!['BTC/USDT', 'ETH/USDT'].includes(pair)) return [];
+    const intervals = ['1m','3m','5m','15m','30m','1h','2h','4h','6h','8h','12h','1d','3d','1w'];
+    if (!intervals.includes(timeframe)) return [];
+    const query = new URLSearchParams({symbol:pair.replace('/',''),interval:timeframe,limit:String(Math.max(1, Math.min(1000, Math.floor(limit))))});
+    if (beforeTimestamp) query.set('endTime', String(Math.floor(beforeTimestamp*1000)-1));
+    const response = await fetch(`${PREVIEW_ROOT}market/klines?${query}`, {headers:this.getAuthHeader(),signal:AbortSignal.timeout(10000)});
+    if (!response.ok) throw new Error('无法读取现货行情，请稍后重试。');
+    const rows: any[][] = await response.json();
+    if (!Array.isArray(rows)) return [];
+    return rows.map(k => ({time:Math.floor(Number(k[0])/1000),open:Number(k[1]),high:Number(k[2]),low:Number(k[3]),close:Number(k[4]),volume:Number(k[5])})).filter(c => Object.values(c).every(Number.isFinite)).sort((a,b) => a.time-b.time);
   }
 
   async getLogs(limit: number = 100): Promise<LogEntry[]> {

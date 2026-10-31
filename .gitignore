@@ -24,3 +24,21 @@ dist-ssr
 *.sln
 *.sw?
 probe_strategy_api.py
+
+# Local maintenance files and credentials must never enter this fork.
+*.before-*
+*.bak*
+__pycache__/
+*.pyc
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+private/
+credentials/
+.ssh/
+*.key
+*.pem
+*.p12
+api-server.json
+dashboard-password-set

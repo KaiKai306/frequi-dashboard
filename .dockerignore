@@ -7,3 +7,12 @@ dist
 .env.*
 __pycache__
 *.pyc
+
+*.before-*
+*.bak*
+private
+credentials
+*.key
+*.pem
+*.p12
+api-server.json

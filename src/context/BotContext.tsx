@@ -12,7 +12,7 @@ import type {
 import { FreqtradeClient, EMPTY_BOT_STATE, normalizeApiUrl } from '../api/client';
 import { useLocale } from '../i18n/LocaleContext';
 
-export type CurrencyUnit = 'USD' | 'CNY' | 'EUR' | 'IDR';
+export type CurrencyUnit = 'USDT' | 'USD' | 'CNY' | 'EUR' | 'IDR';
 
 export interface ExchangeRates {
   USD: number;
@@ -89,74 +89,16 @@ const BotContext = createContext<BotContextValue | null>(null);
 
 function loadInitialProfiles(): { profiles: BotProfile[]; activeId: string | null } {
   try {
-    // 1. Check if bot connection parameters are passed via URL query or hash
-    if (typeof window !== 'undefined' && window.location) {
-      try {
-        const searchParams = new URLSearchParams(window.location.search);
-        const hashParams = new URLSearchParams(
-          window.location.hash.startsWith('#') ? window.location.hash.slice(1) : window.location.hash
-        );
-        const getParam = (key: string) => searchParams.get(key) || hashParams.get(key);
-        const paramApiUrl = getParam('apiUrl') || getParam('url');
-        if (paramApiUrl) {
-          const paramName = getParam('name') || 'Freqtrade Bot';
-          const paramUser = getParam('username') || getParam('user') || '';
-          const paramPass = getParam('password') || getParam('pass') || '';
-          const raw = localStorage.getItem('nfi_bot_profiles');
-          let currentProfiles: BotProfile[] = [];
-          if (raw) {
-            try {
-              const p = JSON.parse(raw);
-              if (Array.isArray(p)) currentProfiles = p;
-            } catch {}
-          }
-          const normalized = normalizeApiUrl(paramApiUrl);
-          let existing = currentProfiles.find(
-            (p) => p.apiUrl === normalized && p.username === paramUser
-          );
-          if (!existing) {
-            existing = {
-              id: `bot-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
-              name: paramName,
-              apiUrl: normalized,
-              username: paramUser,
-              password: paramPass,
-              createdAt: Date.now(),
-            };
-            currentProfiles.push(existing);
-            localStorage.setItem('nfi_bot_profiles', JSON.stringify(currentProfiles));
-          }
-          localStorage.setItem('nfi_active_bot_id', existing.id);
-          return { profiles: currentProfiles, activeId: existing.id };
-        }
-      } catch (paramErr) {
-        console.warn('Failed to parse URL bot params:', paramErr);
-      }
-    }
-
-    // 2. Normal load from localStorage
-    const raw = localStorage.getItem('nfi_bot_profiles');
+    const raw = sessionStorage.getItem('happykai_preview_profiles');
     if (raw) {
-      const parsed = JSON.parse(raw);
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        const savedActive = localStorage.getItem('nfi_active_bot_id');
-        const sanitized = parsed.map((p: BotProfile) => ({
-          ...p,
-          apiUrl: normalizeApiUrl(p.apiUrl === '/ft-api' || p.apiUrl === '/owner-api' ? '/' : p.apiUrl),
-        }));
-        const activeExists = sanitized.some((p: BotProfile) => p.id === savedActive);
-        return {
-          profiles: sanitized,
-          activeId: activeExists ? savedActive : sanitized[0].id,
-        };
+      const profiles = JSON.parse(raw) as BotProfile[];
+      if (Array.isArray(profiles) && profiles.length) {
+        const activeId = sessionStorage.getItem('happykai_preview_active_id');
+        return {profiles:profiles.map(p => ({...p,apiUrl:normalizeApiUrl(p.apiUrl)})),activeId:profiles.some(p => p.id === activeId) ? activeId : profiles[0].id};
       }
     }
-
-  } catch (err) {
-    console.error('Failed to load bot profiles', err);
-  }
-
-  return { profiles: [], activeId: null };
+  } catch { /* A fresh session simply asks the user to log in. */ }
+  return {profiles:[],activeId:null};
 }
 
 function loadBotSnapshot(botId: string | null): {
@@ -168,7 +110,7 @@ function loadBotSnapshot(botId: string | null): {
 } | null {
   if (!botId) return null;
   try {
-    const raw = localStorage.getItem(`frequi_snapshot_${botId}`);
+    const raw = sessionStorage.getItem(`frequi_snapshot_${botId}`);
     if (raw) {
       const parsed = JSON.parse(raw);
       if (parsed.botId && parsed.botId !== botId) return null;
@@ -196,7 +138,7 @@ function saveBotSnapshot(
       botId,
       savedAt: Date.now(),
     };
-    localStorage.setItem(`frequi_snapshot_${botId}`, JSON.stringify(updated));
+    sessionStorage.setItem(`frequi_snapshot_${botId}`, JSON.stringify(updated));
   } catch {}
 }
 
@@ -206,7 +148,7 @@ export function BotProvider({ children }: { children: ReactNode }) {
   // Theme state: 默认白天模式 (Light mode)
   const [theme, setThemeState] = useState<'dark' | 'light'>(() => {
     const saved = localStorage.getItem('nfi_theme') as 'dark' | 'light';
-    return saved || 'light';
+    return saved || 'dark';
   });
 
 
@@ -276,16 +218,11 @@ export function BotProvider({ children }: { children: ReactNode }) {
   }, [config]);
 
   // Branch 'hide-operation-buttons': Default to Read-Only mode to hide all dangerous operation buttons
-  const isReadOnly = false;
+  const isReadOnly = true;
 
   // Global Currency Unit State: 优先保留用户设置(CNY/EUR/IDR/USD)，旧版USDT自动平滑升级为USD
   const [currencyUnit, setCurrencyUnitState] = useState<CurrencyUnit>(() => {
-    const saved = localStorage.getItem('frequi_currency_unit');
-    if (saved === 'USDT' || !saved) return 'USD';
-    if (['USD', 'CNY', 'EUR', 'IDR'].includes(saved)) {
-      return saved as CurrencyUnit;
-    }
-    return 'USD';
+    return 'USDT';
   });
 
   const setCurrencyUnit = (unit: CurrencyUnit) => {
@@ -303,12 +240,12 @@ export function BotProvider({ children }: { children: ReactNode }) {
       if (saved !== null) {
         const parsed = parseInt(saved, 10);
         if (!isNaN(parsed) && parsed >= 0) {
-          if (parsed === 6) return 2; // Auto-upgrade old 6s default to 2s
+          if (parsed > 0 && parsed < 6) return 6;
           return parsed;
         }
       }
     } catch {}
-    return 2;
+    return 6;
   });
 
   const [refreshCountdown, setRefreshCountdown] = useState<number>(() => {
@@ -317,18 +254,18 @@ export function BotProvider({ children }: { children: ReactNode }) {
       if (saved !== null) {
         const parsed = parseInt(saved, 10);
         if (!isNaN(parsed) && parsed >= 0) {
-          if (parsed === 6) return 2;
+          if (parsed > 0 && parsed < 6) return 6;
           return parsed;
         }
       }
     } catch {}
-    return 2;
+    return 6;
   });
 
   const [timerResetKey, setTimerResetKey] = useState<number>(0);
 
   const setRefreshInterval = useCallback((seconds: number) => {
-    const val = Math.max(0, Math.floor(seconds));
+    const val = seconds <= 0 ? 0 : Math.max(6, Math.floor(seconds));
     setRefreshIntervalState(val);
     setRefreshCountdown(val);
     setTimerResetKey((k) => k + 1);
@@ -353,31 +290,12 @@ export function BotProvider({ children }: { children: ReactNode }) {
     return { USD: 1, CNY: 6.7025, EUR: 0.8929, IDR: 16000 };
   });
 
-  const fetchLiveRates = useCallback(async () => {
-    try {
-      const res = await fetch('https://open.er-api.com/v6/latest/USD');
-      if (res.ok) {
-        const data = await res.json();
-        if (data?.rates) {
-          const cny = Number((data.rates.CNY || 6.7025).toFixed(4));
-          const eur = Number((data.rates.EUR || 0.8929).toFixed(4));
-          const idr = Number((data.rates.IDR || 16000).toFixed(2));
-          const updated: ExchangeRates = { USD: 1, CNY: cny, EUR: eur, IDR: idr };
-          setExchangeRates(updated);
-          localStorage.setItem('frequi_exchange_rates', JSON.stringify(updated));
-        }
-      }
-    } catch (e) {
-      console.warn('Failed to fetch live exchange rates:', e);
-    }
-  }, []);
+  const fetchLiveRates = useCallback(async () => { /* Preview uses USDT only. */ }, []);
 
-  useEffect(() => {
-    fetchLiveRates();
-  }, [fetchLiveRates]);
+  // Currency conversion is optional; no third-party call delays the initial view.
 
   const setCustomRate = useCallback((unit: CurrencyUnit, newRate: number) => {
-    if (unit === 'USD' || newRate <= 0) return;
+    if (unit === 'USD' || unit === 'USDT' || newRate <= 0) return;
     setExchangeRates((prev) => {
       const updated = { ...prev, [unit]: newRate };
       localStorage.setItem('frequi_exchange_rates', JSON.stringify(updated));
@@ -425,7 +343,7 @@ export function BotProvider({ children }: { children: ReactNode }) {
       maximumFractionDigits: decimals,
     });
 
-    return `${sign}${symbol}${formattedNum}`;
+    return currencyUnit === 'USDT' ? `${sign}${formattedNum} USDT` : `${sign}${symbol}${formattedNum}`;
   }, [currencyUnit, exchangeRates, hideBalances]);
 
   // ── SWR Snapshot: instant hydrate from cached data ──
@@ -556,13 +474,13 @@ export function BotProvider({ children }: { children: ReactNode }) {
   // Sync profiles to localStorage
   const saveProfiles = (newProfiles: BotProfile[], newActiveId?: string | null) => {
     setProfiles(newProfiles);
-    localStorage.setItem('nfi_bot_profiles', JSON.stringify(newProfiles));
+    sessionStorage.setItem('happykai_preview_profiles', JSON.stringify(newProfiles));
     if (newActiveId !== undefined) {
       setActiveBotId(newActiveId);
       if (newActiveId) {
-        localStorage.setItem('nfi_active_bot_id', newActiveId);
+        sessionStorage.setItem('happykai_preview_active_id', newActiveId);
       } else {
-        localStorage.removeItem('nfi_active_bot_id');
+        sessionStorage.removeItem('happykai_preview_active_id');
       }
     }
   };
@@ -652,7 +570,6 @@ export function BotProvider({ children }: { children: ReactNode }) {
       const shouldFetchSecondary =
         forceAll ||
         lastSecondaryFetchTimeRef.current === 0 ||
-        closedTradesRef.current.length === 0 ||
         hadTradeClosed ||
         (tradeCountChanged && active.length > 0) ||
         (document.visibilityState === 'visible' && timeSinceLastSecondary > 45000);
@@ -760,7 +677,7 @@ export function BotProvider({ children }: { children: ReactNode }) {
     setInitialCapitalState(capInfo.value);
 
     setActiveBotId(id);
-    localStorage.setItem('nfi_active_bot_id', id);
+    sessionStorage.setItem('happykai_preview_active_id', id);
 
     const newClient = new FreqtradeClient({
       apiUrl: target.apiUrl,
@@ -880,7 +797,7 @@ export function BotProvider({ children }: { children: ReactNode }) {
         switchBot(nextActive);
       } else {
         localStorage.removeItem('nfi_bot_config');
-        localStorage.removeItem('nfi_active_bot_id');
+        sessionStorage.removeItem('happykai_preview_active_id');
         setIsConnected(false);
         setBotState(EMPTY_BOT_STATE);
         setActiveTrades([]);

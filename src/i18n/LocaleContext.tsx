@@ -41,8 +41,7 @@ function resolveInitialLocale(): Locale {
       // localStorage unavailable
     }
   }
-  // English is the product default. User can switch to 中文 with toggle.
-  return 'en';
+  return 'zh';
 }
 
 export function LocaleProvider({ children }: { children: ReactNode }) {

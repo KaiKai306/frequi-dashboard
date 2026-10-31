@@ -38,7 +38,7 @@ export function ClosedTradesView() {
     formatCurrency,
     refreshData,
     setMobileTab,
-    isReadOnly,
+    hideBalances,
     activeProfile,
     currencyUnit,
     exchangeRates,
@@ -288,7 +288,7 @@ export function ClosedTradesView() {
           <div className="text-xs font-mono">
             <span className="text-slate-400 mr-1">{translate('closed.total_profit')}:</span>
             <span className={`font-bold ${totalClosedProfit >= 0 ? 'text-emerald-500' : 'text-rose-500'}`}>
-              {isReadOnly ? translate('ui.hidden') : formatCurrency(totalClosedProfit, { showSign: true })}
+              {hideBalances ? translate('ui.hidden') : formatCurrency(totalClosedProfit, { showSign: true })}
             </span>
           </div>
 
@@ -448,7 +448,7 @@ export function ClosedTradesView() {
                         ) : (
                           <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0" />
                         )}
-                        <span>{isReadOnly ? translate('ui.hidden') : formatCurrency(profitAbs, { showSign: true })}</span>
+                        <span>{hideBalances ? translate('ui.hidden') : formatCurrency(profitAbs, { showSign: true })}</span>
                       </div>
                       <div className="text-[10px] text-slate-500 font-mono">
                         {translate('trade.return')}: {isProfit ? '+' : ''}{t.profit_pct}%
@@ -457,7 +457,7 @@ export function ClosedTradesView() {
 
                     <td className="py-2.5 px-3 whitespace-nowrap">
                       <div className="font-medium text-slate-700 dark:text-slate-300">
-                        {isReadOnly ? translate('ui.hidden') : formatCurrency(t.stake_amount || 0)}
+                        {hideBalances ? translate('ui.hidden') : formatCurrency(t.stake_amount || 0)}
                       </div>
                       <div className="text-[10px] text-slate-500">{translate('dashboard.amount')}: {t.amount || '-'}</div>
                     </td>
@@ -480,7 +480,7 @@ export function ClosedTradesView() {
                         }`}
                         title={t.exit_reason || t.exit_tag}
                       >
-                        {isReadOnly ? translate('ui.hidden') : formatExitReason(t.exit_reason, t.exit_tag, locale === 'zh')}
+                        {hideBalances ? translate('ui.hidden') : formatExitReason(t.exit_reason, t.exit_tag, locale === 'zh')}
                       </span>
                     </td>
 

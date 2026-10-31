@@ -212,7 +212,7 @@ export function FreqUIDashboardView() {
 
   // Dynamic next stake calculation based on NFI/Freqtrade unlimited stake logic
   const nextStakeInfo = useMemo(() => {
-    if (isReadOnly) return { label: t('ui.hidden'), isFull: false };
+    if (hideBalances) return { label: t('ui.hidden'), isFull: false };
 
     // Fixed stake amount
     if (
@@ -258,7 +258,7 @@ export function FreqUIDashboardView() {
       isFull: false,
     };
   }, [
-    isReadOnly,
+    hideBalances,
     botState.stake_amount,
     botState.max_open_trades,
     botState.free_balance,
@@ -649,7 +649,7 @@ export function FreqUIDashboardView() {
                 </div>
               </div>
               <div className="text-lg sm:text-2xl font-bold font-mono text-emerald-600 dark:text-emerald-400 tracking-tight whitespace-nowrap truncate my-0.5">
-                {isReadOnly ? t('ui.hidden') : formatCurrency(profitSummary?.profit_closed_coin || 0, { showSign: true })}
+                {hideBalances ? t('ui.hidden') : formatCurrency(profitSummary?.profit_closed_coin || 0, { showSign: true })}
               </div>
               <div className="h-5 flex items-center text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 font-mono whitespace-nowrap overflow-hidden truncate">
                 <span>{t('dashboard.return')}:</span>
@@ -724,7 +724,7 @@ export function FreqUIDashboardView() {
                     : 'text-rose-600 dark:text-rose-400'
                 }`}
               >
-                {isReadOnly ? t('ui.hidden') : formatCurrency(totalUnrealized, { showSign: true })}
+                {hideBalances ? t('ui.hidden') : formatCurrency(totalUnrealized, { showSign: true })}
               </div>
               <div className="h-5 flex items-center justify-between gap-1 text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 font-mono whitespace-nowrap overflow-hidden">
                 <span className="truncate">
@@ -736,7 +736,7 @@ export function FreqUIDashboardView() {
                 </span>
                 <span className="text-cyan-600 dark:text-cyan-400 font-medium truncate text-right shrink-0">
                   {t('dashboard.used')}:{' '}
-                  {isReadOnly
+                  {hideBalances
                     ? t('ui.hidden')
                     : formatCurrency(totalStake, {
                         decimals: totalStake >= 1000 ? 0 : 2,
@@ -797,7 +797,7 @@ export function FreqUIDashboardView() {
                 </div>
               </div>
               <div className="text-lg sm:text-2xl font-bold font-mono text-purple-600 dark:text-purple-400 tracking-tight whitespace-nowrap truncate my-0.5">
-                {isReadOnly ? t('ui.hidden') : formatCurrency(botState.balance)}
+                {hideBalances ? t('ui.hidden') : formatCurrency(botState.balance)}
               </div>
               <div className="h-5 flex items-center text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 font-mono whitespace-nowrap overflow-hidden truncate">
                 <span
@@ -928,7 +928,7 @@ export function FreqUIDashboardView() {
                           }`}
                         >
                           <span>
-                            {isReadOnly
+                            {hideBalances
                               ? t('ui.hidden')
                               : formatCurrency(
                                   trade.profit_abs !== undefined
@@ -945,7 +945,7 @@ export function FreqUIDashboardView() {
 
                       <td className="py-2 px-3 whitespace-nowrap">
                         <div className="font-medium text-slate-700 dark:text-slate-300 font-mono">
-                          {isReadOnly ? t('ui.hidden') : formatCurrency(trade.stake_amount || 0)}
+                          {hideBalances ? t('ui.hidden') : formatCurrency(trade.stake_amount || 0)}
                         </div>
                         <div className="text-[10px] text-slate-500 font-mono">{t('dashboard.amount')}: {trade.amount || '-'}</div>
                       </td>
@@ -1111,7 +1111,7 @@ export function FreqUIDashboardView() {
                         : 'text-rose-500 dark:text-rose-400'
                     }`}
                   >
-                    {isReadOnly ? t('ui.hidden') : formatCurrency(activeDayRecord.abs_profit, { showSign: true })}
+                    {hideBalances ? t('ui.hidden') : formatCurrency(activeDayRecord.abs_profit, { showSign: true })}
                   </span>
 
                   {/* 恒定占位槽：确保无论是否显示恢复按钮，右侧数据都不会发生横向抖动 */}
@@ -1230,7 +1230,7 @@ export function FreqUIDashboardView() {
                         : 'text-rose-500 dark:text-rose-400'
                     }`}
                   >
-                    {isReadOnly ? t('ui.hidden') : formatCurrency(dailyStats.totalProfit, { showSign: true })}
+                    {hideBalances ? t('ui.hidden') : formatCurrency(dailyStats.totalProfit, { showSign: true })}
                   </span>
                 </div>
 
@@ -1250,7 +1250,7 @@ export function FreqUIDashboardView() {
                         : 'text-rose-500 dark:text-rose-400'
                     }`}
                   >
-                    {isReadOnly ? t('ui.hidden') : formatCurrency(dailyStats.avgDailyProfit, { showSign: true })}
+                    {hideBalances ? t('ui.hidden') : formatCurrency(dailyStats.avgDailyProfit, { showSign: true })}
                   </span>
                 </div>
 
@@ -1287,7 +1287,7 @@ export function FreqUIDashboardView() {
                       dailyStats.bestDay >= 0 ? 'text-emerald-500 dark:text-emerald-400' : 'text-rose-500 dark:text-rose-400'
                     }`}
                   >
-                    {isReadOnly ? t('ui.hidden') : formatCurrency(dailyStats.bestDay, { showSign: true })}
+                    {hideBalances ? t('ui.hidden') : formatCurrency(dailyStats.bestDay, { showSign: true })}
                   </span>
                 </div>
               </div>

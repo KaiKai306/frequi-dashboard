@@ -83,6 +83,8 @@ export interface CandleData {
   low: number;
   close: number;
   volume: number;
+  sma50?: number;
+  sma200?: number;
 }
 
 export interface SignalStat {

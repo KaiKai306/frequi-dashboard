@@ -6,6 +6,7 @@ import {
   ColorType,
   CandlestickSeries,
   HistogramSeries,
+  LineSeries,
   LineStyle,
   type IChartApi,
   type ISeriesApi,
@@ -315,6 +316,8 @@ export function CandleChartView() {
   const chartRef = useRef<IChartApi | null>(null);
   const candleSeriesRef = useRef<ISeriesApi<'Candlestick'> | null>(null);
   const volumeSeriesRef = useRef<ISeriesApi<'Histogram'> | null>(null);
+  const sma50Ref = useRef<ISeriesApi<'Line'> | null>(null);
+  const sma200Ref = useRef<ISeriesApi<'Line'> | null>(null);
   const markersRef = useRef<any>(null);
   const priceLinesRef = useRef<IPriceLine[]>([]);
 
@@ -933,6 +936,9 @@ export function CandleChartView() {
       },
     });
 
+    sma50Ref.current = chart.addSeries(LineSeries, {title:'SMA50', color:'#60a5fa', lineWidth:1, priceLineVisible:false});
+    sma200Ref.current = chart.addSeries(LineSeries, {title:'SMA200', color:'#fbbf24', lineWidth:1, priceLineVisible:false});
+
     // Create markers plugin instance attached to candleSeries
     const markersPrimitive = createSeriesMarkers(candleSeries, []);
 
@@ -1062,6 +1068,8 @@ export function CandleChartView() {
       chartRef.current = null;
       candleSeriesRef.current = null;
       volumeSeriesRef.current = null;
+      sma50Ref.current = null;
+      sma200Ref.current = null;
       markersRef.current = null;
       priceLinesRef.current = [];
     };
@@ -1088,8 +1096,22 @@ export function CandleChartView() {
     });
   }, [isDark]);
 
+  useEffect(() => {
+    for (const [period, reference, key] of [[50,sma50Ref,'sma50'],[200,sma200Ref,'sma200']] as const) {
+      let sum = 0;
+      const points: {time:any;value:number}[] = [];
+      candles.forEach((c,i) => {
+        sum += c.close;
+        if (i >= period) sum -= candles[i-period].close;
+        const value = c[key] ?? (i >= period-1 ? sum/period : undefined);
+        if (value !== undefined && Number.isFinite(value)) points.push({time:c.time,value});
+      });
+      reference.current?.setData(points);
+    }
+  }, [candles]);
+
   // 4. Initial load or reload on pair/timeframe change
-  const loadCandles = async () => {
+  const loadCandles = async (preserveView = false) => {
     const pair = selectedPairRef.current || selectedPair;
     if (!pair) {
       setEmpty(true);
@@ -1114,7 +1136,9 @@ export function CandleChartView() {
 
     try {
       // Load initial batch of 1000 candles for comprehensive history
-      const data = await client.getCandles(pair, activeTf, 1000);
+      const visibleRange = preserveView ? chartRef.current?.timeScale().getVisibleLogicalRange() : null;
+      let data = await client.getCandles(pair, activeTf, 1000);
+      if (preserveView && data.length) data = [...new Map([...candlesRef.current,...data].map(c => [c.time,c])).values()].sort((a,b) => a.time-b.time).slice(-5000);
 
       // Verify bot or pair didn't change while request was in-flight
       if (activeBotIdRef.current !== reqBotId || (selectedPairRef.current && selectedPairRef.current !== pair)) {
@@ -1160,7 +1184,9 @@ export function CandleChartView() {
 
         const currentActive = activeTrades.find((t) => t.pair === pair);
         const latestClosed = closedTrades.find((t) => t.pair === pair);
-        if (!currentActive && latestClosed) {
+        if (preserveView && visibleRange) {
+          chartRef.current?.timeScale().setVisibleLogicalRange(visibleRange);
+        } else if (!currentActive && latestClosed) {
           focusTradeOnChart(latestClosed, data, false);
         } else {
           zoomToRecentCandles(chartRef.current, data.length);
@@ -1182,6 +1208,15 @@ export function CandleChartView() {
   useEffect(() => {
     loadCandles();
   }, [selectedPair, timeframe, client, activeBotId]);
+  const reloadCandlesRef = useRef(loadCandles);
+  reloadCandlesRef.current = loadCandles;
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (document.visibilityState === 'visible' && chartContainerRef.current && chartContainerRef.current.clientWidth > 0) reloadCandlesRef.current(true);
+    }, 30000);
+    return () => clearInterval(timer);
+  }, []);
+
 
   const renderGuideButton = (isMobile: boolean) => (
     <button
@@ -1762,7 +1797,7 @@ export function CandleChartView() {
           <AlertCircle className="w-8 h-8 text-rose-500 mb-2" />
           <p className="text-rose-400 font-semibold">{errorMsg}</p>
           <button
-            onClick={loadCandles}
+            onClick={() => loadCandles()}
             className="mt-3 px-3 py-1.5 rounded-lg bg-emerald-600 text-white font-medium cursor-pointer"
           >
             {t('candle.retry')}

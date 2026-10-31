@@ -77,7 +77,7 @@ export function BotSelectView() {
       appName: 'FreqUI',
       exportedAt: new Date().toISOString(),
       activeBotId,
-      profiles,
+      profiles: profiles.map(({password: _password, ...profile}) => profile),
       botSettings,
       preferences: {
         currencyUnit: localStorage.getItem('frequi_currency_unit') || 'USD',

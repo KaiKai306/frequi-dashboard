@@ -312,7 +312,7 @@ export function BotControlView() {
           <div className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 min-w-0 flex flex-col justify-center">
             <span className="text-[10px] text-slate-500 block font-sans mb-1">{t('control.version')}</span>
             <span className="font-bold text-emerald-600 dark:text-emerald-400 text-xs sm:text-sm truncate font-mono">
-              {botState.strategy_version || 'v18.0.124'}
+              {botState.strategy_version || '未提供'}
             </span>
           </div>
 
@@ -550,6 +550,8 @@ export function BotControlView() {
             </div>
             <button
               onClick={() => setShowEditModal(true)}
+              disabled={isReadOnly}
+              hidden={isReadOnly}
               className="p-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:text-emerald-500 text-slate-500 dark:text-slate-400 transition-colors cursor-pointer shrink-0"
               title={t('ui.edit_bot')}
             >

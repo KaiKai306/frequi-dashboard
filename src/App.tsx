@@ -68,7 +68,7 @@ const localizeTrellisMenu = (entries: any[], locale: 'zh' | 'en'): any[] => {
 };
 
 function DashboardWorkspace() {
-  const { theme, botState } = useBot();
+  const { theme, botState, isConnected } = useBot();
   const { locale, t } = useLocale();
 
   return (
@@ -77,6 +77,10 @@ function DashboardWorkspace() {
         theme === 'dark' ? 'bg-[#101726] text-slate-100' : 'bg-slate-100 text-slate-900'
       }`}
     >
+      <div className="flex items-center justify-between gap-4 px-5 py-2 bg-emerald-950/40 border-b border-emerald-800/30 text-xs text-emerald-300">
+        <span>中文工作台 · {isConnected ? (botState.dry_run ? '现货模拟' : '实盘数据') : '连接中'} · 只读预览 · USDT 计价</span>
+        <a href="/" className="text-slate-300 hover:text-white">原版研究面板 ↗</a>
+      </div>
       <HeaderBar />
 
       <main className="flex-1 w-full min-h-0 relative">
