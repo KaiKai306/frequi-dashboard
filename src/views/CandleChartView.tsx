@@ -881,6 +881,8 @@ export function CandleChartView() {
       layout: {
         background: { type: ColorType.Solid, color: isDark ? '#1b1d21' : '#ffffff' },
         textColor: isDark ? '#8e949e' : '#6f7680',
+        fontFamily: getComputedStyle(document.body).fontFamily,
+        fontSize: 12,
       },
       grid: {
         vertLines: { color: isDark ? 'rgba(255, 255, 255, 0.035)' : 'rgba(0, 0, 0, 0.06)' },
@@ -1252,14 +1254,14 @@ export function CandleChartView() {
     >
       {/* Chart Toolbar */}
       <div
-        className={`flex flex-col gap-2 px-2.5 sm:px-3 py-2 border-b text-xs transition-colors shrink-0 ${
+        className={`terminal-chart-toolbar flex flex-col gap-2 px-2.5 sm:px-3 py-2 border-b text-xs transition-colors shrink-0 ${
           isDark ? 'border-slate-700/80 bg-[#141d2f]' : 'border-slate-200 bg-slate-50'
         }`}
       >
         {/* Tier 1: 核心标的与交易操作工具组 (桌面端包含周期栏) */}
-        <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-between gap-1.5 sm:gap-2 w-full">
+        <div className="terminal-chart-toolbar-row flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-between gap-1.5 sm:gap-2 w-full">
           {/* 左侧：标的选择器 + 桌面端周期栏 */}
-          <div className="flex items-center gap-2 min-w-0 flex-1">
+          <div className="terminal-chart-selection flex items-center gap-2 min-w-0 flex-1">
             {/* 交易对选择器 */}
             <div className="flex items-center gap-1.5 min-w-0 w-full sm:w-auto">
               <CandlestickChart className="w-4 h-4 text-emerald-500 shrink-0" />
@@ -1289,7 +1291,7 @@ export function CandleChartView() {
             </div>
 
             {/* 周期切换栏 (桌面端: hidden md:flex) */}
-            <div className="hidden md:flex items-center gap-1 font-mono text-[11px] shrink-0 overflow-x-auto no-scrollbar py-0.5">
+            <div className="terminal-chart-timeframes hidden md:flex items-center gap-1 font-mono text-[11px] shrink-0 overflow-x-auto no-scrollbar py-0.5">
               {TIMEFRAMES.map((tf) => {
                 const isStrategyTf = tf === (botState.timeframe || '5m');
                 return (
@@ -1314,7 +1316,7 @@ export function CandleChartView() {
           </div>
 
           {/* 右侧：交易工具组 (明细、看板、刷新、语言) */}
-          <div className="hidden md:flex items-center justify-end gap-1.5 shrink-0 ml-auto">
+          <div className="terminal-chart-actions hidden md:flex items-center justify-end gap-1.5 shrink-0 ml-auto">
             {/* Mobile: load history joins Trades/HUD row */}
             <button
               onClick={() => handleLoadOlderCandles()}
@@ -1727,7 +1729,7 @@ export function CandleChartView() {
         {/* Tier 4: current position information */}
         {activeTrade && (
           <div
-            className={`w-full overflow-x-auto no-scrollbar flex items-center justify-between gap-2 px-2 py-1.5 rounded-lg border font-mono text-[10px] sm:text-[11px] ${
+            className={`terminal-chart-position w-full overflow-x-auto no-scrollbar flex items-center justify-between gap-2 px-2 py-1.5 rounded-lg border font-mono text-[10px] sm:text-[11px] ${
               isDark ? 'bg-[#182236] border-slate-700 text-slate-200' : 'bg-slate-100 border-slate-300 text-slate-800'
             }`}
           >

@@ -7,7 +7,7 @@ export function ActiveTradesView() {
   const workspace = useOptionalWorkspace();
   const number = (value:number|undefined) => value==null ? '—' : value.toLocaleString('en-US',{maximumFractionDigits:8});
   return <div className="terminal-table-scroll">
-    <table className="terminal-table" aria-label="当前持仓">
+    <table className="terminal-table terminal-positions" aria-label="当前持仓">
       <thead><tr><th>交易对 / 开仓时间</th><th className="number">数量</th><th className="number">投入金额</th><th className="number">开仓价</th><th className="number">当前价</th><th className="number">浮动盈亏</th><th className="number">止损价</th><th>入场信号</th><th/></tr></thead>
       <tbody>{activeTrades.map(trade=><tr key={trade.trade_id}>
         <td><strong>{trade.pair}</strong><small>{formatUtc8(trade.open_timestamp || trade.open_date,'MM-DD HH:mm')}</small></td>

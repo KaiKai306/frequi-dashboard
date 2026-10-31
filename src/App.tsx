@@ -79,8 +79,8 @@ function DashboardWorkspace() {
       <main className="terminal-main">
         <Workspace
           theme={theme === 'dark' ? 'dark' : 'light'}
-          storageKey="happykai-terminal:layout:v1"
-          version={1}
+          storageKey="happykai-terminal:layout:v2"
+          version={2}
           panelMenu={(entries) => localizeTrellisMenu(entries, locale)}
         >
           {/* Register all View Types */}
@@ -164,7 +164,7 @@ function DashboardWorkspace() {
                 <View type="closed_trades" />
               </Panel>
             </Split>
-            <Split axis="y" weights={[1.5, 1]}>
+            <Split axis="y" weights={[2.2, 1]}>
               <Panel><View type="bot_control" /></Panel>
               <Panel><View type="logs" /></Panel>
             </Split>

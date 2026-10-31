@@ -48,13 +48,13 @@ export function BotLogsView() {
 
   return (
     <div
-      className={`flex flex-col h-full overflow-hidden font-mono text-xs transition-colors ${
+      className={`terminal-logs flex flex-col h-full overflow-hidden font-mono text-xs transition-colors ${
         isDark ? 'bg-[#0a0f1d] text-slate-200' : 'bg-slate-50 text-slate-800'
       }`}
     >
       {/* Log toolbar */}
       <div
-        className={`flex items-center justify-between gap-2 px-3 py-1.5 border-b text-[11px] shrink-0 ${
+        className={`terminal-log-toolbar flex items-center justify-between gap-2 px-3 py-1.5 border-b text-[11px] shrink-0 ${
           isDark ? 'border-slate-800/80 bg-slate-900/70' : 'border-slate-200 bg-white'
         }`}
       >
@@ -119,6 +119,7 @@ export function BotLogsView() {
             <Filter className="w-3 h-3 text-slate-500" />
             <select
               value={filterLevel}
+              aria-label="日志级别"
               onChange={(e) => setFilterLevel(e.target.value)}
               className={`border rounded px-1.5 py-0.5 text-[10px] focus:outline-none ${
                 isDark ? 'bg-slate-800 border-slate-700 text-slate-300' : 'bg-white border-slate-300 text-slate-700'
@@ -152,21 +153,21 @@ export function BotLogsView() {
             return (
               <div
                 key={log.id}
-                className={`leading-relaxed p-1 rounded flex items-start gap-1.5 sm:gap-2 ${
+                className={`terminal-log-row leading-relaxed p-1 rounded flex items-start gap-1.5 sm:gap-2 ${
                   isDark ? 'hover:bg-slate-900/40' : 'hover:bg-slate-100'
                 }`}
               >
                 <span
-                  className="text-slate-600 dark:text-slate-400 text-[10px] shrink-0 font-mono"
+                  className="terminal-log-time text-slate-600 dark:text-slate-400 text-[10px] shrink-0 font-mono"
                   title={fullDate ? `${fullDate} ${time}` : time}
                 >
                   <span className="hidden sm:inline opacity-70">{fullDate} </span>
                   <span className="font-medium text-slate-500 dark:text-slate-300">{time}</span>
                 </span>
-                <span className={`text-[9px] px-1 py-0.2 rounded font-bold shrink-0 ${levelColor}`}>
+                <span className={`terminal-log-level text-[9px] px-1 py-0.2 rounded font-bold shrink-0 ${levelColor}`}>
                   {levelLabel(log.level)}
                 </span>
-                <span className="break-all flex-1 min-w-0">{log.message}</span>
+                <span className="terminal-log-message flex-1 min-w-0">{log.message}</span>
               </div>
             );
           })

@@ -18,8 +18,7 @@ export function BotControlView() {
     <section>
       <h2>策略状态</h2>
       <dl className="terminal-details">
-        <div><dt>连接</dt><dd>{isConnected ? '已连接' : '连接中断'}</dd></div>
-        <div><dt>运行状态</dt><dd>{botState.state==='running' ? '运行中' : botState.state==='stopped' ? '已停止' : '重载中'}</dd></div>
+        <div><dt>运行状态</dt><dd>{isConnected ? (botState.state==='running' ? '运行中' : botState.state==='stopped' ? '已停止' : '重载中') : '连接中断'}</dd></div>
         <div><dt>策略</dt><dd className="terminal-mono" title={botState.strategy}>{botState.strategy}</dd></div>
         <div><dt>策略周期</dt><dd>{botState.timeframe}</dd></div>
         <div><dt>运行模式</dt><dd>{botState.dry_run ? '现货模拟' : '实盘数据'}</dd></div>
