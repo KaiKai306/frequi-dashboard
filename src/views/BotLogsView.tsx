@@ -69,13 +69,13 @@ export function BotLogsView() {
                 ? 'bg-slate-800/90 border-slate-700 text-slate-200 hover:border-slate-600 focus:border-cyan-500'
                 : 'bg-white border-slate-300 text-slate-700 hover:border-slate-400 focus:border-cyan-500'
             }`}
-            title="Tail lines"
-            aria-label="Tail lines"
+            title="日志行数"
+            aria-label="日志行数"
           >
-            <option value="50">50 lines</option>
-            <option value="100">100 lines</option>
-            <option value="500">500 lines</option>
-            <option value="1000">1,000 lines</option>
+            <option value="50">50 行</option>
+            <option value="100">100 行</option>
+            <option value="500">500 行</option>
+            <option value="1000">1,000 行</option>
           </select>
         </div>
 

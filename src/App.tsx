@@ -10,6 +10,7 @@ import {
 } from '@danfessler/trellis-react';
 import { BotProvider, useBot } from './context/BotContext';
 import { HeaderBar } from './components/HeaderBar';
+import { AccountStrip } from './components/AccountStrip';
 import { MobileWorkspace } from './components/MobileWorkspace';
 import { FreqUIDashboardView } from './views/FreqUIDashboardView';
 import { ActiveTradesView } from './views/ActiveTradesView';
@@ -27,7 +28,7 @@ const BotLogsView = lazy(() => import('./views/BotLogsView').then(m => ({ defaul
 const EquityCurveView = lazy(() => import('./views/EquityCurveView').then(m => ({ default: m.EquityCurveView })));
 
 const LazyFallback = () => (
-  <div className="flex items-center justify-center h-full opacity-40 text-xs">Loading…</div>
+  <div className="flex items-center justify-center h-full opacity-40 text-xs">加载中…</div>
 );
 
 const translateMenuLabel = (label: string, locale: 'zh' | 'en'): string => {
@@ -72,29 +73,20 @@ function DashboardWorkspace() {
   const { locale, t } = useLocale();
 
   return (
-    <div
-      className={`flex flex-col w-full max-w-full h-[100dvh] overflow-hidden font-sans transition-colors ${
-        theme === 'dark' ? 'bg-[#101726] text-slate-100' : 'bg-slate-100 text-slate-900'
-      }`}
-    >
-      <div className="flex items-center justify-between gap-4 px-5 py-2 bg-emerald-950/40 border-b border-emerald-800/30 text-xs text-emerald-300">
-        <span>中文工作台 · {isConnected ? (botState.dry_run ? '现货模拟' : '实盘数据') : '连接中'} · 只读预览 · USDT 计价</span>
-        <a href="/" className="text-slate-300 hover:text-white">原版研究面板 ↗</a>
-      </div>
+    <div className="terminal-shell">
       <HeaderBar />
-
-      <main className="flex-1 w-full min-h-0 relative">
+      <AccountStrip />
+      <main className="terminal-main">
         <Workspace
           theme={theme === 'dark' ? 'dark' : 'light'}
-          storageKey="frequi-trellis:layout:v10"
-          version={10}
+          storageKey="happykai-terminal:layout:v1"
+          version={1}
           panelMenu={(entries) => localizeTrellisMenu(entries, locale)}
         >
           {/* Register all View Types */}
           <ViewType
             id="frequi_dashboard"
-            title={t('view.frequi_dashboard')}
-            placement="stage"
+            title="运行概览"
             singleton
           >
             <FreqUIDashboardView />
@@ -102,6 +94,7 @@ function DashboardWorkspace() {
 
           <ViewType
             id="chart"
+            placement="stage"
             title={(v) => (v.params?.pair ? `${t('view.candle_chart')} - ${v.params.pair}` : t('view.candle_chart'))}
             singleton
           >
@@ -156,32 +149,33 @@ function DashboardWorkspace() {
             <Suspense fallback={<LazyFallback />}><EquityCurveView /></Suspense>
           </ViewType>
 
-          {/* FreqUI Standard + Trellis Docking Layout */}
-          <Split axis="x" weights={[2.6, 1.2]}>
-            {/* Main Stage: Full FreqUI Dashboard & Charts */}
-            <Stage>
+          <Split axis="x" weights={[4, 1.15]}>
+            <Split axis="y" weights={[3.3, 1]}>
+              <Stage>
+                <Panel>
+                  <View type="chart" />
+                  <View type="frequi_dashboard" />
+                  <View type="equity_curve" />
+                  <View type="signals" />
+                </Panel>
+              </Stage>
               <Panel>
-                <View type="frequi_dashboard" />
-                <View type="equity_curve" />
-                <View type="chart" />
-                <View type="signals" />
+                <View type="active_trades" />
                 <View type="closed_trades" />
               </Panel>
-            </Stage>
-
-            {/* Right Side: Bot Controls & Logs */}
-            <Split axis="y" weights={[1.4, 1.0]}>
-              <Panel>
-                <View type="bot_control" />
-                <View type="active_trades" />
-              </Panel>
-              <Panel>
-                <View type="logs" />
-              </Panel>
+            </Split>
+            <Split axis="y" weights={[1.5, 1]}>
+              <Panel><View type="bot_control" /></Panel>
+              <Panel><View type="logs" /></Panel>
             </Split>
           </Split>
         </Workspace>
       </main>
+      <footer className="terminal-footer">
+        <span>{isConnected ? (botState.dry_run ? '现货模拟' : '实盘数据') : '等待连接'}</span>
+        <span>只读预览</span><span>{botState.strategy} · {botState.timeframe}</span>
+        <span>Binance Spot · USDT</span>
+      </footer>
     </div>
   );
 }

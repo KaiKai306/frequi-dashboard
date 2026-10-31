@@ -879,12 +879,12 @@ export function CandleChartView() {
 
     const chart = createChart(chartContainerRef.current, {
       layout: {
-        background: { type: ColorType.Solid, color: isDark ? '#141c2e' : '#ffffff' },
-        textColor: isDark ? '#94a3b8' : '#475569',
+        background: { type: ColorType.Solid, color: isDark ? '#1b1d21' : '#ffffff' },
+        textColor: isDark ? '#8e949e' : '#6f7680',
       },
       grid: {
-        vertLines: { color: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)' },
-        horzLines: { color: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)' },
+        vertLines: { color: isDark ? 'rgba(255, 255, 255, 0.035)' : 'rgba(0, 0, 0, 0.06)' },
+        horzLines: { color: isDark ? 'rgba(255, 255, 255, 0.035)' : 'rgba(0, 0, 0, 0.06)' },
       },
       localization: {
         timeFormatter: (t: number) => formatUtc8(t, 'YYYY-MM-DD HH:mm'),
@@ -908,11 +908,11 @@ export function CandleChartView() {
     });
 
     const candleSeries = chart.addSeries(CandlestickSeries, {
-      upColor: '#10b981',
-      downColor: '#ef4444',
+      upColor: '#26a69a',
+      downColor: '#ef5350',
       borderVisible: false,
-      wickUpColor: '#10b981',
-      wickDownColor: '#ef4444',
+      wickUpColor: '#26a69a',
+      wickDownColor: '#ef5350',
       priceFormat: getCandlePriceFormat(candlesRef.current),
     });
 
@@ -1080,12 +1080,12 @@ export function CandleChartView() {
     if (!chartRef.current) return;
     chartRef.current.applyOptions({
       layout: {
-        background: { type: ColorType.Solid, color: isDark ? '#141c2e' : '#ffffff' },
-        textColor: isDark ? '#94a3b8' : '#475569',
+        background: { type: ColorType.Solid, color: isDark ? '#1b1d21' : '#ffffff' },
+        textColor: isDark ? '#8e949e' : '#6f7680',
       },
       grid: {
-        vertLines: { color: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)' },
-        horzLines: { color: isDark ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.06)' },
+        vertLines: { color: isDark ? 'rgba(255, 255, 255, 0.035)' : 'rgba(0, 0, 0, 0.06)' },
+        horzLines: { color: isDark ? 'rgba(255, 255, 255, 0.035)' : 'rgba(0, 0, 0, 0.06)' },
       },
       timeScale: {
         borderColor: isDark ? 'rgba(255, 255, 255, 0.15)' : '#cbd5e1',

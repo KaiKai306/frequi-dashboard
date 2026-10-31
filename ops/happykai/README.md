@@ -2,7 +2,8 @@
 
 These files accompany the existing read-only Chinese preview. They contain no
 dashboard password, exchange credentials, SSH key or private authentication data.
-The appearance is unchanged from the first deployed preview.
+The desktop terminal layout is maintained separately from upstream `main` on
+`happykai/preview`, with the redesign also available on `ui/desktop-terminal`.
 
 ## Files
 
@@ -39,6 +40,14 @@ Build locally with the frozen lockfile, validate the static bundle, preserve a
 timestamped backup of the current static release and then publish only the
 build output. Only the preview service should be recreated if its bind mount
 needs to be changed. Existing Freqtrade and public Caddy must not be recreated.
+
+For a static-only update with the existing directory bind mount, keep that
+directory in place. Back up `public/` to a timestamped sibling, copy the new
+hashed assets while retaining old ones, and replace `index.html` last. No
+container restart or proxy reload is needed. To roll back this type of update,
+atomically restore the backup's `index.html`; keep both sets of assets so open
+sessions continue to work. `rollback_preview.py` removes the entire preview
+route and is intended for reverting the initial deployment, not a style update.
 
 ```sh
 pnpm install --frozen-lockfile --ignore-scripts
