@@ -1,10 +1,9 @@
-import { useOptionalWorkspace } from '@danfessler/trellis-react';
+import { useOpenChart } from '../context/DashboardNavigation';
 import { useBot } from '../context/BotContext';
 
 export function BotControlView() {
-  const { botState, isConnected, selectedPair, setSelectedPair, formatCurrency } = useBot();
-  const workspace = useOptionalWorkspace();
-  const openChart = (pair:string) => {setSelectedPair(pair);workspace?.open('chart',{reuse:'type',params:{pair}});};
+  const { botState, isConnected, selectedPair, formatCurrency } = useBot();
+  const openChart = useOpenChart();
   return <div className="terminal-status terminal-scroll">
     <section>
       <h2>交易对 <span>{botState.whitelist.length}</span></h2>

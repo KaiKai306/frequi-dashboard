@@ -264,7 +264,9 @@ function findTradesForCandle(
   return result;
 }
 
-export function CandleChartView() {
+export interface ChartQuote { pair: string; timeframe: string; close: number; change: number; updatedAt: number; }
+
+export function CandleChartView({ onQuote }: { onQuote?: (quote: ChartQuote) => void } = {}) {
   const { client, botState, selectedPair, setSelectedPair, activeTrades, closedTrades, theme, formatCurrency, activeBotId } = useBot();
   const t = useT();
   const { locale } = useLocale();
@@ -879,7 +881,7 @@ export function CandleChartView() {
 
     const chart = createChart(chartContainerRef.current, {
       layout: {
-        background: { type: ColorType.Solid, color: isDark ? '#1b1d21' : '#ffffff' },
+        background: { type: ColorType.Solid, color: isDark ? '#151d2a' : '#ffffff' },
         textColor: isDark ? '#8e949e' : '#6f7680',
         fontFamily: getComputedStyle(document.body).fontFamily,
         fontSize: 12,
@@ -1082,7 +1084,7 @@ export function CandleChartView() {
     if (!chartRef.current) return;
     chartRef.current.applyOptions({
       layout: {
-        background: { type: ColorType.Solid, color: isDark ? '#1b1d21' : '#ffffff' },
+        background: { type: ColorType.Solid, color: isDark ? '#151d2a' : '#ffffff' },
         textColor: isDark ? '#8e949e' : '#6f7680',
       },
       grid: {
@@ -1157,6 +1159,8 @@ export function CandleChartView() {
         return;
       }
 
+      const latest = data[data.length - 1];
+      onQuote?.({ pair, timeframe: activeTf, close: latest.close, change: latest.open > 0 ? (latest.close / latest.open - 1) * 100 : 0, updatedAt: Date.now() });
       setEmpty(false);
       setCandles(data);
       candlesRef.current = data;

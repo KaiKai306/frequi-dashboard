@@ -1,10 +1,10 @@
 import { useBot } from '../context/BotContext';
-import { useOptionalWorkspace } from '@danfessler/trellis-react';
+import { useOpenChart } from '../context/DashboardNavigation';
 import { formatUtc8 } from '../utils/dateUtils';
 
 export function FreqUIDashboardView() {
-  const { dailyRecords, closedTrades, profitSummary, formatCurrency, setSelectedPair } = useBot();
-  const workspace=useOptionalWorkspace();
+  const { dailyRecords, closedTrades, profitSummary, formatCurrency } = useBot();
+  const openChart = useOpenChart();
   const profitClass=(value:number)=>value<0 ? 'terminal-negative' : value>0 ? 'terminal-positive' : '';
   return <div className="terminal-overview terminal-scroll">
     <div className="terminal-overview-summary">
@@ -22,7 +22,7 @@ export function FreqUIDashboardView() {
       </section>
       <section><h2>最近平仓 <small>最近 10 笔</small></h2>
         <table className="terminal-table"><thead><tr><th>交易对</th><th>平仓时间</th><th className="number">已实现盈亏</th></tr></thead>
-          <tbody>{closedTrades.slice(0,10).map(trade=><tr key={trade.trade_id}><td><button className="terminal-text-button" onClick={()=>{setSelectedPair(trade.pair);workspace?.open('chart',{reuse:'type',params:{pair:trade.pair}});}}>{trade.pair}</button></td><td>{trade.close_timestamp || trade.close_date ? formatUtc8(trade.close_timestamp || trade.close_date!,'MM-DD HH:mm') : '—'}</td><td className={`number ${profitClass(trade.profit_ratio)}`}>{formatCurrency(trade.profit_abs ?? trade.stake_amount*trade.profit_ratio,{showSign:true})}</td></tr>)}
+          <tbody>{closedTrades.slice(0,10).map(trade=><tr key={trade.trade_id}><td><button className="terminal-text-button" onClick={()=>openChart(trade.pair)}>{trade.pair}</button></td><td>{trade.close_timestamp || trade.close_date ? formatUtc8(trade.close_timestamp || trade.close_date!,'MM-DD HH:mm') : '—'}</td><td className={`number ${profitClass(trade.profit_ratio)}`}>{formatCurrency(trade.profit_abs ?? trade.stake_amount*trade.profit_ratio,{showSign:true})}</td></tr>)}
           {!closedTrades.length && <tr><td colSpan={3} className="terminal-table-empty">暂无平仓记录</td></tr>}</tbody>
         </table>
       </section>

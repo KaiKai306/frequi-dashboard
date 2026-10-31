@@ -1,10 +1,10 @@
 import { useBot } from '../context/BotContext';
-import { useOptionalWorkspace } from '@danfessler/trellis-react';
+import { useOpenChart } from '../context/DashboardNavigation';
 import { formatUtc8 } from '../utils/dateUtils';
 
 export function ActiveTradesView() {
-  const { activeTrades, setSelectedPair, formatCurrency } = useBot();
-  const workspace = useOptionalWorkspace();
+  const { activeTrades, formatCurrency } = useBot();
+  const openChart = useOpenChart();
   const number = (value:number|undefined) => value==null ? '—' : value.toLocaleString('en-US',{maximumFractionDigits:8});
   return <div className="terminal-table-scroll">
     <table className="terminal-table terminal-positions" aria-label="当前持仓">
@@ -17,7 +17,7 @@ export function ActiveTradesView() {
           {formatCurrency(trade.profit_abs ?? trade.stake_amount*trade.profit_ratio,{showSign:true})}<small>{trade.profit_pct.toFixed(2)}%</small>
         </td>
         <td className="number">{number(trade.stop_loss_abs)}</td><td>{trade.enter_tag || '—'}</td>
-        <td><button onClick={()=>{setSelectedPair(trade.pair);workspace?.open('chart',{reuse:'type',params:{pair:trade.pair}});}}>图表</button></td>
+        <td><button onClick={()=>openChart(trade.pair)}>图表</button></td>
       </tr>)}{activeTrades.length===0 && <tr><td colSpan={9} className="terminal-table-empty">暂无持仓 · 策略正在等待入场信号</td></tr>}</tbody>
     </table>
   </div>;

@@ -88,9 +88,9 @@ export function EquityCurveView() {
     return () => observer.disconnect();
   }, []);
 
-  // Current equity calculation: balance + unrealized PnL
+  // The portfolio total already includes held assets; stake-currency balance alone does not.
   const totalUnrealized = activeTrades.reduce((sum, tr) => sum + (tr.profit_abs || 0), 0);
-  const currentEquity = (botState.balance || 0) + totalUnrealized;
+  const currentEquity = botState.total_balance ?? ((botState.balance || 0) + activeTrades.reduce((sum, trade) => sum + trade.stake_amount, 0) + totalUnrealized);
   const closedProfit = profitSummary?.profit_closed_coin || 0;
   const totalNetProfit = closedProfit + totalUnrealized;
   const totalReturnPct = initialCapital > 0 ? (totalNetProfit / initialCapital) * 100 : 0;

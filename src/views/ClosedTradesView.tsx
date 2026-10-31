@@ -1,7 +1,7 @@
 import { useMemo, useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useBot } from '../context/BotContext';
-import { useOptionalWorkspace } from '@danfessler/trellis-react';
+import { useOpenChart } from '../context/DashboardNavigation';
 import { CheckCircle2, XCircle, CandlestickChart, RefreshCw, History, ArrowUpRight, ArrowDownRight, ChevronLeft, ChevronRight, FileSpreadsheet, FileText, ChevronDown, Share2 } from 'lucide-react';
 import { SignalBadge } from '../components/SignalBadge';
 import { formatUtc8 } from '../utils/dateUtils';
@@ -33,11 +33,9 @@ function useIsMobile() {
 export function ClosedTradesView() {
   const {
     closedTrades,
-    setSelectedPair,
     theme,
     formatCurrency,
     refreshData,
-    setMobileTab,
     hideBalances,
     activeProfile,
     currencyUnit,
@@ -59,7 +57,7 @@ export function ClosedTradesView() {
   const isDark = theme === 'dark';
   const isMobile = useIsMobile();
   const { locale, t: translate } = useLocale();
-  const ws = useOptionalWorkspace();
+  const openChart = useOpenChart();
 
   // Reset pagination and active modals on bot switch
   useEffect(() => {
@@ -71,11 +69,7 @@ export function ClosedTradesView() {
   const pageSize = isMobile ? 20 : 50;
 
   const handleViewChart = (pair: string) => {
-    setSelectedPair(pair);
-    if (ws) {
-      ws.open('chart', { reuse: 'type', params: { pair } });
-    }
-    setMobileTab('chart');
+    openChart(pair);
   };
 
   const handleManualRefresh = async () => {
